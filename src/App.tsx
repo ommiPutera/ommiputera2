@@ -1,6 +1,7 @@
 import { MantineProvider } from "@mantine/core";
 import { GlobalStyle, mantineTheme } from "./theme";
 import { Button } from "@mantine/core";
+import { IconSunHigh, IconMoon } from "@tabler/icons";
 import styled, { ThemeProvider } from "styled-components";
 import useTheme from "./hooks/useTheme";
 import { Helmet } from "react-helmet";
@@ -21,7 +22,17 @@ function App() {
           />
         </Helmet>
         <Container>
-          <Button compact color="warning" onClick={onHandleTheme}>
+          <Button
+            color="warning"
+            leftIcon={
+              mode === "dark" ? (
+                <IconSunHigh size={18} />
+              ) : (
+                <IconMoon size={18} />
+              )
+            }
+            onClick={onHandleTheme}
+          >
             Toggle Mode
           </Button>
           <h1>Hello</h1>

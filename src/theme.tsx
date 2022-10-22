@@ -4,7 +4,9 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${({ theme }) =>
-      theme.mode === "dark" ? "#18181b" : "#fffff"};
+      theme.mode === "dark" ? "#18181b" : "#fff"} !important;
+    color: ${({ theme }) =>
+      theme.mode === "light" ? "#18181b" : "#fff"} !important;
   }
 `;
 
@@ -106,8 +108,8 @@ const mantineTheme = {
       h6: { fontSize: 14, lineHeight: 1.5, fontWeight: 700 },
     },
   },
-  white: "#fffff",
-  black: "#18181b",
+  white: "#fff",
+  black: "#000",
   lineHeight: 1.55,
   primaryColor: "primary",
   activeStyles: { transform: "translateY(0)" },
