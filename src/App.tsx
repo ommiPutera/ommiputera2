@@ -17,7 +17,7 @@ function App() {
           <title>Epic Web App by Ommi</title>
           <meta
             name="theme-color"
-            content={mode === "light" ? "blue" : "red"}
+            content={mode === "light" ? "#fff" : "#18181b"}
           />
         </Helmet>
         <Container>
