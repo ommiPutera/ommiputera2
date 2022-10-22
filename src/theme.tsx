@@ -1,17 +1,12 @@
 import { MantineThemeColorsOverride } from "@mantine/core";
-import { DefaultTheme } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
-const theme: DefaultTheme = {
-  borderRadius: "3px",
-
-  colors: {
-    blue_400: "#1e40af",
-    blue_300: "#2563eb",
-    blue_200: "#60a5fa",
-    blue_100: "#bfdbfe",
-    blue_50: "#dbeafe",
-  },
-};
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${({ theme }) =>
+      theme.mode === "dark" ? "#18181b" : "#fffff"};
+  }
+`;
 
 const colors: MantineThemeColorsOverride = {
   primary: [
@@ -103,20 +98,20 @@ const mantineTheme = {
   headings: {
     fontWeight: 700,
     sizes: {
-      h1: { fontSize: 34, lineHeight: 1.3, fontWeight: undefined },
-      h2: { fontSize: 26, lineHeight: 1.35, fontWeight: undefined },
-      h3: { fontSize: 22, lineHeight: 1.4, fontWeight: undefined },
-      h4: { fontSize: 18, lineHeight: 1.45, fontWeight: undefined },
-      h5: { fontSize: 16, lineHeight: 1.5, fontWeight: undefined },
-      h6: { fontSize: 14, lineHeight: 1.5, fontWeight: undefined },
+      h1: { fontSize: 34, lineHeight: 1.3, fontWeight: 700 },
+      h2: { fontSize: 26, lineHeight: 1.35, fontWeight: 700 },
+      h3: { fontSize: 22, lineHeight: 1.4, fontWeight: 700 },
+      h4: { fontSize: 18, lineHeight: 1.45, fontWeight: 700 },
+      h5: { fontSize: 16, lineHeight: 1.5, fontWeight: 700 },
+      h6: { fontSize: 14, lineHeight: 1.5, fontWeight: 700 },
     },
   },
-  white: "#fff",
-  black: "#000",
+  white: "#fffff",
+  black: "#18181b",
   lineHeight: 1.55,
   primaryColor: "primary",
   activeStyles: { transform: "translateY(0)" },
   datesLocale: "en",
 };
 
-export { theme, mantineTheme };
+export { mantineTheme, GlobalStyle };

@@ -12,22 +12,22 @@ function IconButton(props: ButtonProps) {
 
 const StyledButton = styled(MantineButton)`
   .mantine-Button-inner {
-    padding: 0em 0.2em;
+    padding: 0em 0.1em;
   }
   .mantine-Button-label {
-    font-size: 1.07em;
-    padding: 0.3em;
+    font-size: 0.9em;
+    padding: 0.1em;
     margin-bottom: 1px;
   }
 `;
 
 const StyledIconButton = styled(ActionIcon)`
   .mantine-Button-inner {
-    padding: 0em 0.2em;
+    padding: 0em 0.1em;
   }
   .mantine-Button-label {
-    font-size: 1.07em;
-    padding: 0.3em;
+    font-size: 0.9em;
+    padding: 0.1em;
     margin-bottom: 1px;
   }
 `;
