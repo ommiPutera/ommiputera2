@@ -1,3 +1,4 @@
+import { MantineThemeColorsOverride } from "@mantine/core";
 import { DefaultTheme } from "styled-components";
 
 const theme: DefaultTheme = {
@@ -12,7 +13,71 @@ const theme: DefaultTheme = {
   },
 };
 
+const colors: MantineThemeColorsOverride = {
+  primary: [
+    "#f0f9ff",
+    "#e0f2fe",
+    "#bae6fd",
+    "#7dd3fc",
+    "#38bdf8",
+    "#0ea5e9",
+    "#2563eb",
+    "#1d4ed8",
+    "#1e40af",
+    "#1e3a8a",
+  ],
+  warning: [
+    "#fff7ed",
+    "#ffedd5",
+    "#fed7aa",
+    "#fdba74",
+    "#fb923c",
+    "#f97316",
+    "#ea580c",
+    "#c2410c",
+    "#9a3412",
+    "#7c2d12",
+  ],
+  success: [
+    "#f0fdf4",
+    "#dcfce7",
+    "#bbf7d0",
+    "#86efac",
+    "#4ade80",
+    "#22c55e",
+    "#16a34a",
+    "#15803d",
+    "#166534",
+    "#14532d",
+  ],
+  danger: [
+    "#fef2f2",
+    "#fee2e2",
+    "#fecaca",
+    "#fca5a5",
+    "#f87171",
+    "#ef4444",
+    "#dc2626",
+    "#b91c1c",
+    "#991b1b",
+    "#7f1d1d",
+  ],
+  dark: [
+    "#f9fafb",
+    "#f3f4f6",
+    "#e5e7eb",
+    "#d1d5db",
+    "#9ca3af",
+    "#6b7280",
+    "#4b5563",
+    "#374151",
+    "#1f2937",
+    "#18181b",
+  ],
+};
+
 const mantineTheme = {
+  colors: colors,
   fontSizes: {
     xs: 11,
     sm: 13,
@@ -23,10 +88,10 @@ const mantineTheme = {
   defaultRadius: "sm",
   radius: {
     xs: 2,
-    sm: 3.5,
-    md: 5,
-    lg: 10,
-    xl: 14,
+    sm: 3.7,
+    md: 4.7,
+    lg: 14,
+    xl: 30,
   },
   breakpoints: {
     xs: 500,
@@ -34,13 +99,6 @@ const mantineTheme = {
     md: 1000,
     lg: 1200,
     xl: 1400,
-  },
-  shadows: {
-    xs: "0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1)",
-    sm: "0 1px 3px rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0px 10px 15px -5px, rgba(0, 0, 0, 0.04) 0px 7px 7px -5px",
-    md: "0 1px 3px rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px",
-    lg: "0 1px 3px rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0px 28px 23px -7px, rgba(0, 0, 0, 0.04) 0px 12px 12px -7px",
-    xl: "0 1px 3px rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0px 36px 28px -7px, rgba(0, 0, 0, 0.04) 0px 17px 17px -7px",
   },
   headings: {
     fontWeight: 700,
@@ -56,7 +114,7 @@ const mantineTheme = {
   white: "#fff",
   black: "#000",
   lineHeight: 1.55,
-  primaryColor: "blue",
+  primaryColor: "primary",
   activeStyles: { transform: "translateY(0)" },
   datesLocale: "en",
 };

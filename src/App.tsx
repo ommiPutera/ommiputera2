@@ -1,20 +1,15 @@
 import { ThemeProvider } from "styled-components";
 import { MantineProvider } from "@mantine/core";
-import Button from "./components/Button";
-import { theme, mantineTheme } from "./theme";
-import { IconExternalLink } from "@tabler/icons";
+import { mantineTheme, theme } from "./theme";
+import { Button } from "./components/Button";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <MantineProvider withGlobalStyles withNormalizeCSS theme={mantineTheme}>
-        <Button
-          variant="outline"
-          color="red"
-          leftIcon={<IconExternalLink size={15} />}
-        >
-          Open in new tab
-        </Button>
+        <div style={{ margin: "24px" }}>
+          <Button>Settings</Button>
+        </div>
       </MantineProvider>
     </ThemeProvider>
   );

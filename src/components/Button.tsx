@@ -1,19 +1,35 @@
 import type { ButtonProps } from "@mantine/core";
-import { Button as MantineButton } from "@mantine/core";
-// import styled from "styled-components";
+import { Button as MantineButton, ActionIcon } from "@mantine/core";
+import styled from "styled-components";
 
 function Button(props: ButtonProps) {
-  return <MantineButton {...props}>{props.children}</MantineButton>;
+  return <StyledButton {...props}>{props.children}</StyledButton>;
 }
 
-// const OutlineButton = styled(MantineButton)`
-//   .mantine-Button-root {
-//     color: ${(props) => props.theme.colors.blue_400};
-//     border: 1px solid ${(props) => props.theme.colors.blue_400};
-//   }
-//   .mantine-Button-label {
-//     padding: 1px 0px;
-//   }
-// `;
+function IconButton(props: ButtonProps) {
+  return <StyledIconButton {...props}>{props.children}</StyledIconButton>;
+}
 
-export default Button;
+const StyledButton = styled(MantineButton)`
+  .mantine-Button-inner {
+    padding: 0em 0.2em;
+  }
+  .mantine-Button-label {
+    font-size: 1.07em;
+    padding: 0.3em;
+    margin-bottom: 1px;
+  }
+`;
+
+const StyledIconButton = styled(ActionIcon)`
+  .mantine-Button-inner {
+    padding: 0em 0.2em;
+  }
+  .mantine-Button-label {
+    font-size: 1.07em;
+    padding: 0.3em;
+    margin-bottom: 1px;
+  }
+`;
+
+export { Button, IconButton };
