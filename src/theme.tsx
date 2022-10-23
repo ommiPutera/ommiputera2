@@ -1,5 +1,5 @@
 import { MantineThemeColorsOverride } from "@mantine/core";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, DefaultTheme } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const colors: MantineThemeColorsOverride = {
+const colors = {
   primary: [
     "#f0f9ff",
     "#e0f2fe",
@@ -60,27 +60,52 @@ const colors: MantineThemeColorsOverride = {
     "#7f1d1d",
   ],
   dark: [
-    "#f9fafb",
-    "#f3f4f6",
-    "#e5e7eb",
-    "#d1d5db",
-    "#9ca3af",
-    "#6b7280",
-    "#4b5563",
-    "#374151",
-    "#1f2937",
+    "#fafafa",
+    "#f4f4f5",
+    "#e4e4e7",
+    "#d4d4d8",
+    "#a1a1aa",
+    "#71717a",
+    "#52525b",
+    "#3f3f46",
+    "#27272a",
     "#18181b",
   ],
 };
 
+const styledColors = {
+  ...colors,
+};
+
+const styledTheme: DefaultTheme = {
+  colors: styledColors,
+};
+
+const Mantinecolors: MantineThemeColorsOverride = {
+  ...colors,
+};
+
 const mantineTheme = {
-  colors: colors,
+  colors: Mantinecolors,
   fontSizes: {
     xs: 11,
     sm: 13,
     md: 14.5,
     lg: 16,
     xl: 20,
+  },
+  components: {
+    Container: {
+      defaultProps: {
+        sizes: {
+          xs: 720,
+          sm: 960,
+          md: 1140,
+          lg: 1320,
+          xl: 1600,
+        },
+      },
+    },
   },
   defaultRadius: "sm",
   radius: {
@@ -116,4 +141,4 @@ const mantineTheme = {
   datesLocale: "en",
 };
 
-export { mantineTheme, GlobalStyle };
+export { styledTheme, mantineTheme, GlobalStyle };

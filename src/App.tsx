@@ -1,14 +1,19 @@
-import { MantineProvider } from "@mantine/core";
-import { GlobalStyle, mantineTheme } from "./theme";
+import { MantineProvider, Container } from "@mantine/core";
+import { GlobalStyle, mantineTheme, styledTheme } from "./theme";
 import { Button } from "@mantine/core";
 import { IconSunHigh, IconMoon } from "@tabler/icons";
-import styled, { ThemeProvider } from "styled-components";
-import useTheme from "./hooks/useTheme";
+import { ThemeProvider } from "styled-components";
+import useMode from "./hooks/useMode";
 import { Helmet } from "react-helmet";
+import { Header } from "./components/layouts";
 
 function App() {
-  const { onHandleTheme, theme } = useTheme();
-  const { mode } = theme;
+  const { onHandleMode, mode } = useMode();
+
+  const theme = {
+    mode: mode,
+    ...styledTheme,
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -21,7 +26,8 @@ function App() {
             content={mode === "light" ? "#fff" : "#18181b"}
           />
         </Helmet>
-        <Container>
+        <Header />
+        <Container size="xl">
           <Button
             color="warning"
             leftIcon={
@@ -31,7 +37,7 @@ function App() {
                 <IconMoon size={18} />
               )
             }
-            onClick={onHandleTheme}
+            onClick={onHandleMode}
           >
             Toggle Mode
           </Button>
@@ -41,9 +47,5 @@ function App() {
     </ThemeProvider>
   );
 }
-
-const Container = styled.div`
-  margin: 24px;
-`;
 
 export default App;
