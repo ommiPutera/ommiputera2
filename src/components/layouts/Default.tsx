@@ -2,10 +2,8 @@ import styled from "styled-components";
 import { ActionIcon } from "@mantine/core";
 import { IconMoon, IconSunHigh } from "@tabler/icons";
 import useMode from "../../hooks/useMode";
-
-interface ILayoutProps {
-  children: React.ReactNode;
-}
+import { Outlet } from "react-router-dom";
+import { Container } from "@mantine/core";
 
 const BUTTON_MODE_SIZE = "xl";
 const ICON_MODE_SIZE = 22;
@@ -36,11 +34,15 @@ function Footer() {
   );
 }
 
-function DefaultLayout({ children }: ILayoutProps) {
+function DefaultLayout() {
   return (
     <WrapperLayout>
       <Header />
-      <div className="children">{children}</div>
+      <Container size="xl">
+        <div className="children">
+          <Outlet />
+        </div>
+      </Container>
       <Footer />
     </WrapperLayout>
   );
