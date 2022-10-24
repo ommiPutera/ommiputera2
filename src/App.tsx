@@ -5,10 +5,10 @@ import DefaultLayout from "./components/layouts/Default";
 import useMode from "./hooks/useMode";
 import { GlobalStyle, mantineTheme, styledTheme } from "./theme";
 import { Routes, Route, Link } from "react-router-dom";
+import { ROUTES } from "./routes";
 
 function App() {
   const { mode } = useMode();
-
   const theme = {
     mode: mode,
     ...styledTheme,
@@ -19,14 +19,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <AppHelmet />
-        <Routes>
-          <Route path="/" element={<DefaultLayout />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="dashboard" element={<Dashboard />} />
-            <Route path="*" element={<NoMatch />} />
-          </Route>
-        </Routes>
+        <AppRoutes />
       </ThemeProvider>
     </MantineProvider>
   );
@@ -45,7 +38,25 @@ function AppHelmet() {
   );
 }
 
-function Home() {
+function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<DefaultLayout />}>
+        {ROUTES.map((route) => (
+          <Route
+            key={route.path}
+            index={route.index}
+            path={route.path}
+            element={route.element}
+          />
+        ))}
+        <Route path="*" element={<NoMatch />} />
+      </Route>
+    </Routes>
+  );
+}
+
+export function Home() {
   return (
     <div>
       <h2>Home</h2>
@@ -53,7 +64,7 @@ function Home() {
   );
 }
 
-function About() {
+export function About() {
   return (
     <div>
       <h2>About</h2>
@@ -61,7 +72,7 @@ function About() {
   );
 }
 
-function Dashboard() {
+export function Dashboard() {
   return (
     <div>
       <h2>Dashboard</h2>
@@ -69,7 +80,7 @@ function Dashboard() {
   );
 }
 
-function NoMatch() {
+export function NoMatch() {
   return (
     <div>
       <h2>Nothing to see here!</h2>

@@ -1,9 +1,9 @@
+import { ActionIcon, Container } from "@mantine/core";
+import { IconMoon, IconSunHigh, IconMenu2 } from "@tabler/icons";
+import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
-import { ActionIcon } from "@mantine/core";
-import { IconMoon, IconSunHigh } from "@tabler/icons";
+import { ROUTES } from "../../routes";
 import useMode from "../../hooks/useMode";
-import { Outlet } from "react-router-dom";
-import { Container } from "@mantine/core";
 
 const BUTTON_MODE_SIZE = "xl";
 const ICON_MODE_SIZE = 22;
@@ -15,7 +15,9 @@ function Header() {
         <h2>Logo</h2>
       </LeftContent>
       <RightContent>
+        <DesktopNav className="desktop__nav">{getRouteArray()}</DesktopNav>
         <ModeButton />
+        <NavButton />
       </RightContent>
     </WrapperHeader>
   );
@@ -52,13 +54,20 @@ function ModeButton() {
   const { onHandleMode, mode } = useMode();
   return (
     <ActionIcon
-      className="theme__btn"
+      className="theme__btn btn"
       size={BUTTON_MODE_SIZE}
       radius="xl"
-      color="warning"
       onClick={onHandleMode}
     >
       {getIconMode(mode)}
+    </ActionIcon>
+  );
+}
+
+function NavButton() {
+  return (
+    <ActionIcon className="nav__btn btn" size={BUTTON_MODE_SIZE} radius="xl">
+      <IconMenu2 className="menu__icon" size={ICON_MODE_SIZE} />
     </ActionIcon>
   );
 }
@@ -73,6 +82,18 @@ function getIconMode(mode: string) {
   }
 }
 
+function getRouteArray() {
+  return (
+    <ul>
+      {ROUTES.map(({ path, label }) => (
+        <li>
+          <Link to={path || "/"}>{label}</Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 const WrapperHeader = styled.header`
   display: flex;
   padding: 14px 16px;
@@ -80,14 +101,17 @@ const WrapperHeader = styled.header`
     ${({ theme: { colors, mode } }) =>
       mode === "dark" ? colors.dark[8] : colors.dark[2]};
 
-  .theme__btn {
+  .btn {
     background-color: ${({ theme: { colors, mode } }) =>
       mode === "dark" ? colors.dark[7] : colors.dark[0]};
     :hover {
       background-color: ${({ theme: { colors, mode } }) =>
         mode === "dark" ? colors.dark[8] : colors.dark[2]};
     }
+  }
 
+  .theme__btn {
+    margin-right: 14px;
     .sun__icon {
       color: ${({ theme: { colors } }) => colors.dark[3]};
     }
@@ -95,9 +119,26 @@ const WrapperHeader = styled.header`
       color: ${({ theme: { colors } }) => colors.dark[8]};
     }
   }
+  .nav__btn {
+    .menu__icon {
+      color: ${({ theme: { colors, mode } }) =>
+        mode === "dark" ? colors.dark[2] : colors.dark[8]};
+    }
+  }
+
+  .desktop__nav {
+    display: none;
+  }
 
   @media (min-width: 1600px) {
     padding: 18px 72px;
+
+    .nav__btn {
+      display: none;
+    }
+    .desktop__nav {
+      display: block;
+    }
   }
 `;
 
@@ -134,6 +175,21 @@ const RightContent = styled.div`
   display: flex;
   justify-content: end;
   align-items: center;
+`;
+
+const DesktopNav = styled.nav`
+  ul {
+    display: flex;
+    list-style: none;
+    margin-right: 14px;
+
+    li {
+      margin: 0 24px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
 `;
 
 export default DefaultLayout;
