@@ -16,8 +16,9 @@ function Header() {
 const ContainerHeader = styled.header`
   display: flex;
   padding: 14px 16px;
-  background: ${({ theme: { colors } }) => colors.dark[9]};
-  border-bottom: 1px solid ${({ theme: { colors } }) => colors.dark[8]};
+  border-bottom: 1px solid
+    ${({ theme: { colors, mode } }) =>
+      mode === "dark" ? colors.dark[8] : colors.dark[2]};
 
   @media (min-width: 1600px) {
     padding: 24px 36px;
@@ -26,12 +27,13 @@ const ContainerHeader = styled.header`
 
 const LeftContent = styled.div`
   width: 50%;
-  background: red;
+  /* background: red; */
   text-align: left;
 `;
+
 const RightContent = styled.div`
   width: 50%;
-  background: blue;
+  /* background: blue; */
   text-align: right;
 `;
 

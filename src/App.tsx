@@ -19,13 +19,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <MantineProvider withGlobalStyles withNormalizeCSS theme={mantineTheme}>
         <GlobalStyle />
-        <Helmet>
-          <title>Epic Web App by Ommi</title>
-          <meta
-            name="theme-color"
-            content={mode === "light" ? "#fff" : "#18181b"}
-          />
-        </Helmet>
+        <AppHelmet mode={mode} />
         <Header />
         <Container size="xl">
           <Button
@@ -45,6 +39,18 @@ function App() {
         </Container>
       </MantineProvider>
     </ThemeProvider>
+  );
+}
+
+function AppHelmet({ mode }: { mode: string }) {
+  return (
+    <Helmet>
+      <title>Epic Web App by Ommi</title>
+      <meta
+        name="theme-color"
+        content={mode === "light" ? "#fff" : "#18181b"}
+      />
+    </Helmet>
   );
 }
 
