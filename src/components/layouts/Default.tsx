@@ -14,7 +14,7 @@ function Header() {
   return (
     <WrapperHeader>
       <LeftContent>
-        <span>Logo</span>
+        <h2>Logo</h2>
       </LeftContent>
       <RightContent>
         <ModeButton />
@@ -80,7 +80,7 @@ const WrapperHeader = styled.header`
 
   .theme__btn {
     background-color: ${({ theme: { colors, mode } }) =>
-      mode === "dark" ? colors.dark[7] : colors.dark[1]};
+      mode === "dark" ? colors.dark[7] : colors.dark[0]};
     :hover {
       background-color: ${({ theme: { colors, mode } }) =>
         mode === "dark" ? colors.dark[8] : colors.dark[2]};
@@ -102,6 +102,7 @@ const WrapperHeader = styled.header`
 const WrapperFooter = styled.footer`
   display: flex;
   padding: 14px 16px;
+  margin-bottom: 24px;
   border-top: 1px solid
     ${({ theme: { colors, mode } }) =>
       mode === "dark" ? colors.dark[8] : colors.dark[2]};
