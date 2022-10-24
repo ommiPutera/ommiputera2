@@ -1,14 +1,12 @@
-import { MantineProvider, Container } from "@mantine/core";
-import { GlobalStyle, mantineTheme, styledTheme } from "./theme";
-import { Button } from "@mantine/core";
-import { IconSunHigh, IconMoon } from "@tabler/icons";
-import { ThemeProvider } from "styled-components";
-import useMode from "./hooks/useMode";
+import { Container, MantineProvider } from "@mantine/core";
 import { Helmet } from "react-helmet";
-import DefaultLayout from "./components/layouts/default";
+import { ThemeProvider } from "styled-components";
+import DefaultLayout from "./components/layouts/Default";
+import useMode from "./hooks/useMode";
+import { GlobalStyle, mantineTheme, styledTheme } from "./theme";
 
 function App() {
-  const { onHandleMode, mode } = useMode();
+  const { mode } = useMode();
 
   const theme = {
     mode: mode,
@@ -16,34 +14,22 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <MantineProvider withGlobalStyles withNormalizeCSS theme={mantineTheme}>
+    <MantineProvider withGlobalStyles withNormalizeCSS theme={mantineTheme}>
+      <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <AppHelmet mode={mode} />
+        <AppHelmet />
         <DefaultLayout>
           <Container size="xl">
-            <Button
-              color="warning"
-              leftIcon={
-                mode === "dark" ? (
-                  <IconSunHigh size={18} />
-                ) : (
-                  <IconMoon size={18} />
-                )
-              }
-              onClick={onHandleMode}
-            >
-              Toggle Mode
-            </Button>
             <h1>Hello</h1>
           </Container>
         </DefaultLayout>
-      </MantineProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </MantineProvider>
   );
 }
 
-function AppHelmet({ mode }: { mode: string }) {
+function AppHelmet() {
+  const { mode } = useMode();
   return (
     <Helmet>
       <title>Epic Web App by Ommi</title>

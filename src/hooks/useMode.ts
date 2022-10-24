@@ -1,33 +1,23 @@
-import React from "react";
 import storage from "local-storage-fallback";
-
-const DEFAULT_MODE = "dark";
-
-interface IMode {
-  mode: string;
-  setMode: (value: string) => void;
-}
+import React from "react";
+import { useThemeStore } from "../store";
 
 function useMode() {
-  const [mode, setMode] = React.useState(getInitialMode);
+  const { themeMode, setThemeMode } = useThemeStore((state) => state);
 
   React.useEffect(() => {
-    storage.setItem("mode", JSON.stringify(mode));
-  }, [mode]);
-
-  function getInitialMode() {
-    const savedMode = storage.getItem("mode");
-    return savedMode ? JSON.parse(savedMode) : DEFAULT_MODE;
-  }
+    storage.setItem("mode", JSON.stringify(themeMode));
+  }, [themeMode]);
 
   function onHandleMode() {
-    let tempMode: IMode["mode"];
-    if (mode === "dark") tempMode = "light";
+    let tempMode;
+    if (themeMode === "dark") tempMode = "light";
     else tempMode = "dark";
-    setMode(tempMode);
+    setThemeMode(tempMode);
   }
 
-  return { onHandleMode, mode, setMode };
+  const mode = themeMode;
+  return { onHandleMode, mode };
 }
 
 export default useMode;
