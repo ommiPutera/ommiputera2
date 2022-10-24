@@ -27,13 +27,11 @@ const ContainerHeader = styled.header`
 
 const LeftContent = styled.div`
   width: 50%;
-  /* background: red; */
   text-align: left;
 `;
 
 const RightContent = styled.div`
   width: 50%;
-  /* background: blue; */
   text-align: right;
 `;
 
