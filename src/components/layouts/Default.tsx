@@ -233,13 +233,13 @@ const DesktopNav = styled.nav`
 
 const growDown = keyframes`
     0% {
-      transform: scaleY(0);
+        transform: rotateX(-40deg)
     }
-    80% {
-      transform: scaleY(1.1);
+    70% {
+        transform: rotateX(10deg) 
     }
     100% {
-      transform: scaleY(1);
+        transform: rotateX(0deg) 
     }
   
 `;
@@ -247,20 +247,19 @@ const growDown = keyframes`
 const WrapperDropdownNav = styled.nav`
   position: absolute;
   width: 100%;
-  /* min-height: 50%; */
 
   &.open {
-    visibility: visible;
+    display: block;
   }
   &.closed {
-    visibility: hidden;
+    display: none;
   }
 
   ul {
     width: 100%;
     max-height: 100vh;
     overflow: scroll;
-    animation: ${growDown} 300ms ease-in-out forwards;
+    animation: ${growDown} 400ms ease forwards;
     transform-origin: top center;
 
     li {
@@ -286,9 +285,9 @@ const WrapperDropdownNav = styled.nav`
           mode === "dark" ? colors.dark[2] : colors.dark[8]};
       color: ${({ theme: { colors, mode } }) =>
         mode === "dark" ? colors.dark[2] : colors.dark[8]};
-      border-radius: 24px;
-      margin: 14px 36px;
-      padding: 12px;
+      border-radius: 36px;
+      margin: 8px 36px 14px 36px;
+      padding: 14px;
 
       display: flex;
       justify-content: center;
