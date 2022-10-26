@@ -1,9 +1,10 @@
 import { ActionIcon, Container } from "@mantine/core";
 import { IconMoon, IconSunHigh, IconMenu2 } from "@tabler/icons";
 import { Link, Outlet } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { ROUTES } from "../../routes";
 import useMode from "../../hooks/useMode";
+import { useNavigation } from "../../store/rootStore";
 
 const BUTTON_MODE_SIZE = "xl";
 const ICON_MODE_SIZE = 22;
@@ -40,6 +41,7 @@ function DefaultLayout() {
   return (
     <WrapperLayout>
       <Header />
+      <DropdownNav />
       <Container size="xl">
         <div className="children">
           <Outlet />
@@ -65,10 +67,25 @@ function ModeButton() {
 }
 
 function NavButton() {
+  const { isOpen, setIsOpen } = useNavigation();
   return (
-    <ActionIcon className="nav__btn btn" size={BUTTON_MODE_SIZE} radius="xl">
+    <ActionIcon
+      className="nav__btn btn"
+      size={BUTTON_MODE_SIZE}
+      radius="xl"
+      onClick={() => setIsOpen(!isOpen)}
+    >
       <IconMenu2 className="menu__icon" size={ICON_MODE_SIZE} />
     </ActionIcon>
+  );
+}
+
+function DropdownNav() {
+  const { isOpen } = useNavigation();
+  return (
+    <WrapperDropdownNav className={`${isOpen ? "open" : "closed"}`}>
+      {getRouteArray()}
+    </WrapperDropdownNav>
   );
 }
 
@@ -188,6 +205,52 @@ const DesktopNav = styled.nav`
       font-size: 16px;
       font-weight: 600;
       text-decoration: none;
+    }
+  }
+`;
+
+const growDown = keyframes`
+    0% {
+      transform: scaleY(0);
+    }
+    80% {
+      transform: scaleY(1.1);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  
+`;
+
+const WrapperDropdownNav = styled.nav`
+  position: absolute;
+  width: 100%;
+  background-color: red;
+  /* min-height: 50%; */
+
+  &.open {
+    visibility: visible;
+  }
+  &.closed {
+    visibility: hidden;
+  }
+
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    animation: ${growDown} 300ms ease-in-out forwards;
+    transform-origin: top center;
+
+    li {
+      padding: 24px 0;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid
+        ${({ theme: { colors, mode } }) =>
+          mode === "dark" ? colors.dark[8] : colors.dark[2]};
     }
   }
 `;

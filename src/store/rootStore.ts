@@ -9,4 +9,12 @@ const useThemeStore = create<{
   setThemeMode: (mode) => set((state) => ({ themeMode: mode })),
 }));
 
-export { useThemeStore };
+const useNavigation = create<{
+  isOpen: boolean;
+  setIsOpen: (is: boolean) => void;
+}>((set) => ({
+  isOpen: false,
+  setIsOpen: (is) => set((state) => ({ isOpen: is })),
+}));
+
+export { useThemeStore, useNavigation };
