@@ -1,5 +1,5 @@
 import { ActionIcon, Container } from "@mantine/core";
-import { IconMoon, IconSunHigh, IconMenu2 } from "@tabler/icons";
+import { IconMoon, IconSunHigh, IconMenu2, IconX } from "@tabler/icons";
 import { Link, Outlet } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { ROUTES } from "../../routes";
@@ -7,7 +7,7 @@ import useMode from "../../hooks/useMode";
 import { useNavigation } from "../../store/rootStore";
 
 const BUTTON_MODE_SIZE = "xl";
-const ICON_MODE_SIZE = 22;
+const ICON_SIZE = 22;
 
 function Header() {
   return (
@@ -75,38 +75,59 @@ function NavButton() {
       radius="xl"
       onClick={() => setIsOpen(!isOpen)}
     >
-      <IconMenu2 className="menu__icon" size={ICON_MODE_SIZE} />
+      {isOpen ? (
+        <IconX className="menu__icon" size={ICON_SIZE} />
+      ) : (
+        <IconMenu2 className="menu__icon" size={ICON_SIZE} />
+      )}
     </ActionIcon>
   );
 }
 
 function DropdownNav() {
-  const { isOpen } = useNavigation();
+  const { isOpen, setIsOpen } = useNavigation();
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <WrapperDropdownNav className={`${isOpen ? "open" : "closed"}`}>
-      {getRouteArray()}
+      {getRouteArray(handleClick, true)}
     </WrapperDropdownNav>
   );
+}
+
+function getIcon(type: string) {
+  switch (type) {
+    case "x":
+      return <IconX className="close__icon" size={ICON_SIZE} />;
+    default:
+  }
 }
 
 function getIconMode(mode: string) {
   switch (mode) {
     case "dark":
-      return <IconSunHigh className="sun__icon" size={ICON_MODE_SIZE} />;
+      return <IconSunHigh className="sun__icon" size={ICON_SIZE} />;
     case "light":
-      return <IconMoon className="moon__icon" size={ICON_MODE_SIZE} />;
+      return <IconMoon className="moon__icon" size={ICON_SIZE} />;
     default:
   }
 }
 
-function getRouteArray() {
+function getRouteArray(handleClick?: () => void, withCloseBtn?: boolean) {
   return (
     <ul>
       {ROUTES.map(({ path, label }) => (
-        <li>
-          <Link to={path || "/"}>{label}</Link>
-        </li>
+        <Link key={path} to={path || "/"} onClick={handleClick}>
+          <li>{label}</li>
+        </Link>
       ))}
+      {withCloseBtn && (
+        <li onClick={handleClick}>
+          <div className="close__btn">{getIcon("x")} Close</div>
+        </li>
+      )}
     </ul>
   );
 }
@@ -121,7 +142,8 @@ const WrapperHeader = styled.header`
   .btn {
     background-color: ${({ theme: { colors, mode } }) =>
       mode === "dark" ? colors.dark[7] : colors.dark[0]};
-    :hover {
+    &:hover,
+    &:active {
       background-color: ${({ theme: { colors, mode } }) =>
         mode === "dark" ? colors.dark[8] : colors.dark[2]};
     }
@@ -225,7 +247,6 @@ const growDown = keyframes`
 const WrapperDropdownNav = styled.nav`
   position: absolute;
   width: 100%;
-  background-color: red;
   /* min-height: 50%; */
 
   &.open {
@@ -237,20 +258,42 @@ const WrapperDropdownNav = styled.nav`
 
   ul {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
+    max-height: 100vh;
+    overflow: scroll;
     animation: ${growDown} 300ms ease-in-out forwards;
     transform-origin: top center;
 
     li {
-      padding: 24px 0;
+      padding: 24px 16px;
+      text-align: center;
       font-size: 16px;
       font-weight: 600;
       text-decoration: none;
       border-bottom: 1px solid
         ${({ theme: { colors, mode } }) =>
           mode === "dark" ? colors.dark[8] : colors.dark[2]};
+
+      background-color: ${({ theme: { colors, mode } }) =>
+        mode === "dark" ? colors.dark[9] : colors.dark[0]};
+      &:active {
+        background-color: ${({ theme: { colors, mode } }) =>
+          mode === "dark" ? colors.dark[8] : colors.dark[2]};
+      }
+    }
+    li > .close__btn {
+      border: 1.5px solid
+        ${({ theme: { colors, mode } }) =>
+          mode === "dark" ? colors.dark[2] : colors.dark[8]};
+      color: ${({ theme: { colors, mode } }) =>
+        mode === "dark" ? colors.dark[2] : colors.dark[8]};
+      border-radius: 24px;
+      margin: 14px 36px;
+      padding: 12px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
     }
   }
 `;

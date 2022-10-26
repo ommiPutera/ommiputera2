@@ -26,4 +26,59 @@ export const ROUTES: IRouteObject[] = [
     path: "/dashboard",
     element: <Dashboard />,
   },
+  {
+    label: "Dashboard",
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    label: "Dashboard",
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    label: "Dashboard",
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    label: "Dashboard",
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    label: "Dashboard",
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    label: "Dashboard",
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    label: "Dashboard",
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    label: "Dashboard",
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    label: "Dashboard",
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    label: "Dashboard",
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    label: "Dashboard",
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
 ];
