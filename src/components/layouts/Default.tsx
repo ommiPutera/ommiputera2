@@ -229,8 +229,8 @@ const DesktopNav = styled.nav`
     margin-right: 14px;
 
     li {
-      margin: 0 24px;
-      font-size: 16px;
+      margin: 0 14px;
+      font-size: 14px;
       font-weight: 600;
       text-decoration: none;
     }
@@ -292,7 +292,7 @@ const WrapperDropdownNav = styled.nav`
       color: ${({ theme: { colors, mode } }) =>
         mode === "dark" ? colors.dark[2] : colors.dark[8]};
       border-radius: 36px;
-      margin: 0 36px 6px 36px;
+      margin: 0 36px;
       padding: 14px;
 
       display: flex;

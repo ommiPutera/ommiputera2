@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -14,7 +14,7 @@ h6,
 p,
 ul,
 li {
-  letter-spacing: 0.2px;
+  letter-spacing: -0.2px;
   margin: 0;
   padding: 0;
 }

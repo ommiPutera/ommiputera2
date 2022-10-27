@@ -29,7 +29,7 @@ function AppHelmet() {
   const { mode } = useMode();
   return (
     <Helmet>
-      <title>Epic Web App by Ommi</title>
+      <title>Ommi Putera</title>
       <meta
         name="theme-color"
         content={mode === "light" ? "#fff" : "#18181b"}
