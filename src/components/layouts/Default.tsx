@@ -1,5 +1,11 @@
 import { ActionIcon, Container } from "@mantine/core";
-import { IconMoon, IconSunHigh, IconMenu2, IconX } from "@tabler/icons";
+import {
+  IconMoon,
+  IconSunHigh,
+  IconMenu2,
+  IconArrowBack,
+  IconX,
+} from "@tabler/icons";
 import { Link, Outlet } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { ROUTES } from "../../routes";
@@ -100,7 +106,7 @@ function DropdownNav() {
 function getIcon(type: string) {
   switch (type) {
     case "x":
-      return <IconX className="close__icon" size={ICON_SIZE} />;
+      return <IconArrowBack className="close__icon" size={ICON_SIZE} />;
     default:
   }
 }
@@ -125,7 +131,7 @@ function getRouteArray(handleClick?: () => void, withCloseBtn?: boolean) {
       ))}
       {withCloseBtn && (
         <li onClick={handleClick}>
-          <div className="close__btn">{getIcon("x")} Close</div>
+          <div className="close__btn">{getIcon("x")} Back to content</div>
         </li>
       )}
     </ul>
@@ -150,7 +156,7 @@ const WrapperHeader = styled.header`
   }
 
   .theme__btn {
-    margin-right: 14px;
+    margin-right: 8px;
     .sun__icon {
       color: ${({ theme: { colors } }) => colors.dark[3]};
     }
@@ -233,10 +239,10 @@ const DesktopNav = styled.nav`
 
 const growDown = keyframes`
     0% {
-        transform: rotateX(-40deg)
+        transform: rotateX(16deg)
     }
     70% {
-        transform: rotateX(10deg) 
+        transform: rotateX(8deg) 
     }
     100% {
         transform: rotateX(0deg) 
@@ -259,13 +265,13 @@ const WrapperDropdownNav = styled.nav`
     width: 100%;
     max-height: 100vh;
     overflow: scroll;
-    animation: ${growDown} 400ms ease forwards;
+    animation: ${growDown} 200ms ease;
     transform-origin: top center;
 
     li {
       padding: 24px 16px;
       text-align: center;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 600;
       text-decoration: none;
       border-bottom: 1px solid
@@ -286,7 +292,7 @@ const WrapperDropdownNav = styled.nav`
       color: ${({ theme: { colors, mode } }) =>
         mode === "dark" ? colors.dark[2] : colors.dark[8]};
       border-radius: 36px;
-      margin: 8px 36px 14px 36px;
+      margin: 0 36px 6px 36px;
       padding: 14px;
 
       display: flex;
