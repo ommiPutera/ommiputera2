@@ -1,11 +1,15 @@
+import storage from "local-storage-fallback";
 import create from "zustand";
 import { DEFAULT_MODE } from "../defaultVariable";
+
+const localMode = storage.getItem("mode");
+const preventMode = localMode ? JSON.parse(localMode) : "";
 
 const useThemeStore = create<{
   themeMode: string;
   setThemeMode: (mode: string) => void;
 }>((set) => ({
-  themeMode: DEFAULT_MODE,
+  themeMode: preventMode || DEFAULT_MODE,
   setThemeMode: (mode) => set((state) => ({ themeMode: mode })),
 }));
 

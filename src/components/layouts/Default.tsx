@@ -4,6 +4,7 @@ import {
   IconSunHigh,
   IconMenu2,
   IconArrowBack,
+  IconCopyright,
   IconX,
 } from "@tabler/icons";
 import { Link, Outlet } from "react-router-dom";
@@ -19,7 +20,14 @@ function Header() {
   return (
     <WrapperHeader>
       <LeftContent>
-        <h2>Logo</h2>
+        <Logo>
+          <IconCopyright className="icon__copyright" size={ICON_SIZE} />
+          <div className="logo__text">
+            <Link to="/">
+              <span className="text">Ommi Putera</span>
+            </Link>
+          </div>
+        </Logo>
       </LeftContent>
       <RightContent>
         <DesktopNav className="desktop__nav">{getRouteArray()}</DesktopNav>
@@ -138,6 +146,63 @@ function getRouteArray(handleClick?: () => void, withCloseBtn?: boolean) {
   );
 }
 
+const growDown = keyframes`
+    0% {
+        transform: rotateX(16deg)
+    }
+    70% {
+        transform: rotateX(8deg) 
+    }
+    100% {
+        transform: rotateX(0deg) 
+    }
+  
+`;
+
+const Logo = styled.div`
+  display: flex;
+  align-items: center;
+
+  .logo__text {
+    cursor: pointer;
+    padding: 0 8px;
+    border-radius: 24px;
+    background-color: ${({ theme: { colors, mode } }) =>
+      mode === "dark" ? colors.dark[9] : "#fff"};
+
+    a {
+      font-weight: 600;
+      letter-spacing: -0.4px;
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .logo__text {
+      margin-top: 2px;
+      padding: 6px 12px;
+
+      a {
+        ::before {
+          content: "Code by ";
+        }
+      }
+
+      :hover {
+        border: 1px solid;
+        transform: translateX(-28px);
+        transition: 0.3s ease;
+
+        a {
+          ::before {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+`;
+
 const WrapperHeader = styled.header`
   display: flex;
   padding: 14px 16px;
@@ -230,24 +295,11 @@ const DesktopNav = styled.nav`
 
     li {
       margin: 0 14px;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
       text-decoration: none;
     }
   }
-`;
-
-const growDown = keyframes`
-    0% {
-        transform: rotateX(16deg)
-    }
-    70% {
-        transform: rotateX(8deg) 
-    }
-    100% {
-        transform: rotateX(0deg) 
-    }
-  
 `;
 
 const WrapperDropdownNav = styled.nav`

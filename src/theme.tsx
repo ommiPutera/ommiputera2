@@ -3,6 +3,7 @@ import { createGlobalStyle, DefaultTheme } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   body {
+    transition: none !important;
     background-color: ${({ theme }) =>
       theme.mode === "dark" ? "#18181b" : "#fff"} !important;
     color: ${({ theme }) =>
