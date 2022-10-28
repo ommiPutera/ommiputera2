@@ -5,9 +5,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     transition: none !important;
     background-color: ${({ theme }) =>
-      theme.mode === "dark" ? "#18181b" : "#fff"} !important;
+      theme.mode === "dark" ? "#0f0f15" : "#fff"} !important;
     color: ${({ theme }) =>
-      theme.mode === "light" ? "#18181b" : "#fff"} !important;
+      theme.mode === "light" ? "#0f0f15" : "#fff"} !important;
   }
 `;
 
@@ -66,11 +66,11 @@ const colors = {
     "#e4e4e7",
     "#d4d4d8",
     "#a1a1aa",
-    "#71717a",
-    "#52525b",
-    "#3f3f46",
-    "#27272a",
-    "#18181b",
+    "#383851",
+    "#2e2e42",
+    "#232333",
+    "#191924",
+    "#0f0f15",
   ],
 };
 
