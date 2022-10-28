@@ -1,5 +1,6 @@
 import React from "react";
-import { Home, About, Dashboard } from "./App";
+import { About, Dashboard } from "./App";
+import Home from "./page/Home";
 
 interface IRouteObject {
   path?: string;

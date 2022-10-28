@@ -1,4 +1,4 @@
-import { ActionIcon, Container } from "@mantine/core";
+import { ActionIcon } from "@mantine/core";
 import {
   IconMoon,
   IconSunHigh,
@@ -50,11 +50,9 @@ function DefaultLayout() {
     <WrapperLayout>
       <Header />
       <DropdownNav />
-      <Container size="xl">
-        <div className="children">
-          <Outlet />
-        </div>
-      </Container>
+      <div className="children">
+        <Outlet />
+      </div>
       <Footer />
     </WrapperLayout>
   );
@@ -174,9 +172,6 @@ const Logo = styled.div`
 const WrapperHeader = styled.header`
   display: flex;
   padding: 14px 16px;
-  border-bottom: 1px solid
-    ${({ theme: { colors, mode } }) =>
-      mode === "dark" ? colors.dark[8] : colors.dark[2]};
 
   .btn {
     background-color: ${({ theme: { colors, mode } }) =>
@@ -209,7 +204,7 @@ const WrapperHeader = styled.header`
   }
 
   @media (min-width: 1600px) {
-    padding: 10px 72px;
+    padding: 20px 72px;
 
     .nav__btn {
       display: none;
@@ -263,7 +258,7 @@ const DesktopNav = styled.nav`
 
     li {
       margin: 0 14px;
-      font-size: 14.5px;
+      font-size: 15px;
       font-weight: 600;
       text-decoration: none;
     }
@@ -271,8 +266,9 @@ const DesktopNav = styled.nav`
 `;
 
 const WrapperDropdownNav = styled.nav`
-  position: absolute;
   width: 100%;
+  position: absolute;
+  z-index: 9999;
 
   &.open {
     display: block;
