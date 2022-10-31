@@ -81,16 +81,16 @@ function LibraryCard({ title, desc, overview, to, style }: ILibrary) {
 
 const WrapperHome = styled.div`
   position: relative;
-  margin: 24px 0;
+  margin: 24px;
   text-align: center;
 
   .heading {
-    margin: 6rem 0 8rem 0;
+    margin: 2.5rem 0 3.5rem 0;
 
     h1 {
-      font-size: 40px;
+      font-size: 32px;
       font-weight: 800;
-      line-height: 40px;
+      line-height: 30px;
       background-image: linear-gradient(
         to right,
         ${({ theme: { colors, mode } }) =>
@@ -101,15 +101,12 @@ const WrapperHome = styled.div`
       background-clip: clip;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-
-      span {
-        border-bottom: 3px solid;
-      }
     }
     h2 {
-      font-size: 22px;
-      line-height: 25px;
-      font-weight: 500;
+      font-size: 17px;
+      line-height: 20px;
+      font-weight: 400;
+      margin-top: 20px;
     }
   }
 

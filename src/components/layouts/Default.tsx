@@ -10,6 +10,7 @@ import { Link, Outlet } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { ROUTES } from "../../routes";
 import useMode from "../../hooks/useMode";
+import clsx from "clsx";
 import { useNavigation } from "../../store/rootStore";
 
 const BUTTON_MODE_SIZE = "xl";
@@ -33,8 +34,9 @@ function Header() {
 }
 
 function Footer() {
+  const { isOpen } = useNavigation();
   return (
-    <WrapperFooter>
+    <WrapperFooter className={clsx(isOpen ? "nav__open" : "")}>
       <LeftContent>
         <span>Logo</span>
       </LeftContent>
@@ -46,11 +48,12 @@ function Footer() {
 }
 
 function DefaultLayout() {
+  const { isOpen } = useNavigation();
   return (
     <WrapperLayout>
       <Header />
       <DropdownNav />
-      <div className="children">
+      <div className={clsx("children ", isOpen ? "nav__open" : "")}>
         <Outlet />
       </div>
       <Footer />
@@ -223,6 +226,10 @@ const WrapperFooter = styled.footer`
     ${({ theme: { colors, mode } }) =>
       mode === "dark" ? colors.dark[8] : colors.dark[2]};
 
+  .nav__open {
+    filter: blur(2px);
+  }
+
   @media (min-width: 1600px) {
     padding: 24px 72px;
   }
@@ -231,6 +238,9 @@ const WrapperFooter = styled.footer`
 const WrapperLayout = styled.div`
   .children {
     min-height: 100vh;
+  }
+  .nav__open {
+    filter: blur(2px);
   }
 `;
 
