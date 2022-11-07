@@ -1,4 +1,3 @@
-import { Container } from "@mantine/core";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -15,30 +14,28 @@ interface ILibrary {
 function Home() {
   return (
     <WrapperHome>
-      <Container size="sm">
-        <div className="heading">
-          <h1>
-            High-quality site for web <span>developers and designers.</span>
-          </h1>
-          <br />
-          <h2>
-            Free and open source icons designed to make your website or app
-            attractive, visually consistent and simply beautiful.
-          </h2>
-        </div>
-        <div className="content">
-          <h2>Open source</h2>
-          <br />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
-            ratione quaerat, deleniti magnam nihil atque natus autem
-            reprehenderit asperiores eveniet reiciendis illum sint placeat
-            maxime, omnis voluptatem! Omnis, quod libero!
-          </p>
-          <br />
-          <LibraryCards />
-        </div>
-      </Container>
+      <div className="heading">
+        <h1>
+          High-quality site for web <span>developers and designers.</span>
+        </h1>
+        <br />
+        <h2>
+          Free and open source icons designed to make your website or app
+          attractive, visually consistent and simply beautiful.
+        </h2>
+      </div>
+      <div className="content">
+        <h2>Open source</h2>
+        <br />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ratione
+          quaerat, deleniti magnam nihil atque natus autem reprehenderit
+          asperiores eveniet reiciendis illum sint placeat maxime, omnis
+          voluptatem! Omnis, quod libero!
+        </p>
+        <br />
+        <LibraryCards />
+      </div>
     </WrapperHome>
   );
 }
@@ -81,7 +78,6 @@ function LibraryCard({ title, desc, overview, to, style }: ILibrary) {
 
 const WrapperHome = styled.div`
   position: relative;
-  margin: 24px;
   text-align: center;
 
   .heading {
@@ -90,7 +86,7 @@ const WrapperHome = styled.div`
     h1 {
       font-size: 32px;
       font-weight: 800;
-      line-height: 30px;
+      line-height: 36px;
       background-image: linear-gradient(
         to right,
         ${({ theme: { colors, mode } }) =>
@@ -167,10 +163,10 @@ const WrapperHome = styled.div`
   }
 
   @media (min-width: 1400px) {
+    margin: 0 8rem;
     .heading {
-      margin: 7rem 5rem 9rem 5rem;
       h1 {
-        font-size: 44px;
+        font-size: 32px;
         line-height: 50px;
       }
       h2 {

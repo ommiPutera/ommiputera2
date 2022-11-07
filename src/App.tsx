@@ -1,7 +1,7 @@
 import { MantineProvider } from "@mantine/core";
 import { Helmet } from "react-helmet";
 import { ThemeProvider } from "styled-components";
-import DefaultLayout from "./components/layouts/Default";
+import { DefaultLayout } from "./components/layouts";
 import useMode from "./hooks/useMode";
 import { GlobalStyle, mantineTheme, styledTheme } from "./theme";
 import { Routes, Route, Link } from "react-router-dom";
