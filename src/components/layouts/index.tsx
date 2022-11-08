@@ -1,13 +1,18 @@
 import {Container} from '@mantine/core'
 import {IconArrowBack} from '@tabler/icons'
 import clsx from 'clsx'
-import {Link, Outlet} from 'react-router-dom'
+import {Link, Outlet, useLocation} from 'react-router-dom'
 import styled, {keyframes} from 'styled-components'
 import {ICON_SIZE, CONTAINER_SIZE} from '../../defaultVariable'
 import {ROUTES} from '../../routes'
 import {useNavigation} from '../../store/rootStore'
 import Footer from './Footer'
 import Header from './Header'
+
+interface IRouteArray {
+  handleClick?: () => void
+  withCloseBtn?: boolean
+}
 
 function DefaultLayout() {
   const {isOpen} = useNavigation()
@@ -33,7 +38,7 @@ function DropdownNav() {
 
   return (
     <WrapperDropdownNav className={`${isOpen ? 'open' : 'closed'}`}>
-      {getRouteArray(handleClick, true)}
+      <RouteArray handleClick={handleClick} withCloseBtn={true} />
     </WrapperDropdownNav>
   )
 }
@@ -46,12 +51,13 @@ function getIcon(type: string) {
   }
 }
 
-function getRouteArray(handleClick?: () => void, withCloseBtn?: boolean) {
+function RouteArray({handleClick, withCloseBtn}: IRouteArray) {
+  const {pathname} = useLocation()
   return (
     <ul>
       {ROUTES.map(({path, label}) => (
         <Link key={path} to={path || '/'} onClick={handleClick}>
-          <li>
+          <li className={pathname === path ? 'match' : ''}>
             {label}
             <div />
           </li>
@@ -95,7 +101,6 @@ const LeftContent = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 34px;
 `
 
 const RightContent = styled.div`
@@ -160,4 +165,4 @@ const WrapperDropdownNav = styled.nav`
   }
 `
 
-export {LeftContent, RightContent, DefaultLayout, getRouteArray}
+export {LeftContent, RightContent, DefaultLayout, RouteArray}

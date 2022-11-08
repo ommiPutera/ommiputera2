@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
+import {LeftContent, RightContent} from '../components/layouts'
 
 interface ILibrary {
   title: string
@@ -14,28 +15,11 @@ interface ILibrary {
 function Home() {
   return (
     <WrapperHome>
-      <div className="heading">
-        <h1>
-          High-quality site for web <span>developers and designers.</span>
-        </h1>
-        <br />
-        <h2>
-          Free and open source icons designed to make your website or app
-          attractive, visually consistent and simply beautiful.
-        </h2>
-      </div>
-      <div className="content">
-        <h2>Open source</h2>
-        <br />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ratione
-          quaerat, deleniti magnam nihil atque natus autem reprehenderit
-          asperiores eveniet reiciendis illum sint placeat maxime, omnis
-          voluptatem! Omnis, quod libero!
-        </p>
-        <br />
-        <LibraryCards />
-      </div>
+      <LeftContent className="left">
+        <h1 className="burn__color">Tes</h1>
+        <h1>I am a Front-end Engineer & Design Enthusiast.</h1>
+      </LeftContent>
+      <RightContent className="right"></RightContent>
     </WrapperHome>
   )
 }
@@ -77,27 +61,41 @@ function LibraryCard({title, desc, overview, to, style}: ILibrary) {
 }
 
 const WrapperHome = styled.div`
+  margin: 32px 0;
+  display: flex;
+  align-items: center;
+
+  .left {
+    border-right: 1px solid
+      ${({theme: {colors, mode}}) =>
+        mode === 'dark' ? colors.dark[6] : colors.dark[5]};
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 40px;
+
+      span {
+        background-image: linear-gradient(
+          to right,
+          ${({theme: {colors, mode}}) =>
+            mode === 'dark' ? colors.danger[9] : colors.danger[9]},
+          ${({theme: {colors, mode}}) =>
+            mode === 'dark' ? colors.warning[6] : colors.warning[6]}
+        );
+        background-clip: clip;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
   position: relative;
   text-align: center;
 
   .heading {
     margin: 2.5rem 0 3.5rem 0;
 
-    h1 {
-      font-size: 32px;
-      font-weight: 800;
-      line-height: 36px;
-      background-image: linear-gradient(
-        to right,
-        ${({theme: {colors, mode}}) =>
-          mode === 'dark' ? colors.warning[5] : colors.primary[8]},
-        ${({theme: {colors, mode}}) =>
-          mode === 'dark' ? colors.danger[4] : colors.success[8]}
-      );
-      background-clip: clip;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
     h2 {
       font-size: 17px;
       line-height: 20px;
@@ -163,7 +161,7 @@ const WrapperHome = styled.div`
   }
 
   @media (min-width: 1400px) {
-    margin: 0 8rem;
+    /* margin: 0 8rem; */
     .heading {
       h1 {
         font-size: 32px;

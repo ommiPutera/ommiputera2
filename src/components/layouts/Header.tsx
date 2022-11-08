@@ -3,7 +3,7 @@ import {ActionIcon, Container} from '@mantine/core'
 import {IconMoon, IconSunHigh, IconMenu2, IconX} from '@tabler/icons'
 import styled from 'styled-components'
 import {useNavigation} from '../../store/rootStore'
-import {getRouteArray, LeftContent, RightContent} from '.'
+import {LeftContent, RightContent, RouteArray} from '.'
 import {Link} from 'react-router-dom'
 import {
   BUTTON_MODE_SIZE,
@@ -19,7 +19,9 @@ function Header() {
           <Logo>
             <Link to="/">&#x1F981; Ommi Putera</Link>
           </Logo>
-          <DesktopNav className="desktop__nav">{getRouteArray()}</DesktopNav>
+          <DesktopNav className="desktop__nav">
+            <RouteArray />
+          </DesktopNav>
         </LeftContent>
         <RightContent>
           <NavButton />
@@ -30,7 +32,7 @@ function Header() {
   )
 }
 
-const Logo = styled.div`
+const Logo = styled.nav`
   display: flex;
   align-items: center;
   margin: 0;
@@ -90,12 +92,12 @@ const DesktopNav = styled.nav`
   ul {
     display: flex;
     list-style: none;
-    margin-left: 32px;
+    margin-left: 48px;
 
     li {
-      margin: 5px 22px 0 22px;
+      margin: 5px 18px 0 18px;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
       color: ${({theme: {colors, mode}}) =>
         mode === 'dark' ? colors.dark[4] : colors.dark[5]};
@@ -106,12 +108,19 @@ const DesktopNav = styled.nav`
         border-radius: 20px;
       }
 
-      :hover {
+      :hover,
+      &.match {
         color: ${({theme: {colors}}) => colors.danger[9]};
         div {
-          transition: 0.15s ease-out;
+          transition: 0.2s ease-out;
           width: 100%;
-          background: ${({theme: {colors}}) => colors.danger[9]};
+          background-image: linear-gradient(
+            to right,
+            ${({theme: {colors, mode}}) =>
+              mode === 'dark' ? colors.danger[9] : colors.danger[9]},
+            ${({theme: {colors, mode}}) =>
+              mode === 'dark' ? colors.warning[6] : colors.warning[6]}
+          );
         }
       }
     }

@@ -1,7 +1,7 @@
+import {Button} from '@mantine/core'
+import {IconArrowBack} from '@tabler/icons'
 import {Link, useLocation} from 'react-router-dom'
 import styled from 'styled-components'
-import {IconArrowBack} from '@tabler/icons'
-import {Button} from '@mantine/core'
 import {ICON_SIZE} from '../defaultVariable'
 
 function NoMatchPage() {
@@ -19,7 +19,7 @@ function NoMatchPage() {
       </p>
       <Link to="/">
         <Button
-          color="danger"
+          color="danger.9"
           variant="outline"
           radius="xl"
           size="md"

@@ -3,8 +3,8 @@ import {About, Dashboard} from '../App'
 import Home from '../pages/Home'
 
 interface IRouteObject {
-  path?: string
-  label?: string
+  path: string
+  label: string
   index?: boolean
   children?: React.ReactNode
   element?: JSX.Element

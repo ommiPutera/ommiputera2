@@ -32,7 +32,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "formater": "npx prettier --write ."
+    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|gql|graphql|mdx|vue)\""
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +40,16 @@
       "react-app/jest"
     ]
   },
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "server-build",
+    "build",
+    "other",
+    "public/build",
+    "*.ignored/",
+    "*.ignored.*"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
