@@ -1,5 +1,4 @@
 import 'styled-components'
-// import { MantineThemeColorsOverride } from "@mantine/core";
 
 declare module 'styled-components' {
   export interface DefaultTheme {

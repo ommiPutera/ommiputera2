@@ -82,6 +82,7 @@ const growDown = keyframes`
 const WrapperLayout = styled.div`
   .children {
     min-height: 100vh;
+    margin: 0 14px;
   }
   .nav__open {
     filter: blur(2px);

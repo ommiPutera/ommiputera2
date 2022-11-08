@@ -1,6 +1,6 @@
 import React from 'react'
 import {About, Dashboard} from '../App'
-import Home from '../page/Home'
+import Home from '../pages/Home'
 
 interface IRouteObject {
   path?: string

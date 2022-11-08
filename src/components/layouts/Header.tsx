@@ -107,11 +107,11 @@ const DesktopNav = styled.nav`
       }
 
       :hover {
-        color: red;
+        color: ${({theme: {colors}}) => colors.danger[9]};
         div {
           transition: 0.15s ease-out;
           width: 100%;
-          background: red;
+          background: ${({theme: {colors}}) => colors.danger[9]};
         }
       }
     }
