@@ -1,47 +1,47 @@
-import { Container } from "@mantine/core";
-import { IconArrowBack } from "@tabler/icons";
-import clsx from "clsx";
-import { Link, Outlet } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
-import { ICON_SIZE, CONTAINER_SIZE } from "../../defaultVariable";
-import { ROUTES } from "../../routes";
-import { useNavigation } from "../../store/rootStore";
-import Footer from "./Footer";
-import Header from "./Header";
+import {Container} from '@mantine/core'
+import {IconArrowBack} from '@tabler/icons'
+import clsx from 'clsx'
+import {Link, Outlet} from 'react-router-dom'
+import styled, {keyframes} from 'styled-components'
+import {ICON_SIZE, CONTAINER_SIZE} from '../../defaultVariable'
+import {ROUTES} from '../../routes'
+import {useNavigation} from '../../store/rootStore'
+import Footer from './Footer'
+import Header from './Header'
 
 function DefaultLayout() {
-  const { isOpen } = useNavigation();
+  const {isOpen} = useNavigation()
   return (
     <WrapperLayout>
       <Header />
       <DropdownNav />
       <Container size={CONTAINER_SIZE}>
-        <div className={clsx("children ", isOpen ? "nav__open" : "")}>
+        <div className={clsx('children ', isOpen ? 'nav__open' : '')}>
           <Outlet />
         </div>
       </Container>
       <Footer />
     </WrapperLayout>
-  );
+  )
 }
 
 function DropdownNav() {
-  const { isOpen, setIsOpen } = useNavigation();
+  const {isOpen, setIsOpen} = useNavigation()
   const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
 
   return (
-    <WrapperDropdownNav className={`${isOpen ? "open" : "closed"}`}>
+    <WrapperDropdownNav className={`${isOpen ? 'open' : 'closed'}`}>
       {getRouteArray(handleClick, true)}
     </WrapperDropdownNav>
-  );
+  )
 }
 
 function getIcon(type: string) {
   switch (type) {
-    case "x":
-      return <IconArrowBack className="close__icon" size={ICON_SIZE} />;
+    case 'x':
+      return <IconArrowBack className="close__icon" size={ICON_SIZE} />
     default:
   }
 }
@@ -49,8 +49,8 @@ function getIcon(type: string) {
 function getRouteArray(handleClick?: () => void, withCloseBtn?: boolean) {
   return (
     <ul>
-      {ROUTES.map(({ path, label }) => (
-        <Link key={path} to={path || "/"} onClick={handleClick}>
+      {ROUTES.map(({path, label}) => (
+        <Link key={path} to={path || '/'} onClick={handleClick}>
           <li>
             {label}
             <div />
@@ -59,11 +59,11 @@ function getRouteArray(handleClick?: () => void, withCloseBtn?: boolean) {
       ))}
       {withCloseBtn && (
         <li onClick={handleClick}>
-          <div className="close__btn">{getIcon("x")} Back to content</div>
+          <div className="close__btn">{getIcon('x')} Back to content</div>
         </li>
       )}
     </ul>
-  );
+  )
 }
 
 const growDown = keyframes`
@@ -77,7 +77,7 @@ const growDown = keyframes`
         transform: rotateX(0deg) 
     }
   
-`;
+`
 
 const WrapperLayout = styled.div`
   .children {
@@ -86,7 +86,7 @@ const WrapperLayout = styled.div`
   .nav__open {
     filter: blur(2px);
   }
-`;
+`
 
 const LeftContent = styled.div`
   width: 50%;
@@ -95,7 +95,7 @@ const LeftContent = styled.div`
   justify-content: start;
   align-items: center;
   gap: 34px;
-`;
+`
 
 const RightContent = styled.div`
   width: 50%;
@@ -103,7 +103,7 @@ const RightContent = styled.div`
   display: flex;
   justify-content: end;
   align-items: center;
-`;
+`
 
 const WrapperDropdownNav = styled.nav`
   width: 100%;
@@ -131,22 +131,22 @@ const WrapperDropdownNav = styled.nav`
       font-weight: 600;
       text-decoration: none;
       border-bottom: 1px solid
-        ${({ theme: { colors, mode } }) =>
-          mode === "dark" ? colors.dark[8] : colors.dark[2]};
+        ${({theme: {colors, mode}}) =>
+          mode === 'dark' ? colors.dark[8] : colors.dark[2]};
 
-      background-color: ${({ theme: { colors, mode } }) =>
-        mode === "dark" ? colors.dark[9] : colors.dark[0]};
+      background-color: ${({theme: {colors, mode}}) =>
+        mode === 'dark' ? colors.dark[9] : colors.dark[0]};
       &:active {
-        background-color: ${({ theme: { colors, mode } }) =>
-          mode === "dark" ? colors.dark[8] : colors.dark[2]};
+        background-color: ${({theme: {colors, mode}}) =>
+          mode === 'dark' ? colors.dark[8] : colors.dark[2]};
       }
     }
     li > .close__btn {
       border: 1.5px solid
-        ${({ theme: { colors, mode } }) =>
-          mode === "dark" ? colors.dark[2] : colors.dark[8]};
-      color: ${({ theme: { colors, mode } }) =>
-        mode === "dark" ? colors.dark[2] : colors.dark[8]};
+        ${({theme: {colors, mode}}) =>
+          mode === 'dark' ? colors.dark[2] : colors.dark[8]};
+      color: ${({theme: {colors, mode}}) =>
+        mode === 'dark' ? colors.dark[2] : colors.dark[8]};
       border-radius: 36px;
       margin: 0 36px;
       padding: 14px;
@@ -157,6 +157,6 @@ const WrapperDropdownNav = styled.nav`
       gap: 10px;
     }
   }
-`;
+`
 
-export { LeftContent, RightContent, DefaultLayout, getRouteArray };
+export {LeftContent, RightContent, DefaultLayout, getRouteArray}

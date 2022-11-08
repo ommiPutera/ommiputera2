@@ -1,18 +1,18 @@
-import { MantineProvider } from "@mantine/core";
-import { Helmet } from "react-helmet";
-import { ThemeProvider } from "styled-components";
-import { DefaultLayout } from "./components/layouts";
-import useMode from "./hooks/useMode";
-import { GlobalStyle, mantineTheme, styledTheme } from "./theme";
-import { Routes, Route, Link } from "react-router-dom";
-import { ROUTES } from "./routes";
+import {MantineProvider} from '@mantine/core'
+import {Helmet} from 'react-helmet'
+import {ThemeProvider} from 'styled-components'
+import {DefaultLayout} from './components/layouts'
+import useMode from './hooks/useMode'
+import {GlobalStyle, mantineTheme, styledTheme} from './theme'
+import {Routes, Route, Link} from 'react-router-dom'
+import {ROUTES} from './routes'
 
 function App() {
-  const { mode } = useMode();
+  const {mode} = useMode()
   const theme = {
     mode: mode,
     ...styledTheme,
-  };
+  }
 
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS theme={mantineTheme}>
@@ -22,27 +22,27 @@ function App() {
         <AppRoutes />
       </ThemeProvider>
     </MantineProvider>
-  );
+  )
 }
 
 function AppHelmet() {
-  const { mode } = useMode();
+  const {mode} = useMode()
   return (
     <Helmet>
       <title>Ommi Putera</title>
       <meta
         name="theme-color"
-        content={mode === "light" ? "#fff" : "#18181b"}
+        content={mode === 'light' ? '#fff' : '#18181b'}
       />
     </Helmet>
-  );
+  )
 }
 
 function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
-        {ROUTES.map((route) => (
+        {ROUTES.map(route => (
           <Route
             key={route.path}
             index={route.index}
@@ -53,7 +53,7 @@ function AppRoutes() {
         <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>
-  );
+  )
 }
 
 export function About() {
@@ -61,7 +61,7 @@ export function About() {
     <div>
       <h2>About</h2>
     </div>
-  );
+  )
 }
 
 export function Dashboard() {
@@ -69,7 +69,7 @@ export function Dashboard() {
     <div>
       <h2>Dashboard</h2>
     </div>
-  );
+  )
 }
 
 export function NoMatch() {
@@ -80,7 +80,7 @@ export function NoMatch() {
         <Link to="/">Go to the home page</Link>
       </p>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

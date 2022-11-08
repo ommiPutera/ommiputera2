@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import {Link} from 'react-router-dom'
+import styled from 'styled-components'
 
 interface ILibrary {
-  title: string;
-  desc: string;
-  overview: string;
-  to: string;
+  title: string
+  desc: string
+  overview: string
+  to: string
   style?: {
-    background?: string;
-  };
+    background?: string
+  }
 }
 
 function Home() {
@@ -37,7 +37,7 @@ function Home() {
         <LibraryCards />
       </div>
     </WrapperHome>
-  );
+  )
 }
 
 function LibraryCards() {
@@ -50,7 +50,7 @@ function LibraryCards() {
         desc="orem ipsum dolor sit amet consectetur adipisicing elit."
         style={{
           background:
-            "https://www.epicweb.dev/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fepic-web%2Fimage%2Fupload%2Fv1666191512%2Fepicweb.dev%2Fblog%2FFully%2520Typed%2520Web%2520Apps%2Fhero_2x.jpg&w=828&q=75",
+            'https://www.epicweb.dev/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fepic-web%2Fimage%2Fupload%2Fv1666191512%2Fepicweb.dev%2Fblog%2FFully%2520Typed%2520Web%2520Apps%2Fhero_2x.jpg&w=828&q=75',
         }}
       />
       <LibraryCard
@@ -60,10 +60,10 @@ function LibraryCards() {
         desc="orem ipsum dolor sit amet consectetur adipisicing elit."
       />
     </div>
-  );
+  )
 }
 
-function LibraryCard({ title, desc, overview, to, style }: ILibrary) {
+function LibraryCard({title, desc, overview, to, style}: ILibrary) {
   return (
     <Link to={to}>
       <div className="library__card">
@@ -73,7 +73,7 @@ function LibraryCard({ title, desc, overview, to, style }: ILibrary) {
         <h5 className="desc">{desc}</h5>
       </div>
     </Link>
-  );
+  )
 }
 
 const WrapperHome = styled.div`
@@ -89,10 +89,10 @@ const WrapperHome = styled.div`
       line-height: 36px;
       background-image: linear-gradient(
         to right,
-        ${({ theme: { colors, mode } }) =>
-          mode === "dark" ? colors.warning[5] : colors.primary[8]},
-        ${({ theme: { colors, mode } }) =>
-          mode === "dark" ? colors.danger[4] : colors.success[8]}
+        ${({theme: {colors, mode}}) =>
+          mode === 'dark' ? colors.warning[5] : colors.primary[8]},
+        ${({theme: {colors, mode}}) =>
+          mode === 'dark' ? colors.danger[4] : colors.success[8]}
       );
       background-clip: clip;
       -webkit-background-clip: text;
@@ -123,8 +123,8 @@ const WrapperHome = styled.div`
       height: 300px;
       background: rgba(0, 0, 0, 0.1);
       border: 2px solid
-        ${({ theme: { colors, mode } }) =>
-          mode === "dark" ? colors.dark[8] : colors.dark[2]};
+        ${({theme: {colors, mode}}) =>
+          mode === 'dark' ? colors.dark[8] : colors.dark[2]};
 
       img {
         top: 0;
@@ -157,7 +157,7 @@ const WrapperHome = styled.div`
 
       :hover,
       :active {
-        border: 2px solid ${({ theme: { colors } }) => colors.danger[9]};
+        border: 2px solid ${({theme: {colors}}) => colors.danger[9]};
       }
     }
   }
@@ -179,6 +179,6 @@ const WrapperHome = styled.div`
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
-`;
+`
 
-export default Home;
+export default Home

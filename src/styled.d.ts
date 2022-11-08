@@ -1,15 +1,15 @@
-import "styled-components";
+import 'styled-components'
 // import { MantineThemeColorsOverride } from "@mantine/core";
 
-declare module "styled-components" {
+declare module 'styled-components' {
   export interface DefaultTheme {
-    mode?: string;
+    mode?: string
     colors: {
-      primary: string[];
-      warning: string[];
-      success: string[];
-      danger: string[];
-      dark: string[];
-    };
+      primary: string[]
+      warning: string[]
+      success: string[]
+      danger: string[]
+      dark: string[]
+    }
   }
 }
