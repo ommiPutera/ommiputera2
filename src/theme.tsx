@@ -5,9 +5,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     transition: none !important;
     background-color: ${({theme}) =>
-      theme.mode === 'dark' ? '#0f0f15' : '#fff'} !important;
+      theme.mode === 'dark' ? '#0f0f15' : '#f4f4f5'} !important;
     color: ${({theme}) =>
-      theme.mode === 'light' ? '#0f0f15' : '#fff'} !important;
+      theme.mode === 'light' ? '#232333' : '#f4f4f5'} !important;
   }
 `
 
@@ -88,6 +88,7 @@ const Mantinecolors: MantineThemeColorsOverride = {
 
 const mantineTheme = {
   colors: Mantinecolors,
+  fontFamily: 'Inter, sans-serif',
   fontSizes: {
     xs: 11,
     sm: 13,
@@ -124,12 +125,12 @@ const mantineTheme = {
     xl: 1400,
   },
   headings: {
-    fontWeight: 700,
+    fontFamily: 'Inter, sans-serif',
     sizes: {
-      h1: {fontSize: 34, lineHeight: 1.3, fontWeight: 700},
-      h2: {fontSize: 26, lineHeight: 1.35, fontWeight: 700},
-      h3: {fontSize: 22, lineHeight: 1.4, fontWeight: 700},
-      h4: {fontSize: 18, lineHeight: 1.45, fontWeight: 700},
+      h1: {fontSize: 32, lineHeight: 1.25, fontWeight: 700},
+      h2: {fontSize: 28, lineHeight: 1.25, fontWeight: 700},
+      h3: {fontSize: 24, lineHeight: 1.4, fontWeight: 700},
+      h4: {fontSize: 20, lineHeight: 1.45, fontWeight: 700},
       h5: {fontSize: 16, lineHeight: 1.5, fontWeight: 700},
       h6: {fontSize: 14, lineHeight: 1.5, fontWeight: 700},
     },

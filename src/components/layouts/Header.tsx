@@ -1,7 +1,7 @@
 import useMode from '../../hooks/useMode'
 import {ActionIcon, Container} from '@mantine/core'
 import {IconMoon, IconSunHigh, IconMenu2, IconX} from '@tabler/icons'
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import {useNavigation} from '../../store/rootStore'
 import {LeftContent, RightContent, RouteArray} from '.'
 import {Link} from 'react-router-dom'
@@ -88,6 +88,19 @@ function NavButton() {
   )
 }
 
+const growDown = keyframes`
+    0% {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(0.7)
+    }
+    100% {
+        transform: scale(1) 
+    }
+  
+`
+
 const DesktopNav = styled.nav`
   ul {
     display: flex;
@@ -138,12 +151,10 @@ const WrapperHeader = styled.header`
   }
 
   .btn {
-    background-color: ${({theme: {colors, mode}}) =>
-      mode === 'dark' ? colors.dark[7] : colors.dark[0]};
     &:hover,
     &:active {
       background-color: ${({theme: {colors, mode}}) =>
-        mode === 'dark' ? colors.dark[8] : colors.dark[2]};
+        mode === 'dark' ? colors.dark[8] : colors.dark[1]};
     }
   }
 
@@ -154,6 +165,12 @@ const WrapperHeader = styled.header`
     }
     .moon__icon {
       color: ${({theme: {colors}}) => colors.dark[8]};
+    }
+    :active {
+      .sun__icon,
+      .moon__icon {
+        animation: ${growDown} 300ms ease-in-out;
+      }
     }
   }
   .nav__btn {
