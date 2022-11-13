@@ -7,11 +7,13 @@ function Home() {
     <WrapperHome>
       <RightContent className="left">
         <div className="heading">
-          <Title order={1}>
-            I am a <span>Front-end</span> Engineer & <span>Design </span>
-            Enthusiast.
+          <Title order={2}>
+            I am a <span>Software Engineer</span> also a Design Enthusiast and
+            this site is my high quality <span>open-source.</span>
           </Title>
-          <Title order={2}>Helping brands to stand out.</Title>
+          <Title order={2} className="sub">
+            Helping brands to stand out.
+          </Title>
           <Text>
             After I graduated from college (August 2020), I decided to further
             develop myself into the digital world which I think is more
@@ -33,24 +35,24 @@ function Home() {
 }
 
 const WrapperHome = styled.div`
-  margin: 32px 0;
+  margin: 22px 0;
   .right {
     width: 100%;
     margin-top: 42px;
-    background: rgba(0, 0, 0, 0.3);
+    background: ${({theme: {mode}}) =>
+      mode === 'dark' ? 'rgba(0, 0, 0, 0.25)' : 'rgba(0, 0, 0, 0.1)'};
+    border-radius: 8px;
     img {
       z-index: -2;
       width: 100%;
       object-fit: cover;
-      border-radius: 8px;
     }
   }
   .left {
     text-align: left;
     width: 100%;
     .heading {
-      h1 {
-        font-size: 26px;
+      h2 {
         span {
           background-image: linear-gradient(
             to right,
@@ -63,12 +65,9 @@ const WrapperHome = styled.div`
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
-      }
-      h2 {
-        font-size: 22px;
-        margin: 24px 0 12px 0;
-        color: ${({theme: {colors, mode}}) =>
-          mode === 'dark' ? colors.dark[3] : colors.dark[5]};
+        &.sub {
+          margin: 38px 0 12px 0;
+        }
       }
     }
   }
@@ -90,7 +89,9 @@ const WrapperHome = styled.div`
       padding-right: 125px;
       .heading {
         h2 {
-          margin: 36px 0 16px 0;
+          &.sub {
+            margin: 46px 0 16px 0;
+          }
         }
       }
     }

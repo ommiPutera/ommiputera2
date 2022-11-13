@@ -16,6 +16,7 @@ module.exports = {
   optimization: {
     chunkIds: 'named',
     moduleIds: 'deterministic',
+    runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
         vendor: {
