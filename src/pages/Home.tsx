@@ -1,23 +1,11 @@
 import {Text, Title} from '@mantine/core'
-import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import {LeftContent, RightContent} from '../components/layouts'
-
-interface ILibrary {
-  title: string
-  desc: string
-  overview: string
-  to: string
-  style?: {
-    background?: string
-  }
-}
 
 function Home() {
   return (
     <WrapperHome>
-      <LeftContent className="left">left</LeftContent>
-      <RightContent className="right">
+      <RightContent className="left">
         <div className="heading">
           <Title order={1}>
             I am a <span>Front-end</span> Engineer & <span>Design </span>
@@ -37,24 +25,32 @@ function Home() {
           </Text>
         </div>
       </RightContent>
+      <LeftContent className="right">
+        <img src="/assets/image/profile-home.jpg" alt="" />
+      </LeftContent>
     </WrapperHome>
   )
 }
 
 const WrapperHome = styled.div`
   margin: 32px 0;
-  display: flex;
-  align-items: center;
-
   .right {
+    width: 100%;
+    margin-top: 42px;
+    background: rgba(0, 0, 0, 0.3);
+    img {
+      z-index: -2;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  }
+  .left {
     text-align: left;
-    padding-left: 32px;
-    border-left: 1px solid
-      ${({theme: {colors, mode}}) =>
-        mode === 'dark' ? colors.dark[6] : colors.dark[5]};
-
+    width: 100%;
     .heading {
       h1 {
+        font-size: 26px;
         span {
           background-image: linear-gradient(
             to right,
@@ -69,7 +65,8 @@ const WrapperHome = styled.div`
         }
       }
       h2 {
-        margin: 24px 0 14px 0;
+        font-size: 22px;
+        margin: 24px 0 12px 0;
         color: ${({theme: {colors, mode}}) =>
           mode === 'dark' ? colors.dark[3] : colors.dark[5]};
       }
@@ -77,6 +74,26 @@ const WrapperHome = styled.div`
   }
 
   @media (min-width: 1400px) {
+    margin: 0;
+    display: flex;
+    .right {
+      width: 50%;
+      img {
+        z-index: -2;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+    .left {
+      width: 50%;
+      padding-right: 125px;
+      .heading {
+        h2 {
+          margin: 36px 0 16px 0;
+        }
+      }
+    }
   }
 `
 
