@@ -1,5 +1,6 @@
 import {Text, Title} from '@mantine/core'
 import styled from 'styled-components'
+// import Button from '../components/Button'
 import {LeftContent, RightContent} from '../components/layouts'
 
 function Home() {
@@ -7,14 +8,14 @@ function Home() {
     <WrapperHome>
       <RightContent className="left">
         <div className="heading">
-          <Title order={2}>
+          <Title order={1}>
             I am a <span>Software Engineer</span> also a Design Enthusiast and
             this site is my high quality <span>open-source.</span>
           </Title>
-          <Title order={2} className="sub">
+          <Title order={1} className="sub">
             Helping brands to stand out.
           </Title>
-          <Text>
+          <Text size="lg">
             After I graduated from college (August 2020), I decided to further
             develop myself into the digital world which I think is more
             promising for my future career. Previously, I am graduated from the
@@ -52,7 +53,7 @@ const WrapperHome = styled.div`
     text-align: left;
     width: 100%;
     .heading {
-      h2 {
+      h1 {
         span {
           background-image: linear-gradient(
             to right,
@@ -88,7 +89,7 @@ const WrapperHome = styled.div`
       width: 50%;
       padding-right: 125px;
       .heading {
-        h2 {
+        h1 {
           &.sub {
             margin: 46px 0 16px 0;
           }

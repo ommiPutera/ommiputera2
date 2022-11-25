@@ -41,7 +41,7 @@ const Logo = styled.nav`
 
   a {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 20px;
     font-family: 'Space Grotesk', sans-serif;
   }
 `
@@ -109,7 +109,7 @@ const DesktopNav = styled.nav`
 
     li {
       margin: 5px 18px 0 18px;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 700;
       text-decoration: none;
       color: ${({theme: {colors, mode}}) =>
