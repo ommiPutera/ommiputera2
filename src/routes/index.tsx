@@ -1,6 +1,11 @@
 import React from 'react'
+import Loadable from 'react-loadable'
 import {About, Dashboard} from '../App'
-import Home from '../pages/Home'
+
+const LoadableHome = Loadable({
+  loader: () => import('../pages/Home'),
+  loading: () => <></>,
+})
 
 interface IRouteObject {
   path: string
@@ -8,6 +13,7 @@ interface IRouteObject {
   index?: boolean
   children?: React.ReactNode
   element?: JSX.Element
+  handlePreload?: () => void
 }
 
 export const ROUTES: IRouteObject[] = [
@@ -15,7 +21,8 @@ export const ROUTES: IRouteObject[] = [
     label: 'Home',
     path: '/',
     index: true,
-    element: <Home />,
+    element: <LoadableHome />,
+    handlePreload: preloadHome,
   },
   {
     label: 'About',
@@ -28,3 +35,7 @@ export const ROUTES: IRouteObject[] = [
     element: <Dashboard />,
   },
 ]
+
+function preloadHome() {
+  return LoadableHome.preload()
+}

@@ -1,10 +1,8 @@
-import clsx from 'clsx'
-import React from 'react'
-import styled from 'styled-components'
-import {useNavigation} from '../../store/rootStore'
-import {LeftContent, RightContent} from '.'
 import {Container} from '@mantine/core'
+import clsx from 'clsx'
 import {CONTAINER_SIZE} from '../../defaultVariable'
+import {useNavigation} from '../../store/rootStore'
+import {LeftContent, RightContent, WrapperFooter} from './styled'
 
 function Footer() {
   const {isOpen} = useNavigation()
@@ -21,24 +19,5 @@ function Footer() {
     </WrapperFooter>
   )
 }
-
-const WrapperFooter = styled.footer`
-  padding: 32px 12px;
-  border-top: 1px solid
-    ${({theme: {colors, mode}}) =>
-      mode === 'dark' ? colors.dark[8] : colors.dark[2]};
-
-  > div {
-    display: flex;
-  }
-
-  .nav__open {
-    filter: blur(2px);
-  }
-
-  @media (min-width: 1600px) {
-    padding: 32px 0;
-  }
-`
 
 export default Footer
