@@ -11,15 +11,15 @@ function Home() {
       </LeftContent>
       <RightContent className="right xs__top">
         <div className="heading">
-          <Title className="text font-500 font-34" order={1}>
+          <Title className="text" order={1}>
             I'm a <span>Software Engineer</span> & Design Enthusiast based in
             Jakarta. Available for freelance & collaborations. This site is my
-            high quality <span>open-source.</span>
+            high quality <br /> <span>open-source.</span>
           </Title>
-          <Title className="sub text font-500" order={1}>
+          <Title className="sub text-06" order={1}>
             Helping brands to stand out.
           </Title>
-          <Text className="text" size="lg">
+          <Text className="text-06" size="lg">
             After I graduated from college (August 2020), I decided to further
             develop myself into the digital world which I think is more
             promising for my future career. Previously, I am graduated from the

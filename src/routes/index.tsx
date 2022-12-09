@@ -18,11 +18,23 @@ interface IRouteObject {
 
 export const ROUTES: IRouteObject[] = [
   {
+    label: 'About',
+    path: '/about',
+    element: <About />,
+  },
+  {
+    label: 'Dashboard',
+    path: '/dashboard',
+    element: <Dashboard />,
+  },
+]
+
+export const APP_ROUTES: IRouteObject[] = [
+  {
     label: 'Home',
     path: '/',
     index: true,
     element: <LoadableHome />,
-    handlePreload: preloadHome,
   },
   {
     label: 'About',
@@ -35,7 +47,3 @@ export const ROUTES: IRouteObject[] = [
     element: <Dashboard />,
   },
 ]
-
-function preloadHome() {
-  return LoadableHome.preload()
-}

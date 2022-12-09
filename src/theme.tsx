@@ -127,7 +127,7 @@ const mantineTheme = {
   headings: {
     fontFamily: 'Raleway, sans-serif',
     sizes: {
-      h1: {fontSize: 32, lineHeight: 1.1, fontWeight: 600},
+      h1: {fontSize: 31, lineHeight: 1.18, fontWeight: 600},
       h2: {fontSize: 24, lineHeight: 1.1, fontWeight: 600},
       h3: {fontSize: 22, lineHeight: 1.4, fontWeight: 600},
       h4: {fontSize: 20, lineHeight: 1.45, fontWeight: 600},

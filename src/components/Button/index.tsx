@@ -1,5 +1,6 @@
 import {Button} from '@mantine/core'
 import styled from 'styled-components'
+import {getClassProps} from '../../utils/helpers'
 
 interface IButton {
   children: React.ReactNode | JSX.Element
@@ -29,26 +30,17 @@ const WrapperButton = styled.div`
   }
 
   .outline {
-    border: 2px solid ${({theme: {colors}}) => colors.danger[9]};
+    border: 2.5px solid ${({theme: {colors}}) => colors.dark[4]};
     color: ${({theme: {colors, mode}}) =>
       mode === 'dark' ? colors.dark[0] : colors.dark[9]};
+
     &:hover {
+      border: 3px solid ${({theme: {colors}}) => colors.danger[9]};
       background: ${({theme: {colors, mode}}) =>
-        mode === 'dark' ? colors.dark[8] : colors.dark[2]};
+        mode === 'dark' ? colors.dark[9] : colors.dark[1]};
+      transition: border 0.4s ease;
     }
   }
 `
-
-const getClassProps = (props: any) => {
-  if (!Boolean(Object.keys(props).length)) return ''
-  let className = ''
-  for (var key in props) {
-    let temp = ''
-    if (typeof props[key] === 'boolean') temp = key
-    if (typeof props[key] === 'string') temp = props[key]
-    className += ` ${temp}`
-  }
-  return className
-}
 
 export {EpicButton as Button}

@@ -5,7 +5,7 @@ import {DefaultLayout} from './components/layouts'
 import useMode from './hooks/useMode'
 import {GlobalStyle, mantineTheme, styledTheme} from './theme'
 import {Routes, Route} from 'react-router-dom'
-import {ROUTES} from './routes'
+import {APP_ROUTES} from './routes'
 import NoMatchPage from './routes/NoMatch'
 
 function App() {
@@ -44,7 +44,7 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
         <Route path="*" element={<NoMatchPage />} />
-        {ROUTES.map(route => (
+        {APP_ROUTES.map(route => (
           <Route
             key={route.path}
             index={route.index}
