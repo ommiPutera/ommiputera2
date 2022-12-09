@@ -1,17 +1,22 @@
 import {Text, Title} from '@mantine/core'
+import {Button} from '../../components/Button'
 import {LeftContent, RightContent} from '../../components/layouts/styled'
 import {WrapperHome} from './styled'
 
 function Home() {
   return (
     <WrapperHome>
-      <RightContent className="left">
+      <LeftContent className="left xs__bottom">
+        <img src="/assets/image/profile-home.jpg" alt="" />
+      </LeftContent>
+      <RightContent className="right xs__top">
         <div className="heading">
-          <Title className="text" order={1}>
-            I am a <span>Software Engineer</span> also a Design Enthusiast and
-            this site is my high quality <span>open-source.</span>
+          <Title className="text font-500 font-34" order={1}>
+            I'm a <span>Software Engineer</span> & Design Enthusiast based in
+            Jakarta. Available for freelance & collaborations. This site is my
+            high quality <span>open-source.</span>
           </Title>
-          <Title className="sub text" order={1}>
+          <Title className="sub text font-500" order={1}>
             Helping brands to stand out.
           </Title>
           <Text className="text" size="lg">
@@ -25,11 +30,9 @@ function Home() {
             collaborate with different teams such as the Product team, the
             Mobile team, and of course Backend team for the Web services.
           </Text>
+          <Button variant="outline">Click me</Button>
         </div>
       </RightContent>
-      <LeftContent className="right">
-        <img src="/assets/image/profile-home.jpg" alt="" />
-      </LeftContent>
     </WrapperHome>
   )
 }

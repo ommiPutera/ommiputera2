@@ -28,14 +28,12 @@ export const LeftContent = styled.div`
   text-align: left;
   display: flex;
   justify-content: start;
-  align-items: center;
 `
 export const RightContent = styled.div`
   width: 50%;
   text-align: right;
   display: flex;
   justify-content: end;
-  align-items: center;
 `
 export const WrapperDropdownNav = styled.nav`
   width: 100%;
@@ -164,11 +162,11 @@ export const DesktopNav = styled.nav`
   ul {
     display: flex;
     list-style: none;
-    margin-left: 48px;
+    margin-left: 58px;
 
     li {
-      margin: 5px 18px 0 18px;
-      font-size: 15px;
+      margin: 5px 32px 0 18px;
+      font-size: 14.5px;
       font-weight: 700;
       text-decoration: none;
       color: ${({theme: {colors, mode}}) =>

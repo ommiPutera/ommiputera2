@@ -21,7 +21,7 @@ function Header() {
   return (
     <WrapperHeader>
       <Container size={CONTAINER_SIZE}>
-        <LeftContent>
+        <LeftContent className="align-center">
           <Logo>
             <Link to="/">&#x1F981; Ommi Putera</Link>
           </Logo>

@@ -29,21 +29,17 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'build'),
-    filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].js',
-    clean: true,
+    filename: '[name].[chunkhash].js'
   },
   optimization: {
-    chunkIds: 'named',
     moduleIds: 'deterministic',
     runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          priority: -10,
           name: 'vendors',
-          reuseExistingChunk: true,
+          chunks: 'all',
         },
       },
     },
