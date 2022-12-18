@@ -2,11 +2,7 @@ import {ActionIcon, Container} from '@mantine/core'
 import {IconMenu2, IconMoon, IconSunHigh, IconX} from '@tabler/icons'
 import {Link} from 'react-router-dom'
 import {RouteArray} from '.'
-import {
-  BUTTON_MODE_SIZE,
-  CONTAINER_SIZE,
-  ICON_SIZE,
-} from '../../defaultVariable'
+import {BUTTON_MODE_SIZE, HEADER_SIZE, ICON_SIZE} from '../../defaultVariable'
 import useMode from '../../hooks/useMode'
 import {useNavigation} from '../../store/rootStore'
 import {
@@ -20,10 +16,10 @@ import {
 function Header() {
   return (
     <WrapperHeader>
-      <Container size={CONTAINER_SIZE}>
+      <Container size={HEADER_SIZE}>
         <LeftContent className="align-center">
           <Logo>
-            <Link to="/">&#x1F981; Ommi Putera</Link>
+            <Link to="/">Ommi Putera</Link>
           </Logo>
           <DesktopNav className="desktop__nav">
             <RouteArray />

@@ -17,7 +17,7 @@ export const growDown = keyframes`
 export const WrapperLayout = styled.div`
   .children {
     min-height: 100vh;
-    margin: 0 14px;
+    margin: 0;
   }
   .nav__open {
     filter: blur(2px);
@@ -92,9 +92,6 @@ export const WrapperDropdownNav = styled.nav`
 // --- Header ---
 export const WrapperHeader = styled.header`
   padding: 32px 12px;
-  border-bottom: 1px solid
-    ${({theme: {colors, mode}}) =>
-      mode === 'dark' ? colors.dark[8] : colors.dark[1]};
 
   > div {
     display: flex;
@@ -155,17 +152,16 @@ export const Logo = styled.nav`
   a {
     font-weight: 700;
     font-size: 20px;
-    font-family: 'Space Grotesk', sans-serif;
   }
 `
 export const DesktopNav = styled.nav`
   ul {
     display: flex;
     list-style: none;
-    margin-left: 58px;
+    margin-left: 32px;
 
     li {
-      margin: 5px 32px 0 18px;
+      margin: 12px 32px 0 18px;
       font-size: 14.5px;
       font-weight: 700;
       text-decoration: none;

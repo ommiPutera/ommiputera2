@@ -6,18 +6,14 @@ import {WrapperHome} from './styled'
 function Home() {
   return (
     <WrapperHome>
-      <LeftContent className="left xs__bottom">
-        <img src="/assets/image/profile-home.jpg" alt="" />
-      </LeftContent>
-      <RightContent className="right xs__top">
+      <LeftContent className="left xs__top">
         <div className="heading">
           <Title className="text" order={1}>
-            I'm a <span>Software Engineer</span> & Design Enthusiast based in
-            Jakarta. Available for freelance & collaborations. This site is my
-            high quality <br /> <span>open-source.</span>
+            <span>Software Engineer</span> and also a Design Enthusiast based in
+            Jakarta. Available for freelance and collaborations.
           </Title>
           <Title className="sub text-06" order={1}>
-            Helping brands to stand out.
+            This is my high quality <span>open-source.</span>
           </Title>
           <Text className="text-06" size="lg">
             After I graduated from college (August 2020), I decided to further
@@ -32,6 +28,9 @@ function Home() {
           </Text>
           <Button variant="outline">Click me</Button>
         </div>
+      </LeftContent>
+      <RightContent className="right xs__bottom">
+        <img src="/assets/image/profile-home.jpg" alt="" />
       </RightContent>
     </WrapperHome>
   )

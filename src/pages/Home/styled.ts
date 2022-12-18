@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const WrapperHome = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 42px 0;
+  padding: 18px 0 42px 0;
 
   .xs__top {
     order: 1;
@@ -12,7 +12,7 @@ export const WrapperHome = styled.div`
     .heading {
       h1 {
         span {
-          font-weight: 600;
+          font-weight: 800;
           background-image: linear-gradient(
             to right,
             ${({theme: {colors, mode}}) =>
@@ -50,24 +50,29 @@ export const WrapperHome = styled.div`
 
     .left {
       order: 1;
-      width: 40%;
-      img {
-        z-index: -2;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 8px;
-      }
-    }
-    .right {
-      order: 2;
-      width: 60%;
-      padding-left: 45px;
+      width: 65%;
+      border-top-left-radius: 14px;
+      border-bottom-left-radius: 14px;
+      padding: 52px 180px 52px 52px;
+      background: ${({theme: {colors, mode}}) =>
+        mode === 'dark' ? colors.dark[8] : colors.dark[2]};
       .heading {
         h1 {
           &.sub {
             margin: 42px 0 16px 0;
           }
         }
+      }
+    }
+    .right {
+      order: 2;
+      width: 35%;
+      img {
+        z-index: -2;
+        width: 100%;
+        object-fit: cover;
+        border-top-right-radius: 14px;
+        border-bottom-right-radius: 14px;
       }
     }
   }
