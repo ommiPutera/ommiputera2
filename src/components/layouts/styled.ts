@@ -151,7 +151,7 @@ export const Logo = styled.nav`
 
   a {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
   }
 `
 export const DesktopNav = styled.nav`
@@ -161,9 +161,9 @@ export const DesktopNav = styled.nav`
     margin-left: 72px;
 
     li {
-      margin: 12px 18px 0 18px;
-      font-size: 15px;
-      font-weight: 700;
+      margin: 8px 18px 0 18px;
+      font-size: 16px;
+      font-weight: 600;
       text-decoration: none;
       color: ${({theme: {colors, mode}}) =>
         mode === 'dark' ? colors.dark[4] : colors.dark[5]};

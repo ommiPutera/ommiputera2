@@ -1,6 +1,8 @@
 import {MantineThemeColorsOverride} from '@mantine/core'
 import {createGlobalStyle, DefaultTheme} from 'styled-components'
 
+const fontFamily = 'Matter, sans-serif'
+
 const GlobalStyle = createGlobalStyle`
   body {
     transition: none !important;
@@ -88,7 +90,7 @@ const Mantinecolors: MantineThemeColorsOverride = {
 
 const mantineTheme = {
   colors: Mantinecolors,
-  fontFamily: 'Inter, sans-serif',
+  fontFamily: fontFamily,
   fontSizes: {
     xs: 11,
     sm: 13,
@@ -102,7 +104,7 @@ const mantineTheme = {
         sizes: {
           xs: 720,
           sm: 960,
-          md: 1140,
+          md: 1200,
           lg: 1300,
           xl: 1420,
         },
@@ -125,14 +127,14 @@ const mantineTheme = {
     xl: 1400,
   },
   headings: {
-    fontFamily: 'Matter, sans-serif',
+    fontFamily: fontFamily,
     sizes: {
-      h1: {fontSize: 32, lineHeight: 1.3, fontWeight: 500},
-      h2: {fontSize: 24, lineHeight: 1.3, fontWeight: 500},
-      h3: {fontSize: 22, lineHeight: 1.3, fontWeight: 500},
-      h4: {fontSize: 20, lineHeight: 1.3, fontWeight: 500},
-      h5: {fontSize: 18, lineHeight: 1.3, fontWeight: 500},
-      h6: {fontSize: 16, lineHeight: 1.5, fontWeight: 500},
+      h1: {fontSize: 28, lineHeight: 1.3, fontWeight: 600},
+      h2: {fontSize: 24, lineHeight: 1.3, fontWeight: 600},
+      h3: {fontSize: 22, lineHeight: 1.3, fontWeight: 600},
+      h4: {fontSize: 20, lineHeight: 1.3, fontWeight: 600},
+      h5: {fontSize: 18, lineHeight: 1.3, fontWeight: 600},
+      h6: {fontSize: 16, lineHeight: 1.5, fontWeight: 600},
     },
   },
   white: '#fff',
