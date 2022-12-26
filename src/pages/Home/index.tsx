@@ -12,10 +12,10 @@ function Home() {
             <span>Software Engineer</span> and also a Design Enthusiast based in
             Jakarta. Available for freelance and collaborations.
           </Title>
-          <Title className="sub text-06" order={1}>
+          <Title className="sub text-08" order={1}>
             This is my high quality <span>open-source.</span>
           </Title>
-          <Text className="text-06" size="lg">
+          <Text className="text-08" size="lg">
             After I graduated from college (August 2020), I decided to further
             develop myself into the digital world which I think is more
             promising for my future career. Previously, I am graduated from the
@@ -30,7 +30,7 @@ function Home() {
         </div>
       </LeftContent>
       <RightContent className="right xs__bottom">
-        <img src="/assets/image/profile-home.jpg" alt="" />
+        <img className="img-08" src="/assets/image/profile-home.jpg" alt="" />
       </RightContent>
     </WrapperHome>
   )

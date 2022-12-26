@@ -4,6 +4,7 @@ export const WrapperHome = styled.div`
   display: flex;
   flex-direction: column;
   padding: 18px 0 42px 0;
+  height: max-content;
 
   .xs__top {
     order: 1;
@@ -44,9 +45,9 @@ export const WrapperHome = styled.div`
   }
 
   @media (min-width: 1400px) {
-    margin: 0;
     display: flex;
     flex-direction: row;
+    margin: 0;
 
     .left {
       order: 1;
@@ -67,7 +68,6 @@ export const WrapperHome = styled.div`
     .right {
       order: 2;
       width: 35%;
-      height: 100%;
       img {
         z-index: -2;
         width: 100%;
