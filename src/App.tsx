@@ -1,7 +1,7 @@
 import {MantineProvider, Global} from '@mantine/core'
 import {Helmet} from 'react-helmet'
 import {ThemeProvider} from 'styled-components'
-import {DefaultLayout} from './components/Layouts'
+import {DefaultLayout} from './components/layouts'
 import useMode from './hooks/useMode'
 import {GlobalStyle, mantineTheme, styledTheme} from './theme'
 import {Routes, Route} from 'react-router-dom'

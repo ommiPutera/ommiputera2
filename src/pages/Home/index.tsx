@@ -1,6 +1,6 @@
 import {Text, Title} from '@mantine/core'
 import {Button} from '../../components/Button'
-import {LeftContent, RightContent} from '../../components/Layouts/styled'
+import {LeftContent, RightContent} from '../../components/layouts/styled'
 import {WrapperHome} from './styled'
 
 function Home() {
