@@ -67,6 +67,7 @@ export const WrapperHome = styled.div`
     .right {
       order: 2;
       width: 35%;
+      height: 100%;
       img {
         z-index: -2;
         width: 100%;

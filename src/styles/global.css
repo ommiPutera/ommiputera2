@@ -1,8 +1,10 @@
 body {
   margin: 0;
-  font-family: 'Raleway', sans-serif !important;
+  font-family: 'Matter', sans-serif !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  font-display: swap !important;
   -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
 }
 
 h1,

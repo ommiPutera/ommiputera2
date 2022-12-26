@@ -158,11 +158,11 @@ export const DesktopNav = styled.nav`
   ul {
     display: flex;
     list-style: none;
-    margin-left: 32px;
+    margin-left: 72px;
 
     li {
-      margin: 12px 32px 0 18px;
-      font-size: 14.5px;
+      margin: 12px 18px 0 18px;
+      font-size: 15px;
       font-weight: 700;
       text-decoration: none;
       color: ${({theme: {colors, mode}}) =>
