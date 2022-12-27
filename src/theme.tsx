@@ -5,6 +5,9 @@ const fontFamily = 'Matter, sans-serif'
 
 const GlobalStyle = createGlobalStyle`
   body {
+    font-family: 'Matter', sans-serif !important;
+    -webkit-font-smoothing: antialiased !important;
+    
     transition: none !important;
     background-color: ${({theme}) =>
       theme.mode === 'dark' ? '#0f0f15' : '#f4f4f5'} !important;

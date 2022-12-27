@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  font-family: 'Matter', sans-serif !important;
   -webkit-font-smoothing: antialiased !important;
 }
 
@@ -37,6 +37,10 @@ a {
 
 .align-center {
   align-items: center;
+}
+
+.text-align-left {
+  text-align: left;
 }
 
 .text {

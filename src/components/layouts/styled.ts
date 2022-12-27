@@ -151,17 +151,17 @@ export const Logo = styled.nav`
 
   a {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 18px;
   }
 `
 export const DesktopNav = styled.nav`
   ul {
     display: flex;
     list-style: none;
-    margin-left: 72px;
+    margin-left: 62px;
 
     li {
-      margin: 8px 18px 0 18px;
+      margin: 9px 18px 0 18px;
       font-size: 16px;
       font-weight: 600;
       text-decoration: none;

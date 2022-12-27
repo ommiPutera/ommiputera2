@@ -1,39 +1,12 @@
-import {Text, Title} from '@mantine/core'
-import {Button} from '../../components/Button'
-import {LeftContent, RightContent} from '../../components/layouts/styled'
-import {WrapperHome} from './styled'
+import HeroSection from './HeroSection'
+import ProfileSection from './ProfileSection'
 
 function Home() {
   return (
-    <WrapperHome>
-      <LeftContent className="left xs__top">
-        <div className="heading">
-          <Title className="text" order={1}>
-            <span>Software Engineer</span> and also a Design Enthusiast based in
-            Jakarta. Available for freelance and collaborations.
-          </Title>
-          <Title className="sub text-08" order={1}>
-            This is my high quality <span>open-source.</span>
-          </Title>
-          <Text className="text-08" size="lg">
-            After I graduated from college (August 2020), I decided to further
-            develop myself into the digital world which I think is more
-            promising for my future career. Previously, I am graduated from the
-            Web and Mobile Development program (Bootcamp) at Purwadhika Digital
-            Technologhy School, Jakarta. and on October fourth, 2021 until now I
-            am working as a Frontend Developer at Dipay Indonesia, I take care
-            of legacy code, add a feature that the company needs, and
-            collaborate with different teams such as the Product team, the
-            Mobile team, and of course Backend team for the Web services.
-          </Text>
-          <Button variant="outline">Click me</Button>
-        </div>
-      </LeftContent>
-      <RightContent className="right xs__bottom">
-        <img className="img-08" src="/assets/image/profile-home.jpg" alt="" />
-      </RightContent>
-    </WrapperHome>
+    <>
+      <HeroSection />
+      <ProfileSection />
+    </>
   )
 }
-
 export default Home

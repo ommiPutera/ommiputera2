@@ -1,4 +1,4 @@
-import {MantineProvider, Global} from '@mantine/core'
+import {MantineProvider} from '@mantine/core'
 import {Helmet} from 'react-helmet'
 import {ThemeProvider} from 'styled-components'
 import {DefaultLayout} from './components/layouts'
@@ -21,7 +21,6 @@ function App() {
         <GlobalStyle />
         <AppHelmet />
         <AppRoutes />
-        <CustomFonts />
       </ThemeProvider>
     </MantineProvider>
   )
@@ -55,39 +54,6 @@ function AppRoutes() {
         ))}
       </Route>
     </Routes>
-  )
-}
-
-function CustomFonts() {
-  return (
-    <Global
-      styles={[
-        {
-          '@font-face': {
-            fontFamily: 'Matter',
-            src: `url('/fonts/Matter-Medium.woff') format("woff")`,
-          },
-        },
-        {
-          '@font-face': {
-            fontFamily: 'Matter',
-            src: `url('/fonts/Matter-Medium.woff2') format("woff2"))`,
-          },
-        },
-        {
-          '@font-face': {
-            fontFamily: 'Matter',
-            src: `url('/fonts/Matter-Regular.woff') format("woff")`,
-          },
-        },
-        {
-          '@font-face': {
-            fontFamily: 'Matter',
-            src: `url('/fonts/Matter-Regular.woff2') format("woff2")`,
-          },
-        },
-      ]}
-    />
   )
 }
 
