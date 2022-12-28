@@ -4,17 +4,17 @@ import {Button} from '../../components/Button'
 
 function ProfileSection() {
   return (
-    <WrapperHome>
+    <Wrapper>
       <LeftContent className="left xs__top">
         <div className="heading">
           <Title className="text" order={1}>
             <span>Software Engineer</span> and also a Design Enthusiast based in
             Jakarta. Available for freelance and collaborations.
           </Title>
-          <Title className="sub text-08" order={1}>
+          <Title className="sub text-06" order={1}>
             This is my high quality <span>open-source.</span>
           </Title>
-          <Text className="text-10" size="lg">
+          <Text className="text-06" size="lg">
             After I graduated from college (August 2020), I decided to further
             develop myself into the digital world which I think is more
             promising for my future career. Previously, I am graduated from the
@@ -31,28 +31,34 @@ function ProfileSection() {
       <RightContent className="right xs__bottom">
         <img className="img-08" src="/assets/image/profile-home.jpg" alt="" />
       </RightContent>
-    </WrapperHome>
+    </Wrapper>
   )
 }
 
 const LeftContent = styled.div`
-  width: 50%;
   text-align: left;
   display: flex;
   justify-content: start;
 `
 const RightContent = styled.div`
-  width: 50%;
   text-align: right;
   display: flex;
   justify-content: end;
 `
 
-const WrapperHome = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 18px 0 42px 0;
   height: max-content;
+  border-radius: 14px;
+  border: 2px solid transparent;
+
+  :hover {
+    transition: 0.2s ease-out;
+    border: 2px solid
+      ${({theme: {colors, mode}}) =>
+        mode === 'dark' ? colors.dark[8] : colors.dark[2]};
+  }
 
   .xs__top {
     order: 1;
@@ -65,9 +71,9 @@ const WrapperHome = styled.div`
           background-image: linear-gradient(
             to right,
             ${({theme: {colors, mode}}) =>
-              mode === 'dark' ? colors.danger[9] : colors.danger[9]},
+              mode === 'dark' ? colors.primary[7] : colors.primary[7]},
             ${({theme: {colors, mode}}) =>
-              mode === 'dark' ? colors.warning[6] : colors.warning[6]}
+              mode === 'dark' ? colors.primary[9] : colors.primary[9]}
           );
           background-clip: clip;
           -webkit-background-clip: text;
@@ -96,11 +102,11 @@ const WrapperHome = styled.div`
     display: flex;
     flex-direction: row;
     margin: 0;
+    height: 720px;
 
     .left {
       order: 1;
       width: 65%;
-      height: 100%;
       border-top-left-radius: 14px;
       border-bottom-left-radius: 14px;
       padding: 52px 180px 52px 52px;

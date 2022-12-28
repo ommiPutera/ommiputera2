@@ -1,18 +1,32 @@
 import {Title} from '@mantine/core'
-import {LeftContent, RightContent} from '../../components/layouts/styled'
+import styled from 'styled-components'
 
 function HeroSection() {
   return (
-    <div>
+    <Wrapper>
       <LeftContent></LeftContent>
       <RightContent>
         <Title className="text-align-left" order={1}>
-          <span>Software Engineer</span> and also a Design Enthusiast based in
-          Jakarta. Available for freelance and collaborations.
+          Helping people make the world a better place through quality software.
         </Title>
       </RightContent>
-    </div>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div``
+
+const LeftContent = styled.div`
+  width: 50%;
+  text-align: left;
+  display: flex;
+  justify-content: start;
+`
+const RightContent = styled.div`
+  width: 50%;
+  text-align: right;
+  display: flex;
+  justify-content: end;
+`
 
 export default HeroSection

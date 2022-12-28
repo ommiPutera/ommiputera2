@@ -143,26 +143,40 @@ export const WrapperHeader = styled.header`
   }
 `
 export const Logo = styled.nav`
-  display: flex;
-  align-items: center;
   margin: 0;
   padding: 0;
   cursor: pointer;
 
   a {
     font-weight: 500;
-    font-size: 22px;
+    font-size: 20px;
+    color: ${({theme: {colors, mode}}) =>
+      mode === 'dark' ? colors.dark[0] : colors.dark[9]};
+  }
+  div {
+    height: 3px;
+    margin-top: -2px;
+    border-radius: 20px;
+    transition: 0.2s ease-out;
+    width: 100%;
+    background-image: linear-gradient(
+      to left,
+      ${({theme: {colors, mode}}) =>
+        mode === 'dark' ? colors.dark[9] : colors.dark[0]},
+      ${({theme: {colors, mode}}) =>
+        mode === 'dark' ? colors.primary[9] : colors.primary[6]}
+    );
   }
 `
 export const DesktopNav = styled.nav`
   ul {
     display: flex;
     list-style: none;
-    margin-left: 62px;
+    margin-left: 18px;
 
     li {
-      margin: 9px 18px 0 18px;
-      font-size: 16px;
+      margin: 4px 18px 0 18px;
+      font-size: 17px;
       font-weight: 500;
       text-decoration: none;
       color: ${({theme: {colors, mode}}) =>
@@ -170,23 +184,19 @@ export const DesktopNav = styled.nav`
       div {
         width: 0;
         height: 3px;
-        margin-top: 2px;
+        margin-top: -2px;
         border-radius: 20px;
       }
 
       :hover,
       &.match {
-        color: ${({theme: {colors}}) => colors.danger[9]};
+        color: ${({theme: {colors, mode}}) =>
+          mode === 'dark' ? colors.dark[0] : colors.dark[9]};
         div {
           transition: 0.2s ease-out;
           width: 100%;
-          background-image: linear-gradient(
-            to right,
-            ${({theme: {colors, mode}}) =>
-              mode === 'dark' ? colors.danger[9] : colors.danger[9]},
-            ${({theme: {colors, mode}}) =>
-              mode === 'dark' ? colors.warning[6] : colors.warning[6]}
-          );
+          background: ${({theme: {colors, mode}}) =>
+            mode === 'dark' ? colors.primary[9] : colors.primary[6]};
         }
       }
     }

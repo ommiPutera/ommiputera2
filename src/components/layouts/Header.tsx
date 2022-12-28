@@ -19,7 +19,8 @@ function Header() {
       <Container size={HEADER_SIZE}>
         <LeftContent className="align-center">
           <Logo>
-            <Link to="/">Ommi Putera</Link>
+            <Link to="/">Code by Ommi</Link>
+            <div />
           </Logo>
           <DesktopNav className="desktop__nav">
             <RouteArray />
