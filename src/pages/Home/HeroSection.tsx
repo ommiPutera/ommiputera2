@@ -6,7 +6,7 @@ function HeroSection() {
     <div>
       <LeftContent></LeftContent>
       <RightContent>
-        <Title className="text text-align-left" order={1}>
+        <Title className="text-align-left" order={1}>
           <span>Software Engineer</span> and also a Design Enthusiast based in
           Jakarta. Available for freelance and collaborations.
         </Title>

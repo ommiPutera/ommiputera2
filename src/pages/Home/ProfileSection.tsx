@@ -1,7 +1,6 @@
 import {Text, Title} from '@mantine/core'
 import styled from 'styled-components'
 import {Button} from '../../components/Button'
-import {LeftContent, RightContent} from '../../components/layouts/styled'
 
 function ProfileSection() {
   return (
@@ -15,7 +14,7 @@ function ProfileSection() {
           <Title className="sub text-08" order={1}>
             This is my high quality <span>open-source.</span>
           </Title>
-          <Text className="text-08" size="lg">
+          <Text className="text-10" size="lg">
             After I graduated from college (August 2020), I decided to further
             develop myself into the digital world which I think is more
             promising for my future career. Previously, I am graduated from the
@@ -35,6 +34,19 @@ function ProfileSection() {
     </WrapperHome>
   )
 }
+
+const LeftContent = styled.div`
+  width: 50%;
+  text-align: left;
+  display: flex;
+  justify-content: start;
+`
+const RightContent = styled.div`
+  width: 50%;
+  text-align: right;
+  display: flex;
+  justify-content: end;
+`
 
 const WrapperHome = styled.div`
   display: flex;
@@ -88,6 +100,7 @@ const WrapperHome = styled.div`
     .left {
       order: 1;
       width: 65%;
+      height: 100%;
       border-top-left-radius: 14px;
       border-bottom-left-radius: 14px;
       padding: 52px 180px 52px 52px;

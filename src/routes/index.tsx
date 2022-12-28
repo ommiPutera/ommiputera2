@@ -1,11 +1,6 @@
 import React from 'react'
-import Loadable from 'react-loadable'
 import {About, Dashboard} from '../App'
-
-const LoadableHome = Loadable({
-  loader: () => import('../pages/Home'),
-  loading: () => <></>,
-})
+import Home from '../pages/Home'
 
 interface IRouteObject {
   path: string
@@ -34,7 +29,7 @@ export const APP_ROUTES: IRouteObject[] = [
     label: 'Home',
     path: '/',
     index: true,
-    element: <LoadableHome />,
+    element: <Home />,
   },
   {
     label: 'About',

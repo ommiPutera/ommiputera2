@@ -17,9 +17,9 @@ function App() {
 
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS theme={mantineTheme}>
+      <CustomFonts />
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <CustomFonts />
         <AppHelmet />
         <AppRoutes />
       </ThemeProvider>

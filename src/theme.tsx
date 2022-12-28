@@ -12,7 +12,7 @@ const CustomFonts = () => {
                   url('/fonts/Matter-Medium.woff2') format('woff2')`,
             fontWeight: 500,
             fontStyle: 'normal',
-            fontDisplay: 'fallback',
+            fontDisplay: 'swap',
           },
         },
         {
@@ -20,9 +20,9 @@ const CustomFonts = () => {
             fontFamily: 'Matter',
             src: `url('/fonts/Matter-Regular.woff') format('woff'),
                   url('/fonts/Matter-Regular.woff2') format('woff2')`,
-            fontWeight: 'normal',
+            fontWeight: 400,
             fontStyle: 'normal',
-            fontDisplay: 'fallback',
+            fontDisplay: 'swap',
           },
         },
       ]}
@@ -32,7 +32,6 @@ const CustomFonts = () => {
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Matter', sans-serif !important;
     transition: none !important;
     background-color: ${({theme}) =>
       theme.mode === 'dark' ? '#0f0f15' : '#f4f4f5'} !important;
