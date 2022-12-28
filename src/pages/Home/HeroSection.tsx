@@ -1,10 +1,9 @@
 import {Title} from '@mantine/core'
 import {LeftContent, RightContent} from '../../components/layouts/styled'
-import {WrapperHome} from './styled'
 
 function HeroSection() {
   return (
-    <WrapperHome>
+    <div>
       <LeftContent></LeftContent>
       <RightContent>
         <Title className="text text-align-left" order={1}>
@@ -12,7 +11,7 @@ function HeroSection() {
           Jakarta. Available for freelance and collaborations.
         </Title>
       </RightContent>
-    </WrapperHome>
+    </div>
   )
 }
 

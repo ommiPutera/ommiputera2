@@ -1,13 +1,38 @@
-import {MantineThemeColorsOverride} from '@mantine/core'
+import {MantineThemeColorsOverride, Global} from '@mantine/core'
 import {createGlobalStyle, DefaultTheme} from 'styled-components'
 
-const fontFamily = 'Matter, sans-serif'
+const CustomFonts = () => {
+  return (
+    <Global
+      styles={[
+        {
+          '@font-face': {
+            fontFamily: 'Matter',
+            src: `url('/fonts/Matter-Medium.woff') format('woff'),
+                  url('/fonts/Matter-Medium.woff2') format('woff2')`,
+            fontWeight: 500,
+            fontStyle: 'normal',
+            fontDisplay: 'fallback',
+          },
+        },
+        {
+          '@font-face': {
+            fontFamily: 'Matter',
+            src: `url('/fonts/Matter-Regular.woff') format('woff'),
+                  url('/fonts/Matter-Regular.woff2') format('woff2')`,
+            fontWeight: 'normal',
+            fontStyle: 'normal',
+            fontDisplay: 'fallback',
+          },
+        },
+      ]}
+    />
+  )
+}
 
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Matter', sans-serif !important;
-    -webkit-font-smoothing: antialiased !important;
-    
     transition: none !important;
     background-color: ${({theme}) =>
       theme.mode === 'dark' ? '#0f0f15' : '#f4f4f5'} !important;
@@ -93,7 +118,7 @@ const Mantinecolors: MantineThemeColorsOverride = {
 
 const mantineTheme = {
   colors: Mantinecolors,
-  fontFamily: fontFamily,
+  fontFamily: 'Matter, sans-serif',
   fontSizes: {
     xs: 11,
     sm: 13,
@@ -130,14 +155,14 @@ const mantineTheme = {
     xl: 1400,
   },
   headings: {
-    fontFamily: fontFamily,
+    fontFamily: 'Matter, sans-serif',
     sizes: {
-      h1: {fontSize: 28, lineHeight: 1.3, fontWeight: 600},
-      h2: {fontSize: 24, lineHeight: 1.3, fontWeight: 600},
-      h3: {fontSize: 22, lineHeight: 1.3, fontWeight: 600},
-      h4: {fontSize: 20, lineHeight: 1.3, fontWeight: 600},
-      h5: {fontSize: 18, lineHeight: 1.3, fontWeight: 600},
-      h6: {fontSize: 16, lineHeight: 1.5, fontWeight: 600},
+      h1: {fontSize: 28, lineHeight: 1.3, fontWeight: 500},
+      h2: {fontSize: 24, lineHeight: 1.3, fontWeight: 500},
+      h3: {fontSize: 22, lineHeight: 1.3, fontWeight: 500},
+      h4: {fontSize: 20, lineHeight: 1.3, fontWeight: 500},
+      h5: {fontSize: 18, lineHeight: 1.3, fontWeight: 500},
+      h6: {fontSize: 16, lineHeight: 1.5, fontWeight: 500},
     },
   },
   white: '#fff',
@@ -148,4 +173,4 @@ const mantineTheme = {
   datesLocale: 'en',
 }
 
-export {styledTheme, mantineTheme, GlobalStyle}
+export {styledTheme, mantineTheme, GlobalStyle, CustomFonts}

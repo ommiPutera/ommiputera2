@@ -7,7 +7,6 @@ function getClassProps<T>(props: T): string {
     if (typeof props[key] === 'boolean') className += ` ${key}`
     if (typeof props[key] === 'string') className += ` ${keyValue}`
   }
-  console.log(className)
   return className
 }
 

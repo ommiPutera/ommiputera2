@@ -150,8 +150,8 @@ export const Logo = styled.nav`
   cursor: pointer;
 
   a {
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 22px;
   }
 `
 export const DesktopNav = styled.nav`
@@ -163,7 +163,7 @@ export const DesktopNav = styled.nav`
     li {
       margin: 9px 18px 0 18px;
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 500;
       text-decoration: none;
       color: ${({theme: {colors, mode}}) =>
         mode === 'dark' ? colors.dark[4] : colors.dark[5]};

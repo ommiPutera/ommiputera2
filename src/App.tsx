@@ -3,7 +3,7 @@ import {Helmet} from 'react-helmet'
 import {ThemeProvider} from 'styled-components'
 import {DefaultLayout} from './components/layouts'
 import useMode from './hooks/useMode'
-import {GlobalStyle, mantineTheme, styledTheme} from './theme'
+import {CustomFonts, GlobalStyle, mantineTheme, styledTheme} from './theme'
 import {Routes, Route} from 'react-router-dom'
 import {APP_ROUTES} from './routes'
 import NoMatchPage from './routes/NoMatch'
@@ -19,6 +19,7 @@ function App() {
     <MantineProvider withGlobalStyles withNormalizeCSS theme={mantineTheme}>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
+        <CustomFonts />
         <AppHelmet />
         <AppRoutes />
       </ThemeProvider>
