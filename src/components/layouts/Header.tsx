@@ -7,8 +7,9 @@ import useMode from '../../hooks/useMode'
 import {useNavigation} from '../../store/rootStore'
 import {
   DesktopNav,
-  LeftContent,
   Logo,
+  LeftContent,
+  CenterContent,
   RightContent,
   WrapperHeader,
 } from './styled'
@@ -19,13 +20,14 @@ function Header() {
       <Container size={HEADER_SIZE}>
         <LeftContent className="align-center">
           <Logo>
-            <Link to="/">Code by Ommi</Link>
-            <div />
+            <Link to="/">Ommi Putera</Link>
           </Logo>
+        </LeftContent>
+        <CenterContent>
           <DesktopNav className="desktop__nav">
             <RouteArray />
           </DesktopNav>
-        </LeftContent>
+        </CenterContent>
         <RightContent>
           <NavButton />
           <ModeButton />

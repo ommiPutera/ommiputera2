@@ -17,20 +17,26 @@ export const growDown = keyframes`
 export const WrapperLayout = styled.div`
   .children {
     min-height: 100vh;
-    margin: 0;
+    margin: 32px 0;
   }
   .nav__open {
     filter: blur(2px);
   }
 `
 export const LeftContent = styled.div`
-  width: 50%;
+  width: 25%;
   text-align: left;
   display: flex;
   justify-content: start;
 `
-export const RightContent = styled.div`
+export const CenterContent = styled.div`
   width: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+`
+export const RightContent = styled.div`
+  width: 25%;
   text-align: right;
   display: flex;
   justify-content: end;
@@ -132,7 +138,7 @@ export const WrapperHeader = styled.header`
   }
 
   @media (min-width: 1400px) {
-    padding: 32px 0;
+    padding: 42px 0;
 
     .nav__btn {
       display: none;
@@ -148,24 +154,10 @@ export const Logo = styled.nav`
   cursor: pointer;
 
   a {
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 24px;
     color: ${({theme: {colors, mode}}) =>
       mode === 'dark' ? colors.dark[0] : colors.dark[9]};
-  }
-  div {
-    height: 3px;
-    margin-top: -2px;
-    border-radius: 20px;
-    transition: 0.2s ease-out;
-    width: 100%;
-    background-image: linear-gradient(
-      to left,
-      ${({theme: {colors, mode}}) =>
-        mode === 'dark' ? colors.dark[9] : colors.dark[0]},
-      ${({theme: {colors, mode}}) =>
-        mode === 'dark' ? colors.primary[9] : colors.primary[6]}
-    );
   }
 `
 export const DesktopNav = styled.nav`
@@ -184,12 +176,13 @@ export const DesktopNav = styled.nav`
       div {
         width: 0;
         height: 3px;
-        margin-top: -2px;
+        margin-top: 2px;
         border-radius: 20px;
       }
 
       :hover,
       &.match {
+        font-weight: 600;
         color: ${({theme: {colors, mode}}) =>
           mode === 'dark' ? colors.dark[0] : colors.dark[9]};
         div {
