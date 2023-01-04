@@ -120,8 +120,8 @@ const mantineTheme = {
   fontSizes: {
     xs: 11,
     sm: 13,
-    md: 14.5,
-    lg: 17,
+    md: 17,
+    lg: 19,
     xl: 22,
   },
   components: {
@@ -159,7 +159,7 @@ const mantineTheme = {
       h2: {fontSize: 24, lineHeight: 1.3, fontWeight: 500},
       h3: {fontSize: 22, lineHeight: 1.3, fontWeight: 500},
       h4: {fontSize: 20, lineHeight: 1.3, fontWeight: 500},
-      h5: {fontSize: 18, lineHeight: 1.3, fontWeight: 500},
+      h5: {fontSize: 16, lineHeight: 1.3, fontWeight: 500},
       h6: {fontSize: 16, lineHeight: 1.5, fontWeight: 500},
     },
   },

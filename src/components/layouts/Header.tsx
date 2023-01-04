@@ -144,14 +144,13 @@ const Logo = styled.nav`
 
   a {
     font-weight: 500;
-    font-size: 24px;
+    font-size: 22px;
     color: ${({theme: {colors, mode}}) =>
-      mode === 'dark' ? colors.dark[0] : colors.dark[9]};
+      mode === 'dark' ? colors.dark[4] : colors.dark[5]};
     line-height: 19px;
 
     :hover,
     &.match {
-      font-weight: 600;
       color: ${({theme: {colors, mode}}) =>
         mode === 'dark' ? colors.dark[0] : colors.dark[9]};
     }
@@ -165,7 +164,7 @@ const DesktopNav = styled.nav`
 
     li {
       margin: 10px 18px 0 18px;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 500;
       text-decoration: none;
       color: ${({theme: {colors, mode}}) =>
@@ -179,7 +178,6 @@ const DesktopNav = styled.nav`
 
       :hover,
       &.match {
-        font-weight: 600;
         color: ${({theme: {colors, mode}}) =>
           mode === 'dark' ? colors.dark[0] : colors.dark[9]};
         div {
