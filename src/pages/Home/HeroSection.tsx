@@ -17,7 +17,7 @@ function HeroSection() {
         </Button>
       </LeftContent>
       <RightContent className="mt-62">
-        <Title className="font-34">
+        <Title className="font-36">
           Software Engineer and also a Design Enthusiast based in Jakarta.
           Available for freelance and collaborations.
         </Title>
@@ -77,7 +77,7 @@ const RightContent = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-  align-items: flex-end;
+  align-items: flex-start;
 `
 
 export default HeroSection
