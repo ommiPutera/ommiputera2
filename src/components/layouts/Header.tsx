@@ -122,7 +122,7 @@ const WrapperHeader = styled.header`
   }
 
   @media (min-width: 1400px) {
-    padding: 22px 0;
+    padding: 32px 0;
 
     .nav__btn {
       display: none;

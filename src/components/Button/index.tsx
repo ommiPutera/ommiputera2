@@ -1,19 +1,20 @@
 import {Button} from '@mantine/core'
+import clsx from 'clsx'
 import styled from 'styled-components'
 import {getClassProps} from '../../utils/helpers'
 
 interface IButton {
   children: React.ReactNode | JSX.Element
+  className?: string
   variant?: 'outline' | 'default'
   compact?: true
   size?: 'sm' | 'md' | 'lg' | 'xl'
 }
 
-function EpicButton({children, ...rest}: IButton) {
-  console.log(getClassProps(rest))
+function EpicButton({children, className, ...rest}: IButton) {
   return (
-    <WrapperButton>
-      <Button className={getClassProps(rest)} {...rest}>
+    <WrapperButton className={className}>
+      <Button className={clsx(getClassProps(rest))} {...rest}>
         {children}
       </Button>
     </WrapperButton>
@@ -31,7 +32,7 @@ const WrapperButton = styled.div`
 
   .sizeLg {
     .mantine-Button-label {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 500;
     }
   }

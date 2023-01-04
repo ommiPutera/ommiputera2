@@ -22,6 +22,16 @@ export const ROUTES: IRouteObject[] = [
     path: '/dashboard',
     element: <Dashboard />,
   },
+  {
+    label: 'Project',
+    path: '/project',
+    element: <Dashboard />,
+  },
+  {
+    label: 'Contact',
+    path: '/contact',
+    element: <Dashboard />,
+  },
 ]
 
 export const APP_ROUTES: IRouteObject[] = [
