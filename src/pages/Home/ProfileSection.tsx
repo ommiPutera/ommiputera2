@@ -8,11 +8,11 @@ function ProfileSection() {
       <LeftContent className="left xs__top">
         <div className="heading">
           <Title className="text" order={1}>
-            <span>Software Engineer</span> and also a Design Enthusiast based in
-            Jakarta. Available for freelance and collaborations.
+            Software Engineer and also a Design Enthusiast based in Jakarta.
+            Available for freelance and collaborations.
           </Title>
           <Title className="sub text-06" order={1}>
-            This is my high quality <span>open-source.</span>
+            This is my high quality open-source
           </Title>
           <Text className="text-06" size="lg">
             After I graduated from college (August 2020), I decided to further
@@ -66,19 +66,6 @@ const Wrapper = styled.div`
     width: 100%;
     .heading {
       h1 {
-        span {
-          font-weight: 800;
-          background-image: linear-gradient(
-            to right,
-            ${({theme: {colors, mode}}) =>
-              mode === 'dark' ? colors.primary[7] : colors.primary[7]},
-            ${({theme: {colors, mode}}) =>
-              mode === 'dark' ? colors.primary[9] : colors.primary[9]}
-          );
-          background-clip: clip;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
         &.sub {
           margin: 38px 0 12px 0;
         }

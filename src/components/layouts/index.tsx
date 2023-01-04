@@ -3,6 +3,7 @@ import {IconArrowBack} from '@tabler/icons'
 import clsx from 'clsx'
 import {Link, Outlet, useLocation} from 'react-router-dom'
 import {CONTAINER_SIZE, ICON_SIZE} from '../../defaultVariable'
+import useMode from '../../hooks/useMode'
 import {ROUTES} from '../../routes'
 import {useNavigation} from '../../store/rootStore'
 import Footer from './Footer'
@@ -15,9 +16,18 @@ interface IRouteArray {
 }
 
 function DefaultLayout() {
+  const {mode} = useMode()
   const {isOpen} = useNavigation()
   return (
     <WrapperLayout>
+      {mode === 'dark' && (
+        <img
+          className="bg"
+          src="/assets/image/darkHeroBg.jpg"
+          width="100%"
+          alt=""
+        />
+      )}
       <Header />
       <DropdownNav />
       <Container size={CONTAINER_SIZE}>

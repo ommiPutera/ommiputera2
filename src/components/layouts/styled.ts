@@ -17,10 +17,15 @@ export const growDown = keyframes`
 export const WrapperLayout = styled.div`
   .children {
     min-height: 100vh;
-    margin: 32px 0;
   }
   .nav__open {
     filter: blur(2px);
+  }
+
+  .bg {
+    height: 100vh;
+    z-index: -99;
+    position: absolute;
   }
 `
 export const LeftContent = styled.div`
@@ -91,107 +96,6 @@ export const WrapperDropdownNav = styled.nav`
       justify-content: center;
       align-items: center;
       gap: 10px;
-    }
-  }
-`
-
-// --- Header ---
-export const WrapperHeader = styled.header`
-  padding: 32px 12px;
-
-  > div {
-    display: flex;
-  }
-
-  .btn {
-    &:hover,
-    &:active {
-      background-color: ${({theme: {colors, mode}}) =>
-        mode === 'dark' ? colors.dark[8] : colors.dark[1]};
-    }
-  }
-
-  .theme__btn {
-    margin-left: 12px;
-    .sun__icon {
-      color: ${({theme: {colors}}) => colors.dark[3]};
-    }
-    .moon__icon {
-      color: ${({theme: {colors}}) => colors.dark[8]};
-    }
-    :active {
-      .sun__icon,
-      .moon__icon {
-        animation: ${growDown} 300ms ease-in-out;
-      }
-    }
-  }
-  .nav__btn {
-    .menu__icon {
-      color: ${({theme: {colors, mode}}) =>
-        mode === 'dark' ? colors.dark[2] : colors.dark[8]};
-    }
-  }
-
-  .desktop__nav {
-    display: none;
-  }
-
-  @media (min-width: 1400px) {
-    padding: 42px 0;
-
-    .nav__btn {
-      display: none;
-    }
-    .desktop__nav {
-      display: block;
-    }
-  }
-`
-export const Logo = styled.nav`
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-
-  a {
-    font-weight: 600;
-    font-size: 24px;
-    color: ${({theme: {colors, mode}}) =>
-      mode === 'dark' ? colors.dark[0] : colors.dark[9]};
-  }
-`
-export const DesktopNav = styled.nav`
-  ul {
-    display: flex;
-    list-style: none;
-    margin-left: 18px;
-
-    li {
-      margin: 4px 18px 0 18px;
-      font-size: 17px;
-      font-weight: 500;
-      text-decoration: none;
-      color: ${({theme: {colors, mode}}) =>
-        mode === 'dark' ? colors.dark[4] : colors.dark[5]};
-      div {
-        width: 0;
-        height: 3px;
-        margin-top: 2px;
-        border-radius: 20px;
-      }
-
-      :hover,
-      &.match {
-        font-weight: 600;
-        color: ${({theme: {colors, mode}}) =>
-          mode === 'dark' ? colors.dark[0] : colors.dark[9]};
-        div {
-          transition: 0.2s ease-out;
-          width: 100%;
-          background: ${({theme: {colors, mode}}) =>
-            mode === 'dark' ? colors.primary[9] : colors.primary[6]};
-        }
-      }
     }
   }
 `

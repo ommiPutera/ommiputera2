@@ -29,6 +29,22 @@ a {
 .font-38 {
   font-size: 38px;
 }
+.font-42 {
+  font-size: 42px;
+}
+
+.mt-32 {
+  margin-top: 32px;
+}
+.mt-62 {
+  margin-top: 62px;
+}
+.mt-82 {
+  margin-top: 82px;
+}
+.mt-102 {
+  margin-top: 102px;
+}
 
 .align-center {
   align-items: center;

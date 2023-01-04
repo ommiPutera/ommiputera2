@@ -32,7 +32,6 @@ const CustomFonts = () => {
 
 const GlobalStyle = createGlobalStyle`
   body {
-    transition: none !important;
     background-color: ${({theme}) =>
       theme.mode === 'dark' ? '#0f0f15' : '#f4f4f5'} !important;
     color: ${({theme}) =>
@@ -123,17 +122,17 @@ const mantineTheme = {
     sm: 13,
     md: 14.5,
     lg: 17,
-    xl: 20,
+    xl: 22,
   },
   components: {
     Container: {
       defaultProps: {
         sizes: {
-          xs: 720,
-          sm: 960,
+          xs: 620,
+          sm: 920,
           md: 1160,
-          lg: 1380,
-          xl: 1420,
+          lg: 1280,
+          xl: 1530,
         },
       },
     },
@@ -150,13 +149,13 @@ const mantineTheme = {
     xs: 500,
     sm: 800,
     md: 1000,
-    lg: 1200,
+    lg: 1100,
     xl: 1400,
   },
   headings: {
     fontFamily: 'Matter, sans-serif',
     sizes: {
-      h1: {fontSize: 28, lineHeight: 1.3, fontWeight: 500},
+      h1: {fontSize: 30, lineHeight: 1.2, fontWeight: 500},
       h2: {fontSize: 24, lineHeight: 1.3, fontWeight: 500},
       h3: {fontSize: 22, lineHeight: 1.3, fontWeight: 500},
       h4: {fontSize: 20, lineHeight: 1.3, fontWeight: 500},
