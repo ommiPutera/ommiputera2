@@ -79,9 +79,12 @@ function RouteArray({handleClick, withCloseBtn}: IRouteArray) {
         </Link>
       ))}
       {withCloseBtn && (
-        <li onClick={handleClick}>
-          <div className="close__btn">{getIcon('x')} Back to content</div>
-        </li>
+        <Link to={pathname}>
+          <li onClick={handleClick} className="close__btn">
+            {getIcon('x')} Back to content
+            <div />
+          </li>
+        </Link>
       )}
     </ul>
   )

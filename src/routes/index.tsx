@@ -13,6 +13,11 @@ interface IRouteObject {
 
 export const ROUTES: IRouteObject[] = [
   {
+    label: 'Home',
+    path: '/',
+    element: <Home />,
+  },
+  {
     label: 'About',
     path: '/about',
     element: <About />,

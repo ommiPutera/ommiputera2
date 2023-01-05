@@ -5,14 +5,14 @@ import {Button} from '../../components/Button'
 function HeroSection() {
   return (
     <Wrapper>
-      <LeftContent className="mt-62 mobile__mt-82">
+      <LeftContent className="mt-62 mobile__mt-32">
         <Title className="font-36 mobile__font-28 basic-animate">
           Software Engineer and also a Design Enthusiast based in Jakarta.
           Available for freelance and collaborations.
         </Title>
         <Text
           size="lg"
-          className="mt-32 mobile__mt-22 font-500 basic-animate-1"
+          className="mt-32 mobile__mt-22 mobile__font-18 font-500 basic-animate-1"
         >
           Hi 👋, I'm a Software Engineer - Front-end with 2 years of proven
           experience in helping to create and maintain a better code base for
@@ -23,11 +23,17 @@ function HeroSection() {
         <Button
           variant="default"
           size="lg"
+          mobileSize="md"
           className="mt-102 mobile__mt-32 basic-animate-2"
         >
           Get started to my open-sources
         </Button>
-        <Button variant="outline" size="lg" className="basic-animate-3">
+        <Button
+          variant="outline"
+          size="lg"
+          mobileSize="md"
+          className="basic-animate-3"
+        >
           Learn more about Ommi Putera
         </Button>
       </LeftContent>
@@ -39,15 +45,16 @@ function HeroSection() {
         />
         <Text
           size="lg"
-          className="mt-32 mobile__mt-22 font-500 basic-animate-1"
+          className="mt-32 mobile__mt-22 mobile__font-16 font-500 basic-animate-1"
         >
           Jakarta, Indonesia. <div className="line" /> Ommi Putera karunia
           <br />
-          omiputrakarunia@gmail.com <div className="line" /> +62 89508182045
+          omiputrakarunia@gmail.com <div className="line" /> +6289508182045
         </Text>
         <Button
           variant="default"
           size="lg"
+          mobileSize="md"
           className="mt-32 mobile__mt-32 basic-animate-3"
         >
           Send me email?

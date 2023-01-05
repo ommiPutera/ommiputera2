@@ -9,6 +9,7 @@ interface IButton {
   variant?: 'outline' | 'default'
   compact?: true
   size?: 'sm' | 'md' | 'lg' | 'xl'
+  mobileSize?: 'sm' | 'md' | 'lg' | 'xl'
 }
 
 function EpicButton({children, className, ...rest}: IButton) {
@@ -29,11 +30,18 @@ const WrapperButton = styled.div`
     min-height: 60px;
     border-radius: 100px;
   }
+  .mantine-Button-label {
+    font-weight: 500;
+  }
 
   .sizeLg {
     .mantine-Button-label {
       font-size: 17px;
-      font-weight: 500;
+    }
+  }
+  .mobileSizeMd {
+    .mantine-Button-label {
+      font-size: 14px;
     }
   }
 

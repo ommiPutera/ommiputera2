@@ -23,6 +23,21 @@ a {
   font-weight: 600;
 }
 
+.mobile__font-14 {
+  font-size: 14px;
+}
+.mobile__font-16 {
+  font-size: 16px;
+}
+.mobile__font-18 {
+  font-size: 18px;
+}
+.mobile__font-20 {
+  font-size: 20px;
+}
+.mobile__font-22 {
+  font-size: 22px;
+}
 .mobile__font-24 {
   font-size: 24px;
 }
@@ -45,6 +60,21 @@ a {
   font-size: 42px;
 }
 @media (min-width: 1400px) {
+  .font-14 {
+    font-size: 14px;
+  }
+  .font-16 {
+    font-size: 16px;
+  }
+  .font-18 {
+    font-size: 18px;
+  }
+  .font-20 {
+    font-size: 20px;
+  }
+  .font-22 {
+    font-size: 22px;
+  }
   .font-24 {
     font-size: 24px;
   }

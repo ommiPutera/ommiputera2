@@ -29,8 +29,8 @@ function Header() {
             </DesktopNav>
           </CenterContent>
           <RightContent>
-            <NavButton />
             <ModeButton />
+            <NavButton />
           </RightContent>
         </Container>
       </WrapperHeader>
@@ -96,7 +96,7 @@ const WrapperHeader = styled.header`
   }
 
   .theme__btn {
-    margin-left: 12px;
+    margin-right: 12px;
     .sun__icon {
       color: ${({theme: {colors}}) => colors.dark[3]};
     }
@@ -144,7 +144,7 @@ const Logo = styled.nav`
 
   a {
     font-weight: 500;
-    font-size: 22px;
+    font-size: 20px;
     color: ${({theme: {colors, mode}}) =>
       mode === 'dark' ? colors.dark[4] : colors.dark[5]};
     line-height: 19px;
@@ -153,6 +153,10 @@ const Logo = styled.nav`
     &.match {
       color: ${({theme: {colors, mode}}) =>
         mode === 'dark' ? colors.dark[0] : colors.dark[9]};
+    }
+
+    @media (min-width: 1400px) {
+      font-size: 23px;
     }
   }
 `

@@ -21,16 +21,22 @@ const WrapperInfo = styled.div`
     align-items: center;
     gap: 10px;
     padding: 16px 0;
+    margin: 0 16px;
     border-bottom: 1px solid
       ${({theme: {colors, mode}}) =>
-        mode === 'dark' ? colors.dark[8] : colors.dark[2]};
+        mode === 'dark' ? colors.dark[6] : colors.dark[2]};
 
     h5 {
+      font-weight: 500;
       font-size: 11px;
       background: ${({theme: {colors}}) => colors.danger[9]};
       color: ${({theme: {colors}}) => colors.dark[0]};
       padding: 1px 6px 2px 6px;
       border-radius: 3px;
+    }
+
+    @media (min-width: 1400px) {
+      margin: auto;
     }
   }
 `
