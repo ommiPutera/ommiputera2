@@ -1,5 +1,5 @@
 import {ActionIcon, Container} from '@mantine/core'
-import {IconMenu2, IconMoon, IconSunHigh, IconX} from '@tabler/icons'
+import {IconMenu2, IconMoonStars, IconSunHigh, IconX} from '@tabler/icons'
 import {Link, useLocation} from 'react-router-dom'
 import styled from 'styled-components'
 import {RouteArray} from '.'
@@ -57,7 +57,7 @@ function getIconMode(mode: string) {
     case 'dark':
       return <IconSunHigh className="sun__icon" size={ICON_SIZE} />
     case 'light':
-      return <IconMoon className="moon__icon" size={ICON_SIZE} />
+      return <IconMoonStars className="moon__icon" size={ICON_SIZE} />
     default:
   }
 }

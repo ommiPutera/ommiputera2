@@ -1,5 +1,4 @@
 import {MantineProvider} from '@mantine/core'
-import {Helmet} from 'react-helmet'
 import {ThemeProvider} from 'styled-components'
 import {DefaultLayout} from './components/layouts'
 import useMode from './hooks/useMode'
@@ -20,23 +19,9 @@ function App() {
       <CustomFonts />
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <AppHelmet />
         <AppRoutes />
       </ThemeProvider>
     </MantineProvider>
-  )
-}
-
-function AppHelmet() {
-  const {mode} = useMode()
-  return (
-    <Helmet>
-      <title>Ommi Putera</title>
-      <meta
-        name="theme-color"
-        content={mode === 'light' ? '#fff' : '#18181b'}
-      />
-    </Helmet>
   )
 }
 
