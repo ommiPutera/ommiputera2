@@ -5,37 +5,51 @@ import {Button} from '../../components/Button'
 function HeroSection() {
   return (
     <Wrapper>
-      <LeftContent className="mt-62">
-        <Title className="font-36 basic-animate">
+      <LeftContent className="mt-62 mobile__mt-82">
+        <Title className="font-36 mobile__font-28 basic-animate">
           Software Engineer and also a Design Enthusiast based in Jakarta.
           Available for freelance and collaborations.
         </Title>
-        <Text size="lg" className="mt-32 font-500 basic-animate-1">
+        <Text
+          size="lg"
+          className="mt-32 mobile__mt-22 font-500 basic-animate-1"
+        >
           Hi 👋, I'm a Software Engineer - Front-end with 2 years of proven
           experience in helping to create and maintain a better code base for
           re-usability and best practices. Experience in developing projects
           from concept to launch. Eager to tackle more complex problems, and
           continues to find ways to maximize user efficiency
         </Text>
-        <Button variant="default" size="lg" className="mt-102 basic-animate-2">
+        <Button
+          variant="default"
+          size="lg"
+          className="mt-102 mobile__mt-32 basic-animate-2"
+        >
           Get started to my open-sources
         </Button>
         <Button variant="outline" size="lg" className="basic-animate-3">
           Learn more about Ommi Putera
         </Button>
       </LeftContent>
-      <RightContent className="mt-102">
+      <RightContent className="mt-102 mobile__mt-102">
         <img
           className="profileImg basic-animate-2"
           src="/assets/image/profile.jpeg"
           alt=""
         />
-        <Text size="lg" className="mt-32 font-500 basic-animate-1">
+        <Text
+          size="lg"
+          className="mt-32 mobile__mt-22 font-500 basic-animate-1"
+        >
           Jakarta, Indonesia. <div className="line" /> Ommi Putera karunia
           <br />
           omiputrakarunia@gmail.com <div className="line" /> +62 89508182045
         </Text>
-        <Button variant="default" size="lg" className="mt-32 basic-animate-3">
+        <Button
+          variant="default"
+          size="lg"
+          className="mt-32 mobile__mt-32 basic-animate-3"
+        >
           Send me email?
         </Button>
       </RightContent>
@@ -47,25 +61,37 @@ const Wrapper = styled.div`
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  text-align: center;
   display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  @media (min-width: 1400px) {
+    flex-direction: row;
+    padding: 32px 0;
+  }
 `
 
 const LeftContent = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  text-align: left;
-  align-items: flex-start;
-  padding-right: 20px;
+  align-items: center;
+  text-align: center;
+
+  @media (min-width: 1400px) {
+    padding-right: 20px;
+    width: 50%;
+    text-align: left;
+    align-items: flex-start;
+  }
 `
 
 const RightContent = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  text-align: right;
-  align-items: flex-end;
+  text-align: center;
+  align-items: center;
 
   .profileImg {
     width: 180px;
@@ -80,6 +106,12 @@ const RightContent = styled.div`
     width: 1px;
     background: ${({theme: {colors, mode}}) =>
       mode === 'dark' ? colors.dark[2] : colors.dark[8]};
+  }
+
+  @media (min-width: 1400px) {
+    width: 50%;
+    text-align: right;
+    align-items: flex-end;
   }
 `
 

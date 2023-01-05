@@ -81,7 +81,7 @@ function NavButton() {
 }
 
 const WrapperHeader = styled.header`
-  padding: 32px 12px;
+  padding: 12px 0;
 
   > div {
     display: flex;

@@ -23,30 +23,88 @@ a {
   font-weight: 600;
 }
 
-.font-34 {
+.mobile__font-24 {
+  font-size: 24px;
+}
+.mobile__font-26 {
+  font-size: 26px;
+}
+.mobile__font-28 {
+  font-size: 28px;
+}
+.mobile__font-34 {
   font-size: 34px;
 }
-.font-36 {
+.mobile__font-36 {
   font-size: 36px;
 }
-.font-38 {
+.mobile__font-38 {
   font-size: 38px;
 }
-.font-42 {
+.mobile__font-42 {
   font-size: 42px;
 }
+@media (min-width: 1400px) {
+  .font-24 {
+    font-size: 24px;
+  }
+  .font-26 {
+    font-size: 26px;
+  }
+  .font-28 {
+    font-size: 28px;
+  }
+  .font-34 {
+    font-size: 34px;
+  }
+  .font-36 {
+    font-size: 36px;
+  }
+  .font-38 {
+    font-size: 38px;
+  }
+  .font-42 {
+    font-size: 42px;
+  }
+}
 
-.mt-32 {
+.mobile__mt-12 {
+  margin-top: 12px;
+}
+.mobile__mt-22 {
+  margin-top: 22px;
+}
+.mobile__mt-32 {
   margin-top: 32px;
 }
-.mt-62 {
+.mobile__mt-62 {
   margin-top: 62px;
 }
-.mt-82 {
+.mobile__mt-82 {
   margin-top: 82px;
 }
-.mt-102 {
+.mobile__mt-102 {
   margin-top: 102px;
+}
+@media (min-width: 1400px) {
+  .mt-12 {
+    margin-top: 12px;
+  }
+  .mt-22 {
+    margin-top: 22px;
+  }
+  .mt-32 {
+    margin-top: 32px;
+  }
+  .mt-62 {
+    margin-top: 62px;
+  }
+  .mt-82 {
+    margin-top: 82px;
+  }
+  .mt-102 {
+    margin-top: 102px;
+  }
 }
 
 .align-center {
