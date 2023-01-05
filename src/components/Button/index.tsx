@@ -39,9 +39,12 @@ const WrapperButton = styled.div`
       font-size: 17px;
     }
   }
-  .mobileSizeMd {
-    .mantine-Button-label {
-      font-size: 14px;
+
+  @media (max-width: 768px) {
+    .mobileSizeMd {
+      .mantine-Button-label {
+        font-size: 14px;
+      }
     }
   }
 

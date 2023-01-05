@@ -12,7 +12,7 @@ function HeroSection() {
         </Title>
         <Text
           size="lg"
-          className="mt-32 mobile__mt-22 mobile__font-18 font-500 basic-animate-1"
+          className="mt-32 mobile__mt-22 mobile__font-18 font-20 font-500 basic-animate-1"
         >
           Hi 👋, I'm a Software Engineer - Front-end with 2 years of proven
           experience in helping to create and maintain a better code base for
@@ -45,7 +45,7 @@ function HeroSection() {
         />
         <Text
           size="lg"
-          className="mt-32 mobile__mt-22 mobile__font-16 font-500 basic-animate-1"
+          className="mt-32 mobile__mt-22 mobile__font-16 font-20 font-500 basic-animate-1"
         >
           Jakarta, Indonesia. <div className="line" /> Ommi Putera karunia
           <br />
