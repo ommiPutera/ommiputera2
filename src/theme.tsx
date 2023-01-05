@@ -8,6 +8,16 @@ const CustomFonts = () => {
         {
           '@font-face': {
             fontFamily: 'Matter',
+            src: `url('/fonts/Matter-SemiBold.woff') format('woff'),
+                  url('/fonts/Matter-SemiBold.woff2') format('woff2')`,
+            fontWeight: 600,
+            fontStyle: 'normal',
+            fontDisplay: 'swap',
+          },
+        },
+        {
+          '@font-face': {
+            fontFamily: 'Matter',
             src: `url('/fonts/Matter-Medium.woff') format('woff'),
                   url('/fonts/Matter-Medium.woff2') format('woff2')`,
             fontWeight: 500,

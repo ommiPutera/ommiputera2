@@ -5,8 +5,8 @@ import {Button} from '../../components/Button'
 function HeroSection() {
   return (
     <Wrapper>
-      <LeftContent className="mt-62 mobile__mt-32">
-        <Title className="font-36 mobile__font-28 basic-animate">
+      <LeftContent className="mobile__mt-32">
+        <Title className="font-38 mobile__font-28 font-600 basic-animate">
           Software Engineer and also a Design Enthusiast based in Jakarta.
           Available for freelance and collaborations.
         </Title>
@@ -37,7 +37,7 @@ function HeroSection() {
           Learn more about Ommi Putera
         </Button>
       </LeftContent>
-      <RightContent className="mt-102 mobile__mt-102">
+      <RightContent className="mt-32 mobile__mt-102">
         <img
           className="profileImg basic-animate-2"
           src="/assets/image/profile.jpeg"
@@ -74,7 +74,6 @@ const Wrapper = styled.div`
 
   @media (min-width: 1400px) {
     flex-direction: row;
-    padding: 32px 0;
   }
 `
 
@@ -86,8 +85,8 @@ const LeftContent = styled.div`
   text-align: center;
 
   @media (min-width: 1400px) {
-    padding-right: 20px;
-    width: 50%;
+    padding-right: 10px;
+    width: 55%;
     text-align: left;
     align-items: flex-start;
   }
@@ -116,7 +115,7 @@ const RightContent = styled.div`
   }
 
   @media (min-width: 1400px) {
-    width: 50%;
+    width: 45%;
     text-align: right;
     align-items: flex-end;
   }

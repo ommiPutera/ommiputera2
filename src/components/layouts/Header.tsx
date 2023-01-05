@@ -122,7 +122,8 @@ const WrapperHeader = styled.header`
   }
 
   @media (min-width: 1400px) {
-    padding: 32px 0;
+    padding: 8px 0;
+    margin-bottom: 102px;
 
     .nav__btn {
       display: none;
@@ -143,11 +144,10 @@ const Logo = styled.nav`
   height: 100%;
 
   a {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 20px;
     color: ${({theme: {colors, mode}}) =>
       mode === 'dark' ? colors.dark[4] : colors.dark[5]};
-    line-height: 19px;
 
     :hover,
     &.match {
@@ -168,24 +168,27 @@ const DesktopNav = styled.nav`
 
     li {
       margin: 10px 18px 0 18px;
-      font-size: 16px;
-      font-weight: 500;
+      font-size: 15.5px;
+      font-weight: 600;
       text-decoration: none;
       color: ${({theme: {colors, mode}}) =>
         mode === 'dark' ? colors.dark[4] : colors.dark[5]};
       div {
         width: 0;
-        height: 3px;
-        margin-top: 2px;
+        height: 2.5px;
+        margin: 0 auto;
         border-radius: 20px;
       }
 
-      :hover,
+      :hover {
+        color: ${({theme: {colors, mode}}) =>
+          mode === 'dark' ? colors.dark[0] : colors.dark[9]};
+      }
       &.match {
         color: ${({theme: {colors, mode}}) =>
           mode === 'dark' ? colors.dark[0] : colors.dark[9]};
         div {
-          transition: 0.2s ease-out;
+          transition: 0.2s linear;
           width: 100%;
           background: ${({theme: {colors, mode}}) =>
             mode === 'dark' ? colors.dark[0] : colors.dark[9]};
