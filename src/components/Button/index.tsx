@@ -12,10 +12,13 @@ interface IButton {
   mobileSize?: 'sm' | 'md' | 'lg' | 'xl'
 }
 
-function EpicButton({children, className, ...rest}: IButton) {
+function EpicButton({children, className, mobileSize, ...rest}: IButton) {
+  const combineClass = {...rest, mobileSize}
   return (
     <WrapperButton className={className}>
-      <Button className={clsx(getClassProps(rest))}>{children}</Button>
+      <Button className={clsx(getClassProps(combineClass))} {...rest}>
+        {children}
+      </Button>
     </WrapperButton>
   )
 }
