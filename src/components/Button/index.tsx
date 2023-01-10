@@ -15,9 +15,7 @@ interface IButton {
 function EpicButton({children, className, ...rest}: IButton) {
   return (
     <WrapperButton className={className}>
-      <Button className={clsx(getClassProps(rest))} {...rest}>
-        {children}
-      </Button>
+      <Button className={clsx(getClassProps(rest))}>{children}</Button>
     </WrapperButton>
   )
 }

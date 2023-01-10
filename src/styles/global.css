@@ -24,40 +24,40 @@ a {
 }
 
 @media (max-width: 768px) {
-  .mobile__font-14 {
+  .mobile-font-14 {
     font-size: 14px;
   }
-  .mobile__font-16 {
+  .mobile-font-16 {
     font-size: 16px;
   }
-  .mobile__font-18 {
+  .mobile-font-18 {
     font-size: 18px;
   }
-  .mobile__font-20 {
+  .mobile-font-20 {
     font-size: 20px;
   }
-  .mobile__font-22 {
+  .mobile-font-22 {
     font-size: 22px;
   }
-  .mobile__font-24 {
+  .mobile-font-24 {
     font-size: 24px;
   }
-  .mobile__font-26 {
+  .mobile-font-26 {
     font-size: 26px;
   }
-  .mobile__font-28 {
+  .mobile-font-28 {
     font-size: 28px;
   }
-  .mobile__font-34 {
+  .mobile-font-34 {
     font-size: 34px;
   }
-  .mobile__font-36 {
+  .mobile-font-36 {
     font-size: 36px;
   }
-  .mobile__font-38 {
+  .mobile-font-38 {
     font-size: 38px;
   }
-  .mobile__font-42 {
+  .mobile-font-42 {
     font-size: 42px;
   }
 }
@@ -101,22 +101,22 @@ a {
 }
 
 @media (max-width: 768px) {
-  .mobile__mt-12 {
+  .mobile-mt-12 {
     margin-top: 12px;
   }
-  .mobile__mt-22 {
+  .mobile-mt-22 {
     margin-top: 22px;
   }
-  .mobile__mt-32 {
+  .mobile-mt-32 {
     margin-top: 32px;
   }
-  .mobile__mt-62 {
+  .mobile-mt-62 {
     margin-top: 62px;
   }
-  .mobile__mt-82 {
+  .mobile-mt-82 {
     margin-top: 82px;
   }
-  .mobile__mt-102 {
+  .mobile-mt-102 {
     margin-top: 102px;
   }
 }

@@ -42,10 +42,10 @@ const CustomFonts = () => {
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background-color: ${({theme}) =>
-      theme.mode === 'dark' ? '#0f0f15' : '#f4f4f5'} !important;
-    color: ${({theme}) =>
-      theme.mode === 'light' ? '#232333' : '#f4f4f5'} !important;
+    background-color: ${({theme: {colors, mode}}) =>
+      mode === 'dark' ? colors.dark[9] : colors.dark[1]} !important;
+    color: ${({theme: {colors, mode}}) =>
+      mode === 'light' ? colors.dark[9] : colors.dark[1]} !important;
   }
 `
 

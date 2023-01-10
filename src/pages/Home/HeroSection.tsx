@@ -5,14 +5,14 @@ import {Button} from '../../components/Button'
 function HeroSection() {
   return (
     <Wrapper>
-      <LeftContent className="mobile__mt-32">
-        <Title className="font-38 mobile__font-28 font-600 basic-animate">
+      <LeftContent className="mobile-mt-32">
+        <Title className="font-38 mobile-font-28 font-600 basic-animate">
           Software Engineer and also a Design Enthusiast based in Jakarta.
           Available for freelance and collaborations.
         </Title>
         <Text
           size="lg"
-          className="mt-32 mobile__mt-22 mobile__font-18 font-20 font-500 basic-animate-1"
+          className="mt-32 mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
         >
           Hi 👋, I'm a Software Engineer - Front-end with 2 years of proven
           experience in helping to create and maintain a better code base for
@@ -24,7 +24,7 @@ function HeroSection() {
           variant="default"
           size="lg"
           mobileSize="md"
-          className="mt-102 mobile__mt-32 basic-animate-2"
+          className="mt-102 mobile-mt-32 basic-animate-2"
         >
           Get started to my open-sources
         </Button>
@@ -37,25 +37,25 @@ function HeroSection() {
           Learn more about Ommi Putera
         </Button>
       </LeftContent>
-      <RightContent className="mt-32 mobile__mt-102">
+      <RightContent className="mt-32 mobile-mt-102">
         <img
-          className="profileImg basic-animate-2"
+          className="profile__image basic-animate-2"
           src="/assets/image/profile.jpeg"
           alt=""
         />
         <Text
           size="lg"
-          className="mt-32 mobile__mt-22 mobile__font-16 font-20 font-500 basic-animate-1"
+          className="mt-32 mobile-mt-22 mobile-font-16 font-20 font-500 basic-animate-1"
         >
-          Jakarta, Indonesia. <div className="line" /> Ommi Putera karunia
+          Jakarta, Indonesia. <div className="line__" /> Ommi Putera karunia
           <br />
-          omiputrakarunia@gmail.com <div className="line" /> +6289508182045
+          omiputrakarunia@gmail.com <div className="line__" /> +6289508182045
         </Text>
         <Button
           variant="default"
           size="lg"
           mobileSize="md"
-          className="mt-32 mobile__mt-32 basic-animate-3"
+          className="mt-32 mobile-mt-32 basic-animate-3"
         >
           Send me email?
         </Button>
@@ -99,13 +99,13 @@ const RightContent = styled.div`
   text-align: center;
   align-items: center;
 
-  .profileImg {
+  .profile__image {
     width: 180px;
     height: 180px;
     border-radius: 50%;
   }
 
-  .line {
+  .line__ {
     display: inline-block;
     height: 25px;
     margin: 0 6px -6.5px 6px;

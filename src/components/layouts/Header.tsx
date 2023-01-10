@@ -1,40 +1,43 @@
 import {ActionIcon, Container} from '@mantine/core'
-import {IconMenu2, IconMoonStars, IconSunHigh, IconX} from '@tabler/icons'
+import {IconMenu2, IconX} from '@tabler/icons'
 import {Link, useLocation} from 'react-router-dom'
 import styled from 'styled-components'
 import {RouteArray} from '.'
 import {BUTTON_MODE_SIZE, HEADER_SIZE, ICON_SIZE} from '../../defaultVariable'
 import useMode from '../../hooks/useMode'
 import {useNavigation} from '../../store/rootStore'
-import Info from './Info'
+import {getIconMode} from '../../utils/getIcon'
 import {LeftContent, CenterContent, RightContent, growDown} from './styled'
 
 function Header() {
+  return (
+    <WrapperHeader>
+      <Container size={HEADER_SIZE}>
+        <LeftContent className="align-center">
+          <OmmiLogo />
+        </LeftContent>
+        <CenterContent>
+          <DesktopNavigation className="desktop__navigation">
+            <RouteArray />
+          </DesktopNavigation>
+        </CenterContent>
+        <RightContent>
+          <ModeButton />
+          <NavButton />
+        </RightContent>
+      </Container>
+    </WrapperHeader>
+  )
+}
+
+function OmmiLogo() {
   const {pathname} = useLocation()
   return (
-    <>
-      <Info />
-      <WrapperHeader>
-        <Container size={HEADER_SIZE}>
-          <LeftContent className="align-center">
-            <Logo>
-              <Link to="/" className={pathname === '/' ? 'match' : ''}>
-                <div>ommiputera.com</div>
-              </Link>
-            </Logo>
-          </LeftContent>
-          <CenterContent>
-            <DesktopNav className="desktop__nav">
-              <RouteArray />
-            </DesktopNav>
-          </CenterContent>
-          <RightContent>
-            <ModeButton />
-            <NavButton />
-          </RightContent>
-        </Container>
-      </WrapperHeader>
-    </>
+    <Logo>
+      <Link to="/" className={pathname === '/' ? 'match__home' : ''}>
+        <div>ommiputera.com</div>
+      </Link>
+    </Logo>
   )
 }
 
@@ -50,16 +53,6 @@ function ModeButton() {
       {getIconMode(mode)}
     </ActionIcon>
   )
-}
-
-function getIconMode(mode: string) {
-  switch (mode) {
-    case 'dark':
-      return <IconSunHigh className="sun__icon" size={ICON_SIZE} />
-    case 'light':
-      return <IconMoonStars className="moon__icon" size={ICON_SIZE} />
-    default:
-  }
 }
 
 function NavButton() {
@@ -117,7 +110,7 @@ const WrapperHeader = styled.header`
     }
   }
 
-  .desktop__nav {
+  .desktop__navigation {
     display: none;
   }
 
@@ -128,7 +121,7 @@ const WrapperHeader = styled.header`
     .nav__btn {
       display: none;
     }
-    .desktop__nav {
+    .desktop__navigation {
       display: block;
     }
   }
@@ -150,7 +143,7 @@ const Logo = styled.nav`
       mode === 'dark' ? colors.dark[4] : colors.dark[5]};
 
     :hover,
-    &.match {
+    &.match__home {
       color: ${({theme: {colors, mode}}) =>
         mode === 'dark' ? colors.dark[0] : colors.dark[9]};
     }
@@ -160,7 +153,7 @@ const Logo = styled.nav`
     }
   }
 `
-const DesktopNav = styled.nav`
+const DesktopNavigation = styled.nav`
   ul {
     display: flex;
     list-style: none;
@@ -184,7 +177,7 @@ const DesktopNav = styled.nav`
         color: ${({theme: {colors, mode}}) =>
           mode === 'dark' ? colors.dark[0] : colors.dark[9]};
       }
-      &.match {
+      &.match__path {
         color: ${({theme: {colors, mode}}) =>
           mode === 'dark' ? colors.dark[0] : colors.dark[9]};
         div {

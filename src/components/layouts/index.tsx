@@ -1,14 +1,16 @@
 import {Container} from '@mantine/core'
-import {IconArrowBack} from '@tabler/icons'
 import clsx from 'clsx'
 import {Link, Outlet, useLocation} from 'react-router-dom'
-import {CONTAINER_SIZE, ICON_SIZE} from '../../defaultVariable'
+import styled from 'styled-components'
+import {CONTAINER_SIZE} from '../../defaultVariable'
 import useMode from '../../hooks/useMode'
 import {ROUTES} from '../../routes'
 import {useNavigation} from '../../store/rootStore'
+import {getIcon} from '../../utils/getIcon'
 import Footer from './Footer'
 import Header from './Header'
-import {WrapperDropdownNav, WrapperLayout} from './styled'
+import Info from './Info'
+import {growDown} from './styled'
 
 interface IRouteArray {
   handleClick?: () => void
@@ -16,49 +18,61 @@ interface IRouteArray {
 }
 
 function DefaultLayout() {
-  const {mode} = useMode()
-  const {isOpen} = useNavigation()
   return (
     <WrapperLayout>
-      {mode === 'dark' && (
-        <img
-          className="bg"
-          src="/assets/image/darkHeroBg.jpg"
-          width="100%"
-          alt=""
-        />
-      )}
+      <BackgroundLayout />
+      <Info />
+
       <Header />
-      <DropdownNav />
+      <MobileNavigation />
       <Container size={CONTAINER_SIZE}>
-        <div className={clsx('children ', isOpen ? 'nav__open' : '')}>
-          <Outlet />
-        </div>
+        <Pages />
       </Container>
       <Footer />
     </WrapperLayout>
   )
 }
 
-function DropdownNav() {
+function Pages() {
+  const {isOpen} = useNavigation()
+  return (
+    <div className={clsx('children__ ', Boolean(isOpen) ? 'nav__open' : '')}>
+      <Outlet />
+    </div>
+  )
+}
+
+function BackgroundLayout() {
+  const {mode} = useMode()
+  if (!Boolean(mode)) return <></>
+  if (Boolean(mode === 'dark')) {
+    return (
+      <img
+        className="background__"
+        src="/assets/image/darkHeroBg.jpg"
+        width="100%"
+        alt=""
+      />
+    )
+  } else {
+    return <></>
+  }
+}
+
+function MobileNavigation() {
   const {isOpen, setIsOpen} = useNavigation()
   const handleClick = () => {
     setIsOpen(!isOpen)
   }
-
   return (
-    <WrapperDropdownNav className={`${isOpen ? 'open' : 'closed'}`}>
+    <WrapperMobileNavigation
+      className={`${
+        isOpen ? 'open__mobile__navigation' : 'close__mobile__navigation'
+      }`}
+    >
       <RouteArray handleClick={handleClick} withCloseBtn={true} />
-    </WrapperDropdownNav>
+    </WrapperMobileNavigation>
   )
-}
-
-function getIcon(type: string) {
-  switch (type) {
-    case 'x':
-      return <IconArrowBack className="close__icon" size={ICON_SIZE} />
-    default:
-  }
 }
 
 function RouteArray({handleClick, withCloseBtn}: IRouteArray) {
@@ -72,7 +86,7 @@ function RouteArray({handleClick, withCloseBtn}: IRouteArray) {
           onClick={handleClick}
           onMouseOver={handlePreload}
         >
-          <li className={pathname === path ? 'match' : ''}>
+          <li className={Boolean(pathname === path) ? 'match__path' : ''}>
             {label}
             <div />
           </li>
@@ -89,5 +103,91 @@ function RouteArray({handleClick, withCloseBtn}: IRouteArray) {
     </ul>
   )
 }
+
+export const WrapperLayout = styled.div`
+  .children__ {
+    min-height: 100vh;
+  }
+  .nav__open {
+    filter: blur(2px);
+    overflow: hidden;
+    display: none;
+  }
+
+  .background__ {
+    height: 100vh;
+    z-index: -99;
+    position: absolute;
+  }
+`
+
+export const WrapperMobileNavigation = styled.nav`
+  width: 100%;
+  height: max-content;
+  max-height: 100vh;
+  position: absolute;
+  z-index: 9999;
+
+  &.open__mobile__navigation {
+    display: block;
+  }
+  &.close__mobile__navigation {
+    display: none;
+  }
+
+  ul {
+    width: 100%;
+    overflow: scroll;
+    animation: ${growDown} 400ms linear;
+    transform-origin: top center;
+
+    li {
+      padding: 32px 16px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      color: ${({theme: {colors, mode}}) =>
+        mode === 'dark' ? colors.dark[4] : colors.dark[4]};
+      border-bottom: 1px solid
+        ${({theme: {colors, mode}}) =>
+          mode === 'dark' ? colors.dark[8] : colors.dark[2]};
+
+      background-color: ${({theme: {colors, mode}}) =>
+        mode === 'dark' ? colors.dark[9] : colors.dark[1]};
+      &:active {
+        background-color: ${({theme: {colors, mode}}) =>
+          mode === 'dark' ? colors.dark[8] : colors.dark[2]};
+      }
+
+      &.match__path {
+        color: ${({theme: {colors, mode}}) =>
+          mode === 'dark' ? colors.dark[0] : colors.dark[9]};
+      }
+    }
+  }
+  .close__btn {
+    padding: 32px 0;
+    color: ${({theme: {colors, mode}}) =>
+      mode === 'dark' ? colors.dark[2] : colors.dark[8]};
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    div {
+      border: 1px solid
+        ${({theme: {colors, mode}}) =>
+          mode === 'dark' ? colors.dark[2] : colors.dark[8]};
+      border-radius: 50px;
+      position: absolute;
+      content: '';
+      width: 70%;
+      height: 60%;
+      background: none;
+    }
+  }
+`
 
 export {DefaultLayout, RouteArray}

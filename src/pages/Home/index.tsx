@@ -1,33 +1,19 @@
-import {Helmet} from 'react-helmet'
 import styled from 'styled-components'
-import useMode from '../../hooks/useMode'
+import HomeHelmet from './HomeHelmet'
 import HeroSection from './HeroSection'
 import ProfileSection from './ProfileSection'
 
 function Home() {
   return (
-    <Wrapper>
+    <HomeWrapper>
       <HomeHelmet />
       <HeroSection />
       <ProfileSection />
-    </Wrapper>
+    </HomeWrapper>
   )
 }
 
-function HomeHelmet() {
-  const {mode} = useMode()
-  return (
-    <Helmet>
-      <title>Ommi Putera - Software Engineer</title>
-      <meta
-        name="theme-color"
-        content={mode === 'light' ? '#fff' : '#18181b'}
-      />
-    </Helmet>
-  )
-}
-
-const Wrapper = styled.div`
+const HomeWrapper = styled.div`
   display: block;
 
   > div {
