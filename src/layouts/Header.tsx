@@ -173,7 +173,7 @@ const DesktopNavigation = styled.nav`
 
     li {
       margin: 10px 18px 0 18px;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
       letter-spacing: -0.1px;
       text-decoration: none;
