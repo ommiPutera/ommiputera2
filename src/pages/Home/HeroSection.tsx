@@ -37,7 +37,7 @@ function HeroSection() {
           Learn more about Ommi Putera
         </Button>
       </LeftContent>
-      <RightContent className="mt-32 mobile-mt-102">
+      <RightContent className="mobile-mt-102">
         <img
           className="profile__image basic-animate-2"
           src="/assets/image/profile.jpeg"

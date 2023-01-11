@@ -1,5 +1,6 @@
 import {Container} from '@mantine/core'
 import clsx from 'clsx'
+import {useMediaQuery} from '@mantine/hooks'
 import {Link, Outlet, useLocation} from 'react-router-dom'
 import styled from 'styled-components'
 import {CONTAINER_SIZE} from '../defaultVariable'
@@ -25,7 +26,7 @@ function DefaultLayout() {
 
       <Header />
       <MobileNavigation />
-      <Container size={CONTAINER_SIZE}>
+      <Container size={CONTAINER_SIZE} className="container">
         <Pages />
       </Container>
       <Footer />
@@ -70,8 +71,12 @@ function BackgroundLayout() {
 
 function MobileNavigation() {
   const {isOpen, setIsOpen} = useNavigation()
+  const isDesktop = useMediaQuery('(min-width: 1100px)')
   const handleClick = () => {
     setIsOpen(!isOpen)
+  }
+  if (isDesktop && isOpen) {
+    return <RouteArray handleClick={handleClick} withCloseBtn={true} />
   }
   return (
     <WrapperMobileNavigation
@@ -114,6 +119,10 @@ function RouteArray({handleClick, withCloseBtn}: IRouteArray) {
 }
 
 export const WrapperLayout = styled.div`
+  > .container {
+    padding: 0;
+  }
+
   .children__ {
     min-height: 100vh;
   }
@@ -127,6 +136,13 @@ export const WrapperLayout = styled.div`
     height: 100vh;
     z-index: -99;
     position: absolute;
+    object-fit: cover;
+  }
+
+  @media (max-width: 1100px) {
+    > .container {
+      padding: 0 20px;
+    }
   }
 `
 

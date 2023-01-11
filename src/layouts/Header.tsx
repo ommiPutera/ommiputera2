@@ -8,16 +8,16 @@ import useMode from '../hooks/useMode'
 import {useNavigation} from '../store/rootStore'
 import {getIconMode} from '../utils/getIcon'
 import {
-  LeftContent,
   CenterContent,
-  RightContent,
   growDown,
+  LeftContent,
+  RightContent,
 } from './sharedStyled'
 
 function Header() {
   return (
     <WrapperHeader>
-      <Container size={HEADER_SIZE}>
+      <Container size={HEADER_SIZE} className="container">
         <LeftContent className="align-center">
           <OmmiLogo />
         </LeftContent>
@@ -85,6 +85,10 @@ const WrapperHeader = styled.header`
     display: flex;
   }
 
+  > .container {
+    padding: 0 20px;
+  }
+
   .btn {
     &:hover,
     &:active {
@@ -120,8 +124,12 @@ const WrapperHeader = styled.header`
   }
 
   @media (min-width: 1400px) {
-    padding: 8px 0;
+    padding: 12px 0;
     margin-bottom: 102px;
+
+    > .container {
+      padding: 0;
+    }
 
     .nav__btn {
       display: none;
