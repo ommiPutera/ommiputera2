@@ -1,6 +1,6 @@
 {
   "name": "ommiputera.com",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "keywords": [],
   "author": "Ommi Putera",
   "dependencies": {
@@ -33,6 +33,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "prepare": "husky install || true",
     "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|gql|graphql|mdx|vue)\""
   },
   "eslintConfig": {
@@ -69,6 +70,7 @@
     "@types/styled-components": "^5.1.26",
     "babel-loader": "^9.1.0",
     "css-loader": "^6.7.3",
+    "husky": "^8.0.3",
     "prettier": "2.7.1",
     "ts-loader": "^9.4.2"
   }
