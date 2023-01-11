@@ -5,7 +5,7 @@ import {HEADER_SIZE} from '../defaultVariable'
 function Info() {
   return (
     <WrapperInfo>
-      <Container size={HEADER_SIZE} className="container">
+      <Container size={HEADER_SIZE} className="container basic-animate-3">
         <h5>NOTES</h5>
         <Text size="sm" className="font-500">
           This website is under development. 💪

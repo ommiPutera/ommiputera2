@@ -48,7 +48,7 @@ function BackgroundLayout() {
   if (Boolean(mode === 'dark')) {
     return (
       <img
-        className="background__"
+        className="background__ basic-animate-3"
         src="/assets/image/darkHeroBg.jpg"
         width="100%"
         alt=""
@@ -57,7 +57,7 @@ function BackgroundLayout() {
   } else if (Boolean(mode === 'light')) {
     return (
       <img
-        className="background__"
+        className="background__ basic-animate-3"
         src="/assets/image/lightHeroBg.jpg"
         width="100%"
         alt=""
