@@ -7,7 +7,12 @@ import {BUTTON_MODE_SIZE, HEADER_SIZE, ICON_SIZE} from '../../defaultVariable'
 import useMode from '../../hooks/useMode'
 import {useNavigation} from '../../store/rootStore'
 import {getIconMode} from '../../utils/getIcon'
-import {LeftContent, CenterContent, RightContent, growDown} from './styled'
+import {
+  LeftContent,
+  CenterContent,
+  RightContent,
+  growDown,
+} from './sharedStyled'
 
 function Header() {
   return (

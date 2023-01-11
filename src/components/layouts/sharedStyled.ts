@@ -17,12 +17,14 @@ export const LeftContent = styled.div`
   display: flex;
   justify-content: start;
 `
+
 export const CenterContent = styled.div`
   width: 50%;
   text-align: center;
   display: flex;
   justify-content: center;
 `
+
 export const RightContent = styled.div`
   width: 25%;
   text-align: right;

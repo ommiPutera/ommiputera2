@@ -10,7 +10,7 @@ import {getIcon} from '../../utils/getIcon'
 import Footer from './Footer'
 import Header from './Header'
 import Info from './Info'
-import {growDown} from './styled'
+import {growDown} from './sharedStyled'
 
 interface IRouteArray {
   handleClick?: () => void
