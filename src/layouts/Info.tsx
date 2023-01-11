@@ -1,6 +1,6 @@
 import {Container, Text} from '@mantine/core'
 import styled from 'styled-components'
-import {HEADER_SIZE} from '../../defaultVariable'
+import {HEADER_SIZE} from '../defaultVariable'
 
 function Info() {
   return (

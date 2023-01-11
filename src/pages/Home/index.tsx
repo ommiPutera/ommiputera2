@@ -1,14 +1,12 @@
 import styled from 'styled-components'
 import HomeHelmet from './HomeHelmet'
 import HeroSection from './HeroSection'
-import ProfileSection from './ProfileSection'
 
 function Home() {
   return (
     <HomeWrapper>
       <HomeHelmet />
       <HeroSection />
-      <ProfileSection />
     </HomeWrapper>
   )
 }

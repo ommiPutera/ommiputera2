@@ -1,8 +1,8 @@
 import {Container} from '@mantine/core'
 import clsx from 'clsx'
 import styled from 'styled-components'
-import {CONTAINER_SIZE} from '../../defaultVariable'
-import {useNavigation} from '../../store/rootStore'
+import {CONTAINER_SIZE} from '../defaultVariable'
+import {useNavigation} from '../store/rootStore'
 import {LeftContent, RightContent} from './sharedStyled'
 
 function Footer() {

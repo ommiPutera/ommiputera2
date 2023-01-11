@@ -3,10 +3,10 @@ import {IconMenu2, IconX} from '@tabler/icons'
 import {Link, useLocation} from 'react-router-dom'
 import styled from 'styled-components'
 import {RouteArray} from '.'
-import {BUTTON_MODE_SIZE, HEADER_SIZE, ICON_SIZE} from '../../defaultVariable'
-import useMode from '../../hooks/useMode'
-import {useNavigation} from '../../store/rootStore'
-import {getIconMode} from '../../utils/getIcon'
+import {BUTTON_MODE_SIZE, HEADER_SIZE, ICON_SIZE} from '../defaultVariable'
+import useMode from '../hooks/useMode'
+import {useNavigation} from '../store/rootStore'
+import {getIconMode} from '../utils/getIcon'
 import {
   LeftContent,
   CenterContent,
@@ -162,12 +162,12 @@ const DesktopNavigation = styled.nav`
   ul {
     display: flex;
     list-style: none;
-    margin-left: 18px;
 
     li {
       margin: 10px 18px 0 18px;
-      font-size: 15.5px;
+      font-size: 16px;
       font-weight: 600;
+      letter-spacing: -0.1px;
       text-decoration: none;
       color: ${({theme: {colors, mode}}) =>
         mode === 'dark' ? colors.dark[4] : colors.dark[5]};

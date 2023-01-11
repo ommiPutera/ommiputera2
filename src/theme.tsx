@@ -43,9 +43,9 @@ const CustomFonts = () => {
 const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${({theme: {colors, mode}}) =>
-      mode === 'dark' ? colors.dark[9] : colors.dark[1]} !important;
+      mode === 'dark' ? colors.dark[9] : colors.dark[0]} !important;
     color: ${({theme: {colors, mode}}) =>
-      mode === 'light' ? colors.dark[9] : colors.dark[1]} !important;
+      mode === 'light' ? colors.dark[9] : colors.dark[0]} !important;
   }
 `
 
@@ -99,7 +99,7 @@ const colors = {
     '#ff0000',
   ],
   dark: [
-    '#fafafa',
+    '#FFFFFF',
     '#f4f4f5',
     '#e4e4e7',
     '#d4d4d8',
@@ -108,7 +108,7 @@ const colors = {
     '#2e2e42',
     '#232333',
     '#19191e',
-    '#0f0f15',
+    '#161513',
   ],
 }
 
@@ -173,8 +173,8 @@ const mantineTheme = {
       h6: {fontSize: 16, lineHeight: 1.5, fontWeight: 500},
     },
   },
-  white: '#fff',
-  black: '#000',
+  white: '#FFFFFF',
+  black: '#161513',
   lineHeight: 1.55,
   primaryColor: 'primary',
   activeStyles: {transform: 'translateY(0)'},

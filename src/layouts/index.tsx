@@ -2,11 +2,11 @@ import {Container} from '@mantine/core'
 import clsx from 'clsx'
 import {Link, Outlet, useLocation} from 'react-router-dom'
 import styled from 'styled-components'
-import {CONTAINER_SIZE} from '../../defaultVariable'
-import useMode from '../../hooks/useMode'
-import {ROUTES} from '../../routes'
-import {useNavigation} from '../../store/rootStore'
-import {getIcon} from '../../utils/getIcon'
+import {CONTAINER_SIZE} from '../defaultVariable'
+import useMode from '../hooks/useMode'
+import {ROUTES} from '../routes'
+import {useNavigation} from '../store/rootStore'
+import {getIcon} from '../utils/getIcon'
 import Footer from './Footer'
 import Header from './Header'
 import Info from './Info'
@@ -50,6 +50,15 @@ function BackgroundLayout() {
       <img
         className="background__"
         src="/assets/image/darkHeroBg.jpg"
+        width="100%"
+        alt=""
+      />
+    )
+  } else if (Boolean(mode === 'light')) {
+    return (
+      <img
+        className="background__"
+        src="/assets/image/lightHeroBg.jpg"
         width="100%"
         alt=""
       />

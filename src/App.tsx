@@ -1,6 +1,6 @@
 import {MantineProvider} from '@mantine/core'
 import {ThemeProvider} from 'styled-components'
-import {DefaultLayout} from './components/layouts'
+import {DefaultLayout} from './layouts'
 import useMode from './hooks/useMode'
 import {CustomFonts, GlobalStyle, mantineTheme, styledTheme} from './theme'
 import {Routes, Route} from 'react-router-dom'
