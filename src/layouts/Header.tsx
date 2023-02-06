@@ -79,7 +79,7 @@ function NavButton() {
 }
 
 const WrapperHeader = styled.header`
-  padding: 12px 0;
+  padding: 18px 0;
 
   > div {
     display: flex;
@@ -124,7 +124,7 @@ const WrapperHeader = styled.header`
   }
 
   @media (min-width: 1400px) {
-    padding: 12px 0;
+    padding: 32px 0;
     margin-bottom: 102px;
 
     > .container {

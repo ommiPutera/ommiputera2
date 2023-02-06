@@ -10,7 +10,6 @@ import {useNavigation} from '../store/rootStore'
 import {getIcon} from '../utils/getIcon'
 import Footer from './Footer'
 import Header from './Header'
-import Info from './Info'
 import {growDown} from './sharedStyled'
 
 interface IRouteArray {
@@ -22,8 +21,6 @@ function DefaultLayout() {
   return (
     <WrapperLayout>
       <BackgroundLayout />
-      <Info />
-
       <Header />
       <MobileNavigation />
       <Container size={CONTAINER_SIZE} className="container">
@@ -49,19 +46,21 @@ function BackgroundLayout() {
   if (Boolean(mode === 'dark')) {
     return (
       <img
-        className="background__ basic-animate-3"
+        className="background__"
         src="/assets/image/darkHeroBg.jpg"
         width="100%"
         alt=""
+        style={{opacity: '18%', background: '#161513'}}
       />
     )
   } else if (Boolean(mode === 'light')) {
     return (
       <img
-        className="background__ basic-animate-3"
+        className="background__"
         src="/assets/image/lightHeroBg.jpg"
         width="100%"
         alt=""
+        style={{opacity: '32%'}}
       />
     )
   } else {

@@ -1,6 +1,6 @@
 import React from 'react'
-import Loadable from 'react-loadable'
 import {About, Dashboard} from '../App'
+import Home from '../pages/Home'
 interface IRouteObject {
   path: string
   label: string
@@ -10,17 +10,7 @@ interface IRouteObject {
   handlePreload?: () => void
 }
 
-const Home = Loadable({
-  loader: () => import('../pages/Home'),
-  loading: () => <></>,
-})
-
 export const ROUTES: IRouteObject[] = [
-  {
-    label: 'Home',
-    path: '/',
-    element: <Home />,
-  },
   {
     label: 'About',
     path: '/about',
