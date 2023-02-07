@@ -100,8 +100,8 @@ const RightContent = styled.div`
   align-items: center;
 
   .profile__image {
-    width: 230px;
-    height: 230px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
   }
 

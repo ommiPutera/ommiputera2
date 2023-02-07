@@ -123,8 +123,8 @@ const WrapperHeader = styled.header`
     display: none;
   }
 
-  @media (min-width: 1400px) {
-    padding: 32px 0;
+  @media (min-width: 1100px) {
+    padding: 38px 0;
     margin-bottom: 102px;
 
     > .container {
@@ -161,7 +161,7 @@ const Logo = styled.nav`
         mode === 'dark' ? colors.dark[0] : colors.dark[9]};
     }
 
-    @media (min-width: 1400px) {
+    @media (min-width: 1100px) {
       font-size: 23px;
     }
   }

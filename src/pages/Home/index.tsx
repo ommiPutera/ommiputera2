@@ -1,15 +1,31 @@
 import styled from 'styled-components'
-import HomeHelmet from './HomeHelmet'
 import HeroSection from './HeroSection'
 import ServicesSection from './ServicesSection'
+import useMode from '../../hooks/useMode'
+import {Helmet} from 'react-helmet'
+import ProjectsSection from './ProjectsSection'
 
 function Home() {
   return (
     <HomeWrapper>
-      <HomeHelmet />
+      <PageHelmet />
       <HeroSection />
       <ServicesSection />
+      <ProjectsSection />
     </HomeWrapper>
+  )
+}
+
+function PageHelmet() {
+  const {mode} = useMode()
+  return (
+    <Helmet>
+      <title>Ommi Putera - Software Engineer</title>
+      <meta
+        name="theme-color"
+        content={mode === 'light' ? '#fff' : '#18181b'}
+      />
+    </Helmet>
   )
 }
 
@@ -18,7 +34,13 @@ const HomeWrapper = styled.div`
   min-height: 100vh;
 
   > div {
-    margin-bottom: 142px;
+    margin-bottom: 132px;
+  }
+
+  @media (min-width: 1100px) {
+    > div {
+      margin-bottom: 212px;
+    }
   }
 `
 

@@ -140,7 +140,7 @@ const mantineTheme = {
         sizes: {
           xs: 620,
           sm: 920,
-          md: 1160,
+          md: 1100,
           lg: 1320,
           xl: 1530,
         },
