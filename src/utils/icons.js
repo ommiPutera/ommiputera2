@@ -18,3 +18,49 @@ export const Icon1 = ({ size = 48 }) => {
     </svg>
   )
 }
+
+export const Icon2 = ({ size = 60 }) => {
+  return (
+    <svg
+      width={size}
+      height={size + 1}
+      viewBox={`0 0 ${size} ${size + 1}`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_847_1042)">
+        <path d="M4.6875 50.8123H21.5625C23.973 50.8123 26.3293 50.0975 28.3335 48.7583C30.3377 47.4191 31.8998 45.5157 32.8223 43.2887C33.7447 41.0617 33.9861 38.6112 33.5158 36.2471C33.0456 33.883 31.8848 31.7113 30.1804 30.0069C28.4759 28.3024 26.3043 27.1417 23.9402 26.6714C21.576 26.2012 19.1255 26.4425 16.8985 27.365C14.6716 28.2874 12.7681 29.8495 11.429 31.8537C10.0898 33.858 9.375 36.2143 9.375 38.6248C9.375 47.0623 4.6875 50.8123 4.6875 50.8123Z" stroke="currentColor" stroke-width="3.75" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M26.3457 27.4121C30.8443 21.3494 42.2895 7.45984 52.7278 7.45984C52.7278 17.898 38.8385 29.343 32.7757 33.8417" stroke="currentColor" stroke-width="3.75" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M31.1631 21.4325C34.3453 23.2149 36.9728 25.8423 38.7552 29.0246" stroke="currentColor" stroke-width="3.75" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+      <defs>
+        <clipPath id="clip0_847_1042">
+          <rect width="60" height="60" fill="currentColor" transform="translate(0 0.187256)" />
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}
+
+export const Icon3 = ({ size = 61 }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox={`0 0 ${size} ${size}`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_847_1048)">
+        <path d="M15.9937 20.8123L4.74365 30.1873L15.9937 39.5623" stroke="currentColor" stroke-width="3.75" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M45.9937 20.8123L57.2437 30.1873L45.9937 39.5623" stroke="currentColor" stroke-width="3.75" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M38.4937 9.56226L23.4937 50.8123" stroke="currentColor" stroke-width="3.75" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+      <defs>
+        <clipPath id="clip0_847_1048">
+          <rect width="60" height="60" fill="currentColor" transform="translate(0.993652 0.187256)" />
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}

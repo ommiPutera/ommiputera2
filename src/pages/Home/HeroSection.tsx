@@ -5,7 +5,7 @@ import {Button} from '../../components/Button'
 function HeroSection() {
   return (
     <Wrapper>
-      <LeftContent className="mobile-mt-32">
+      <LeftContent className="mobile-mt-102">
         <Title className="font-38 mobile-font-28 font-600 basic-animate">
           Software Engineer and also a Design Enthusiast based in Jakarta.
           Available for freelance and collaborations.
@@ -76,6 +76,7 @@ const Wrapper = styled.div`
 `
 
 const LeftContent = styled.div`
+  order: 2;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -83,6 +84,7 @@ const LeftContent = styled.div`
   text-align: center;
 
   @media (min-width: 1000px) {
+    order: 1;
     width: 50%;
     text-align: left;
     align-items: flex-start;
@@ -90,6 +92,7 @@ const LeftContent = styled.div`
 `
 
 const RightContent = styled.div`
+  order: 1;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -112,6 +115,7 @@ const RightContent = styled.div`
   }
 
   @media (min-width: 1000px) {
+    order: 2;
     width: 50%;
     text-align: right;
     align-items: flex-end;

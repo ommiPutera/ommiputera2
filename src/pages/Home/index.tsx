@@ -18,7 +18,7 @@ const HomeWrapper = styled.div`
   min-height: 100vh;
 
   > div {
-    margin-bottom: 134px;
+    margin-bottom: 142px;
   }
 `
 

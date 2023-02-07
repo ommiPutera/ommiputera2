@@ -148,6 +148,9 @@ a {
 .text-align-left {
   text-align: left;
 }
+.text-align-center {
+  text-align: center;
+}
 
 .basic-animate {
   animation: my-awesome-beboop 1s, pause-between-iterations 0.4s linear;
