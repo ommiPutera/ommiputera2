@@ -119,7 +119,7 @@ function RouteArray({handleClick, withCloseBtn}: IRouteArray) {
 
 export const WrapperLayout = styled.div`
   > .container {
-    padding: 0;
+    padding: 0 15px;
   }
 
   .children__ {
@@ -138,7 +138,7 @@ export const WrapperLayout = styled.div`
     object-fit: cover;
   }
 
-  @media (max-width: 1100px) {
+  @media (min-width: 1100px) {
     > .container {
       padding: 0 20px;
     }

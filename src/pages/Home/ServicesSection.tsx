@@ -59,7 +59,7 @@ const Contents = styled.div`
     flex-direction: row;
     justify-content: space-between;
     margin-top: 102px;
-    gap: 86;
+    gap: 86px;
   }
 `
 

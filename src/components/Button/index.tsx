@@ -68,6 +68,7 @@ const WrapperButton = styled.div`
     }
   }
   .variantOutline {
+    transition: border 0.4s ease-in;
     border: 2px solid
       ${({theme: {colors, mode}}) =>
         mode === 'dark' ? colors.dark[0] : colors.dark[9]};
@@ -80,7 +81,7 @@ const WrapperButton = styled.div`
           mode === 'dark' ? colors.dark[9] : colors.dark[1]};
       background: ${({theme: {colors, mode}}) =>
         mode === 'dark' ? colors.dark[9] : colors.dark[1]};
-      transition: border 0.4s ease;
+      transition: border 0.4s ease-out;
     }
   }
 `
