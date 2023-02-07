@@ -4,6 +4,7 @@ import ServicesSection from './ServicesSection'
 import useMode from '../../hooks/useMode'
 import {Helmet} from 'react-helmet'
 import ProjectsSection from './ProjectsSection'
+import EmailSection from './EmailSection'
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <HeroSection />
       <ServicesSection />
       <ProjectsSection />
+      <EmailSection />
     </HomeWrapper>
   )
 }

@@ -106,8 +106,8 @@ const Project = styled.div<IProject>`
     width: 100%;
     flex-direction: row;
     gap: 102px;
-    margin-bottom: 102px;
     padding: 0 32px;
+    margin: 0 0 102px 0;
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
     transition: border 0.4s ease;
