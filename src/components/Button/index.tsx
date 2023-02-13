@@ -37,14 +37,14 @@ const WrapperButton = styled.div`
 
   .sizeLg {
     .mantine-Button-label {
-      font-size: 17px;
+      font-size: 18px;
     }
   }
 
   @media (max-width: 768px) {
     .mobileSizeMd {
       .mantine-Button-label {
-        font-size: 14px;
+        font-size: 16px;
       }
     }
   }

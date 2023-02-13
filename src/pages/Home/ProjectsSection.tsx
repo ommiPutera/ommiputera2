@@ -11,7 +11,7 @@ function ProjectsSection() {
   return (
     <Wrapper>
       <Title className="font-38 mobile-font-28 font-600 basic-animate-1">
-        My past projects.
+        Some of my projects.
       </Title>
       <Contents>
         <ProjectItem layout="1" />
@@ -38,14 +38,14 @@ function ProjectItem({layout}: IProject) {
           <Text
             style={{opacity: '60%'}}
             size="lg"
-            className="mobile-mt-22 mobile-font-16 font-18 font-500 basic-animate-1"
+            className="mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
           >
             Aut cupiditate expedita dolor eveniet a autem rerum ut dicta.
             Exercitationem eum suscipit quo. Est fugiat ducimus aut saepe.
           </Text>
           <Text
             size="xl"
-            className="mt-32 mobile-mt-22 mobile-font-22 font-22 font-500 basic-animate-2"
+            className="mt-32 mobile-mt-22 mobile-font-22 font-24 font-500 basic-animate-2"
           >
             Lorem ipsum dolor sit amet consectetur. Facilisis quam turpis at
             cras faucibus a
@@ -54,7 +54,7 @@ function ProjectItem({layout}: IProject) {
         <Text
           style={{opacity: '60%'}}
           size="lg"
-          className="mobile-mt-22 mobile-font-16 font-18 font-500 basic-animate-1"
+          className="mobile-mt-22 mobile-font-16 font-20 font-500 basic-animate-1"
         >
           Client site rendering & React JS.
         </Text>
@@ -97,7 +97,8 @@ const Project = styled.div<IProject>`
 
   .preview__ {
     width: 100%;
-    height: 60vh;
+    height: 100%;
+    max-height: 400px;
     object-fit: cover;
     border-radius: 14px;
   }
@@ -136,8 +137,8 @@ const Project = styled.div<IProject>`
 
     .preview__ {
       width: 100%;
-      height: 70vh;
-      max-height: 700px;
+      height: 100%;
+      max-height: 600px;
       object-fit: cover;
       border-radius: 20px;
     }

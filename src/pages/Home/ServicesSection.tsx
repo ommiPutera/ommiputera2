@@ -28,17 +28,17 @@ function ContentItem({
 }) {
   return (
     <Content className={clsx(animate, '')}>
-      {Icon}
+      <div className="icon__">{Icon}</div>
       <Text
         size="xl"
-        className="mt-32 mobile-mt-22 mobile-font-22 font-22 font-500"
+        className="mt-32 mobile-mt-22 mobile-font-22 font-24 font-500"
       >
         Lorem ipsum dolor sit Amet
       </Text>
       <Text
-        style={{opacity: '60%'}}
+        style={{opacity: '70%'}}
         size="lg"
-        className="mt-32 mobile-mt-22 mobile-font-16 font-18 font-500"
+        className="mt-32 mobile-mt-22 mobile-font-18 font-18 font-500"
       >
         Aut cupiditate expedita dolor eveniet a autem rerum ut dicta.
         Exercitationem eum suscipit quo. Est fugiat ducimus aut saepe.
@@ -59,13 +59,20 @@ const Contents = styled.div`
     flex-direction: row;
     justify-content: space-between;
     margin-top: 102px;
-    gap: 86px;
+    gap: 66px;
   }
 `
 
 const Content = styled.div`
   width: 100%;
   text-align: center;
+
+  .icon__ {
+    height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 export default ServicesSection
