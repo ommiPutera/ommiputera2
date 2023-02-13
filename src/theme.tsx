@@ -100,8 +100,8 @@ const colors = {
   ],
   dark: [
     '#FFFFFF',
-    '#f4f4f5',
-    '#e4e4e7',
+    '#f6f6f6',
+    '#efefef',
     '#d4d4d8',
     '#a1a1aa',
     '#383851',

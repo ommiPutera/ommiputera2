@@ -14,6 +14,7 @@ function EpicTextarea({placeholder, minRows, maxRows, ...rest}: ITextarea) {
   return (
     <WrapperTextarea>
       <Textarea
+        radius="md"
         placeholder={placeholder}
         minRows={minRows}
         maxRows={maxRows}
@@ -33,8 +34,13 @@ const WrapperTextarea = styled.div`
     padding-bottom: 4px;
     color: ${({theme: {colors, mode}}) =>
       mode === 'dark' ? colors.dark[0] : colors.dark[9]};
-    background: ${({theme: {colors, mode}}) =>
-      mode === 'dark' ? colors.dark[7] : colors.dark[2]};
+    border: 2px solid ${({theme: {colors}}) => colors.dark[4]};
+    background: transparent;
+
+    :focus {
+      border-color: ${({theme: {colors, mode}}) =>
+        mode === 'dark' ? colors.dark[0] : colors.dark[9]};
+    }
   }
 `
 

@@ -13,7 +13,13 @@ interface IInput {
 function EpicInput({placeholder, type, multiline, ...rest}: IInput) {
   return (
     <WrapperInput>
-      <Input placeholder={placeholder} type={type} multiline {...rest} />
+      <Input
+        radius="md"
+        placeholder={placeholder}
+        type={type}
+        multiline
+        {...rest}
+      />
     </WrapperInput>
   )
 }
@@ -28,8 +34,13 @@ const WrapperInput = styled.div`
     padding-bottom: 4px;
     color: ${({theme: {colors, mode}}) =>
       mode === 'dark' ? colors.dark[0] : colors.dark[9]};
-    background: ${({theme: {colors, mode}}) =>
-      mode === 'dark' ? colors.dark[7] : colors.dark[2]};
+    border: 2px solid ${({theme: {colors}}) => colors.dark[4]};
+    background: transparent;
+
+    :focus {
+      border-color: ${({theme: {colors, mode}}) =>
+        mode === 'dark' ? colors.dark[0] : colors.dark[9]};
+    }
   }
 `
 

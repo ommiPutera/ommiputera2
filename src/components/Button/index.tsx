@@ -8,15 +8,27 @@ interface IButton {
   className?: string
   variant?: 'outline' | 'default'
   compact?: true
+  fullwidth?: boolean
   size?: 'sm' | 'md' | 'lg' | 'xl'
+  radius?: 'lg' | 'md' | 'xl'
   mobileSize?: 'sm' | 'md' | 'lg' | 'xl'
 }
 
-function EpicButton({children, className, mobileSize, ...rest}: IButton) {
+function EpicButton({
+  children,
+  className,
+  mobileSize,
+  radius = 'xl',
+  ...rest
+}: IButton) {
   const combineClass = {...rest, mobileSize}
   return (
     <WrapperButton className={className}>
-      <Button className={clsx(getClassProps(combineClass))} {...rest}>
+      <Button
+        radius={radius}
+        className={clsx(getClassProps(combineClass))}
+        {...rest}
+      >
         {children}
       </Button>
     </WrapperButton>
@@ -24,15 +36,20 @@ function EpicButton({children, className, mobileSize, ...rest}: IButton) {
 }
 
 const WrapperButton = styled.div`
+  width: 100%;
   .mantine-Button-root {
-    margin: 8px 0;
     padding: 0 32px 3px 32px;
     min-width: 190px;
     min-height: 60px;
-    border-radius: 100px;
   }
   .mantine-Button-label {
     font-weight: 500;
+  }
+
+  .fullwidth {
+    &.mantine-Button-root {
+      width: 100%;
+    }
   }
 
   .sizeLg {
