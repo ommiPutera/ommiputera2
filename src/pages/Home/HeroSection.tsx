@@ -23,6 +23,7 @@ function HeroSection() {
           variant="default"
           size="lg"
           mobileSize="md"
+          position="left mobile-center"
           className="mt-102 mobile-mt-32 basic-animate-2"
         >
           Some of my projects
@@ -31,7 +32,8 @@ function HeroSection() {
           variant="outline"
           size="lg"
           mobileSize="md"
-          className="basic-animate-3"
+          position="left mobile-center"
+          className="mt-12 mobile-mt-22 basic-animate-3"
         >
           Everything about me
         </Button>
@@ -54,6 +56,7 @@ function HeroSection() {
           variant="default"
           size="lg"
           mobileSize="md"
+          position="right mobile-center"
           className="mt-32 mobile-mt-32 basic-animate-3"
         >
           Send me email?
