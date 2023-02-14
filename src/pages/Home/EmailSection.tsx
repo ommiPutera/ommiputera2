@@ -4,8 +4,28 @@ import styled from 'styled-components'
 import {Button} from '../../components/Button'
 import {Input} from '../../components/Input'
 import {Textarea} from '../../components/Textarea'
+import {useForm} from 'react-hook-form'
+import {zodResolver} from '@hookform/resolvers/zod'
+import * as z from 'zod'
+
+const schema = z.object({
+  name: z.string({
+    required_error: 'Name is required',
+    invalid_type_error: 'Name must be a string',
+  }),
+  email: z.string().email({message: 'Email must be a valid email'}),
+})
 
 function EmailSection() {
+  const {
+    register,
+    handleSubmit,
+    formState: {errors},
+  } = useForm({
+    resolver: zodResolver(schema),
+    defaultValues: {name: '', email: ''},
+  })
+
   return (
     <>
       <Title className="font-38 mobile-font-28 font-600 basic-animate-1 text-align-left">
@@ -54,12 +74,26 @@ function EmailSection() {
             omiputrakarunia@gmail.com
           </Text>
         </Information>
-        <Form>
-          <Input placeholder="Name" icon={<IconUser />} size="md" />
-          <Input placeholder="Email" icon={<IconAt />} size="md" type="email" />
-          <Textarea placeholder="Message" size="md" minRows={5} maxRows={6} />
+        <Form onSubmit={handleSubmit(d => console.log('d: ', d))}>
+          <Input
+            placeholder="Name"
+            icon={<IconUser />}
+            size="md"
+            errors={errors?.name?.message ?? ''}
+            {...register('name')}
+          />
+          <Input
+            placeholder="Email"
+            icon={<IconAt />}
+            size="md"
+            type="email"
+            errors={errors?.email?.message ?? ''}
+            {...register('email')}
+          />
+          {/* <Textarea placeholder="Message" size="md" minRows={5} maxRows={6} /> */}
           <div style={{display: 'flex', justifyContent: 'flex-end'}}>
             <Button
+              type="submit"
               variant="outline"
               size="lg"
               radius="md"

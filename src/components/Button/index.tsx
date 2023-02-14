@@ -9,6 +9,7 @@ interface IButton {
   variant?: 'outline' | 'default'
   compact?: true
   fullwidth?: boolean
+  type?: 'submit' | 'button'
   size?: 'sm' | 'md' | 'lg' | 'xl'
   radius?: 'lg' | 'md' | 'xl'
   mobileSize?: 'sm' | 'md' | 'lg' | 'xl'

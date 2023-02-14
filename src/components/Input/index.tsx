@@ -7,27 +7,34 @@ interface IInput {
   size: 'sm' | 'md' | 'lg'
   icon?: React.ReactNode | JSX.Element
   multiline?: boolean
+  errors?: any
+  register?: any
   type?: 'email'
 }
 
-function EpicInput({placeholder, type, multiline, ...rest}: IInput) {
+function EpicInput({placeholder, type, multiline, errors, ...rest}: IInput) {
   return (
     <WrapperInput>
-      <Input
-        radius="md"
-        placeholder={placeholder}
-        type={type}
-        multiline
-        {...rest}
-      />
+      <Input.Wrapper error={errors}>
+        <Input
+          radius="md"
+          placeholder={placeholder}
+          type={type}
+          multiline
+          {...rest}
+        />
+      </Input.Wrapper>
     </WrapperInput>
   )
 }
 
 const WrapperInput = styled.div`
-  .mantine-Input-wrapper {
+  .mantine-InputWrapper-root {
     margin: 16px 0;
+  }
+  .mantine-Input-wrapper {
     width: 100%;
+    margin-bottom: 6px;
   }
   .mantine-Input-input {
     border: none;
