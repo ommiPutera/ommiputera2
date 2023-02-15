@@ -1,4 +1,4 @@
-export const Icon1 = ({ size = 48 }) => {
+export const Icon1 = ({size = 48}) => {
   return (
     <svg
       width={size}
@@ -67,7 +67,7 @@ export const Icon1 = ({ size = 48 }) => {
   )
 }
 
-export const Icon2 = ({ size = 60 }) => {
+export const Icon2 = ({size = 60}) => {
   return (
     <svg
       width={size}
@@ -113,7 +113,7 @@ export const Icon2 = ({ size = 60 }) => {
   )
 }
 
-export const Icon3 = ({ size = 61 }) => {
+export const Icon3 = ({size = 61}) => {
   return (
     <svg
       width={size}
