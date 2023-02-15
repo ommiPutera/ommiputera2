@@ -8,6 +8,7 @@ interface IButton {
   className?: string
   variant?: 'outline' | 'default'
   compact?: true
+  disabled?: boolean
   fullwidth?: boolean
   type?: 'submit' | 'button'
   size?: 'sm' | 'md' | 'lg' | 'xl'
@@ -128,6 +129,13 @@ const WrapperButton = styled.div`
         mode === 'dark' ? colors.dark[0] : colors.dark[9]};
     color: ${({theme: {colors, mode}}) =>
       mode === 'dark' ? colors.dark[0] : colors.dark[9]};
+
+    &:disabled {
+      border: 2px solid ${({theme: {colors}}) => colors.dark[4]};
+      background: ${({theme: {colors, mode}}) =>
+        mode === 'dark' ? colors.dark[9] : colors.dark[0]};
+      color: ${({theme: {colors}}) => colors.dark[4]};
+    }
 
     &:hover {
       border: 2px solid

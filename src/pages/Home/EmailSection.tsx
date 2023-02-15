@@ -4,27 +4,37 @@ import styled from 'styled-components'
 import {Button} from '../../components/Button'
 import {Input} from '../../components/Input'
 import {Textarea} from '../../components/Textarea'
-import {useForm} from 'react-hook-form'
+import {SubmitHandler, useForm} from 'react-hook-form'
 import {zodResolver} from '@hookform/resolvers/zod'
 import * as z from 'zod'
 
 const schema = z.object({
-  name: z.string({
-    required_error: 'Name is required',
-    invalid_type_error: 'Name must be a string',
+  name: z.string().min(1, {message: 'Name is required'}),
+  email: z.string().min(1, {message: 'Email is required'}).email({
+    message: 'Must be a valid email',
   }),
-  email: z.string().email({message: 'Email must be a valid email'}),
+  message: z.string().min(1, {message: 'Message is required'}),
 })
+
+type Shcema = z.infer<typeof schema>
 
 function EmailSection() {
   const {
     register,
     handleSubmit,
     formState: {errors},
-  } = useForm({
+    getValues,
+  } = useForm<Shcema>({
+    mode: 'onChange',
     resolver: zodResolver(schema),
     defaultValues: {name: '', email: ''},
   })
+
+  const {name, email, message} = getValues()
+
+  const onSubmit: SubmitHandler<Shcema> = data => {
+    console.log(data)
+  }
 
   return (
     <>
@@ -74,12 +84,13 @@ function EmailSection() {
             omiputrakarunia@gmail.com
           </Text>
         </Information>
-        <Form onSubmit={handleSubmit(d => console.log('d: ', d))}>
+        <Form onSubmit={handleSubmit(onSubmit)}>
           <Input
             placeholder="Name"
             icon={<IconUser />}
             size="md"
-            errors={errors?.name?.message ?? ''}
+            type="text"
+            errors={errors.name?.message ?? ''}
             {...register('name')}
           />
           <Input
@@ -87,12 +98,20 @@ function EmailSection() {
             icon={<IconAt />}
             size="md"
             type="email"
-            errors={errors?.email?.message ?? ''}
+            errors={errors.email?.message ?? ''}
             {...register('email')}
           />
-          {/* <Textarea placeholder="Message" size="md" minRows={5} maxRows={6} /> */}
+          <Textarea
+            placeholder="Message"
+            size="md"
+            minRows={5}
+            maxRows={6}
+            errors={errors.message?.message ?? ''}
+            {...register('message')}
+          />
           <div style={{display: 'flex', justifyContent: 'flex-end'}}>
             <Button
+              disabled={!Boolean(name && email && message)}
               type="submit"
               variant="outline"
               size="lg"

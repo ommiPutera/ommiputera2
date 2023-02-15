@@ -7,26 +7,31 @@ interface IInput {
   size: 'sm' | 'md' | 'lg'
   icon?: React.ReactNode | JSX.Element
   multiline?: boolean
-  errors?: any
+  errors?: string
   register?: any
-  type?: 'email'
+  type?: 'email' | 'text'
 }
 
-function EpicInput({placeholder, type, multiline, errors, ...rest}: IInput) {
-  return (
-    <WrapperInput>
-      <Input.Wrapper error={errors}>
-        <Input
-          radius="md"
-          placeholder={placeholder}
-          type={type}
-          multiline
-          {...rest}
-        />
-      </Input.Wrapper>
-    </WrapperInput>
-  )
-}
+type Ref = HTMLInputElement
+
+const EpicInput = React.forwardRef<Ref, IInput>(
+  ({placeholder, type, multiline, errors, ...rest}, ref) => {
+    return (
+      <WrapperInput>
+        <Input.Wrapper error={errors}>
+          <Input
+            ref={ref}
+            radius="md"
+            placeholder={placeholder}
+            type={type}
+            multiline
+            {...rest}
+          />
+        </Input.Wrapper>
+      </WrapperInput>
+    )
+  },
+)
 
 const WrapperInput = styled.div`
   .mantine-InputWrapper-root {
@@ -36,14 +41,25 @@ const WrapperInput = styled.div`
     width: 100%;
     margin-bottom: 6px;
   }
+  .mantine-InputWrapper-error {
+    font-size: 13.5px;
+  }
   .mantine-Input-input {
     border: none;
-    padding-bottom: 4px;
     color: ${({theme: {colors, mode}}) =>
       mode === 'dark' ? colors.dark[0] : colors.dark[9]};
     border: 2px solid ${({theme: {colors}}) => colors.dark[4]};
     background: transparent;
 
+    ::placeholder {
+      color: ${({theme: {colors}}) => colors.dark[4]};
+    }
+    :-ms-input-placeholder {
+      color: ${({theme: {colors}}) => colors.dark[4]};
+    }
+    ::-ms-input-placeholder {
+      color: ${({theme: {colors}}) => colors.dark[4]};
+    }
     :focus {
       border-color: ${({theme: {colors, mode}}) =>
         mode === 'dark' ? colors.dark[0] : colors.dark[9]};
