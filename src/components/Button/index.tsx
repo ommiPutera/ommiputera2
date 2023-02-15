@@ -30,6 +30,7 @@ function EpicButton({
   children,
   className,
   mobileSize,
+  fullwidth,
   position = 'center',
   radius = 'xl',
   ...rest
@@ -43,7 +44,10 @@ function EpicButton({
     <WrapperButton className={clsx(className, getClassProps(postionClass))}>
       <Button
         radius={radius}
-        className={clsx(getClassProps(combineClass))}
+        className={clsx(
+          getClassProps(combineClass),
+          fullwidth ? 'fullwidth' : '',
+        )}
         {...rest}
       >
         {children}

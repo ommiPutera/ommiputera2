@@ -7,6 +7,7 @@ import {Textarea} from '../../components/Textarea'
 import {SubmitHandler, useForm} from 'react-hook-form'
 import {zodResolver} from '@hookform/resolvers/zod'
 import * as z from 'zod'
+import useMode from '../../hooks/useMode'
 
 const schema = z.object({
   name: z.string().min(1, {message: 'Name is required'}),
@@ -23,17 +24,27 @@ function EmailSection() {
     register,
     handleSubmit,
     formState: {errors},
-    getValues,
+    watch,
   } = useForm<Shcema>({
     mode: 'onChange',
     resolver: zodResolver(schema),
-    defaultValues: {name: '', email: ''},
+    defaultValues: {name: '', email: '', message: ''},
   })
 
-  const {name, email, message} = getValues()
+  const [name, email, message] = watch(['name', 'email', 'message'])
+  const {mode} = useMode()
 
   const onSubmit: SubmitHandler<Shcema> = data => {
     console.log(data)
+  }
+
+  const getIconColor = (inputName: string) => {
+    if (inputName) {
+      if (mode === 'dark') return '#fff'
+      return '#4c4c4c'
+    } else {
+      return 'currentColor'
+    }
   }
 
   return (
@@ -87,7 +98,7 @@ function EmailSection() {
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Input
             placeholder="Name"
-            icon={<IconUser />}
+            icon={<IconUser color={getIconColor(name)} />}
             size="md"
             type="text"
             errors={errors.name?.message ?? ''}
@@ -95,7 +106,7 @@ function EmailSection() {
           />
           <Input
             placeholder="Email"
-            icon={<IconAt />}
+            icon={<IconAt color={getIconColor(email)} />}
             size="md"
             type="email"
             errors={errors.email?.message ?? ''}
@@ -109,19 +120,17 @@ function EmailSection() {
             errors={errors.message?.message ?? ''}
             {...register('message')}
           />
-          <div style={{display: 'flex', justifyContent: 'flex-end'}}>
-            <Button
-              disabled={!Boolean(name && email && message)}
-              type="submit"
-              variant="outline"
-              size="lg"
-              radius="md"
-              fullwidth
-              mobileSize="md"
-            >
-              Send
-            </Button>
-          </div>
+          <Button
+            disabled={!Boolean(name && email && message)}
+            type="submit"
+            variant="outline"
+            size="lg"
+            radius="md"
+            fullwidth
+            mobileSize="md"
+          >
+            Send my message
+          </Button>
         </Form>
       </Wrapper>
     </>
