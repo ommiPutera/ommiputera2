@@ -1,5 +1,6 @@
 import {Text, Title} from '@mantine/core'
 import styled from 'styled-components'
+import {Link as LinkScroll} from 'react-scroll'
 import {Button} from '../../components/Button'
 
 function HeroSection() {
@@ -7,17 +8,18 @@ function HeroSection() {
     <Wrapper>
       <LeftContent className="mobile-mt-102">
         <Title className="font-38 mobile-font-28 font-600 basic-animate">
-          Software Engineer and also a Design Enthusiast based in Jakarta.
-          Available for freelance and collaborations.
+          Software Engineer available for freelance and collaborations. Let's
+          bring your ideas to life!
         </Title>
         <Text
           size="lg"
           className="mt-32 mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
         >
-          Hi👋 I'm a Software Engineer - Front-end with 2 years of proven
-          experience in helping to create and maintain a better code base for
-          re-usability and best practices. Experience in developing projects
-          from concept to launch.
+          👋 Hello there! I'm a highly skilled Software Engineer with two years
+          of experience creating and maintaining top-notch, reusable codebases.
+          From conceptualization to launch, I specialize in bringing your ideas
+          to life using industry best practices. Let's collaborate and create
+          something amazing!
         </Text>
         <Button
           variant="default"
@@ -44,14 +46,6 @@ function HeroSection() {
           src="/assets/image/profile.jpeg"
           alt=""
         />
-        <Text
-          size="lg"
-          className="mt-32 mobile-mt-22 mobile-font-16 font-20 font-500 basic-animate-1"
-        >
-          Jakarta, Indonesia. <div className="line__" /> Ommi Putera karunia
-          <br />
-          omiputrakarunia@gmail.com <div className="line__" /> +6289508182045
-        </Text>
         <Button
           variant="default"
           size="lg"
@@ -61,6 +55,24 @@ function HeroSection() {
         >
           Send me email?
         </Button>
+        <LinkScroll
+          activeClass="active"
+          to="services"
+          spy={true}
+          smooth={true}
+          offset={-10}
+          duration={300}
+        >
+          <Button
+            variant="outline"
+            size="lg"
+            mobileSize="md"
+            position="right mobile-center"
+            className="mt-12 mobile-mt-32 basic-animate-3"
+          >
+            Scroll down.. 👇
+          </Button>
+        </LinkScroll>
       </RightContent>
     </Wrapper>
   )
@@ -88,7 +100,7 @@ const LeftContent = styled.div`
 
   @media (min-width: 1000px) {
     order: 1;
-    width: 50%;
+    width: 60%;
     text-align: left;
     align-items: flex-start;
   }
@@ -119,9 +131,13 @@ const RightContent = styled.div`
 
   @media (min-width: 1000px) {
     order: 2;
-    width: 50%;
+    width: 40%;
     text-align: right;
     align-items: flex-end;
+
+    .profile__image {
+      margin-right: -22px;
+    }
   }
 `
 

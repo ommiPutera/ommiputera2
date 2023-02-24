@@ -6,7 +6,7 @@ import {Icon1, Icon2, Icon3} from '../../utils/icons'
 
 function ServicesSection() {
   return (
-    <Wrapper>
+    <Wrapper id="services">
       <Title className="font-38 mobile-font-28 font-600 basic-animate-1 text-align-center">
         Pushing the limits of what's possible.
       </Title>
@@ -47,7 +47,9 @@ function ContentItem({
   )
 }
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  padding-top: 24px;
+`
 
 const Contents = styled.div`
   display: flex;

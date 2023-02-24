@@ -125,7 +125,7 @@ const WrapperHeader = styled.header`
 
   @media (min-width: 1100px) {
     padding: 38px 0;
-    margin-bottom: 102px;
+    margin-bottom: 110px;
 
     > .container {
       padding: 0;

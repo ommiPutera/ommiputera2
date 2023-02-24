@@ -41,7 +41,7 @@ const HomeWrapper = styled.div`
 
   @media (min-width: 1100px) {
     > div {
-      margin-bottom: 212px;
+      margin-bottom: 145px;
     }
   }
 `

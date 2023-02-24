@@ -19,7 +19,7 @@ function ProjectsSection() {
         <ProjectItem layout="1" />
       </Contents>
       <Button
-        variant="outline"
+        variant="default"
         size="lg"
         mobileSize="md"
         className="mt-32 mobile-mt-32 basic-animate-2"
