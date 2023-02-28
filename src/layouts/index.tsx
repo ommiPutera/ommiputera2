@@ -50,7 +50,7 @@ function BackgroundLayout() {
         src="/assets/image/darkHeroBg.jpg"
         width="100%"
         alt=""
-        style={{opacity: '24%', background: '#161513'}}
+        style={{opacity: '45%', background: '#161513'}}
       />
     )
   } else if (Boolean(mode === 'light')) {
@@ -60,7 +60,7 @@ function BackgroundLayout() {
         src="/assets/image/lightHeroBg.jpg"
         width="100%"
         alt=""
-        style={{opacity: '38%'}}
+        style={{opacity: '35%'}}
       />
     )
   } else {

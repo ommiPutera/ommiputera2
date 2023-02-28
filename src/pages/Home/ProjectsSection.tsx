@@ -15,7 +15,6 @@ function ProjectsSection() {
       </Title>
       <Contents>
         <ProjectItem layout="1" />
-        <ProjectItem layout="2" />
         <ProjectItem layout="1" />
       </Contents>
       <Button
@@ -36,7 +35,7 @@ function ProjectItem({layout}: IProject) {
       <div>
         <div>
           <Text
-            style={{opacity: '60%'}}
+            color="dark.6"
             size="lg"
             className="mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
           >
@@ -52,7 +51,7 @@ function ProjectItem({layout}: IProject) {
           </Text>
         </div>
         <Text
-          style={{opacity: '60%'}}
+          color="dark.7"
           size="lg"
           className="mobile-mt-22 mobile-font-16 font-20 font-500 basic-animate-1"
         >
@@ -62,7 +61,7 @@ function ProjectItem({layout}: IProject) {
       <div className="basic-animate-3">
         <img
           className="preview__"
-          src="/assets/projects/project1.webp"
+          src="/assets/projects/example1.webp"
           alt=""
         />
       </div>
@@ -106,9 +105,9 @@ const Project = styled.div<IProject>`
   @media (min-width: 1000px) {
     width: 100%;
     flex-direction: row;
-    gap: 102px;
+    gap: 82px;
     padding: 0 32px;
-    margin: 0 0 102px 0;
+    margin: 0 0 102px -32px;
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
     transition: border 0.4s ease;
@@ -128,19 +127,25 @@ const Project = styled.div<IProject>`
     > div:first-child {
       order: ${props => (props.layout === '1' ? 1 : 2)};
       display: flex;
+      width: 50%;
       flex-direction: column;
       justify-content: space-between;
     }
     > div:last-child {
+      width: 100%;
+      margin-left: ${props => (props.layout === '2' ? '-270px' : '')};
+      margin-right: ${props => (props.layout === '1' ? '-270px' : '')};
       order: ${props => (props.layout === '1' ? 2 : 1)};
     }
 
     .preview__ {
-      width: 100%;
+      width: 105%;
       height: 100%;
       max-height: 600px;
       object-fit: cover;
       border-radius: 20px;
+      filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+        drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
     }
   }
 `

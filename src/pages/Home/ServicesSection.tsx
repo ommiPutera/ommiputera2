@@ -36,9 +36,9 @@ function ContentItem({
         Lorem ipsum dolor sit Amet
       </Text>
       <Text
-        style={{opacity: '70%'}}
         size="lg"
         className="mt-32 mobile-mt-22 mobile-font-18 font-18 font-500"
+        color="dark.6"
       >
         Aut cupiditate expedita dolor eveniet a autem rerum ut dicta.
         Exercitationem eum suscipit quo. Est fugiat ducimus aut saepe.
