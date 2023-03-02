@@ -1,11 +1,18 @@
 import {Text, Title} from '@mantine/core'
 import React from 'react'
+import Autoplay, {AutoplayType} from 'embla-carousel-autoplay'
+import {Carousel} from '@mantine/carousel'
 import styled from 'styled-components'
 import {Button} from '../../components/Button'
 import useMode from '../../hooks/useMode'
+import useWindowFocusHandler from '../../hooks/useWindowFocusHandler'
 
 interface IProject {
   layout: '1' | '2'
+}
+
+type ProjectTypes = {
+  autoplay: React.MutableRefObject<AutoplayType>
 }
 
 function ProjectsSection() {
@@ -32,9 +39,43 @@ function ProjectsSection() {
 
 function ProjectItem({layout}: IProject) {
   const {mode} = useMode()
+  const autoplay = React.useRef(
+    Autoplay({
+      delay: 3000,
+      jump: true,
+      stopOnInteraction: false,
+      playOnInit: false,
+    }),
+  )
+  const handlePlaySlides = () => {
+    autoplay.current.play(false)
+  }
+  const handleResetSlides = () => {
+    autoplay.current.reset()
+    autoplay.current.stop()
+  }
+  const onFocus = () => {
+    autoplay.current.stop()
+  }
+  const onBlur = () => {
+    autoplay.current.play(true)
+  }
+  useWindowFocusHandler(onFocus, onBlur)
 
   return (
-    <Project layout={layout}>
+    <Project
+      layout={layout}
+      onMouseEnter={handlePlaySlides}
+      onMouseLeave={handleResetSlides}
+    >
+      <div>
+        <Text
+          size="lg"
+          className="mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
+        >
+          Landing Page
+        </Text>
+      </div>
       <div>
         <div>
           <Text
@@ -53,22 +94,49 @@ function ProjectItem({layout}: IProject) {
             cras faucibus a
           </Text>
         </div>
-        <Text
-          color={mode === 'dark' ? 'dark.3' : 'dark.7'}
-          size="lg"
-          className="mobile-mt-22 mobile-font-16 font-20 font-500 basic-animate-1"
-        >
-          Client site rendering & React JS.
-        </Text>
+        <div>
+          <Text
+            color={mode === 'dark' ? 'dark.3' : 'dark.7'}
+            size="lg"
+            className="mobile-mt-22 mobile-font-16 font-20 font-500 basic-animate-1"
+          >
+            Client site rendering & React JS.
+          </Text>
+        </div>
       </div>
       <div className="basic-animate-3">
-        <img
-          className="preview__"
-          src="/assets/projects/example1.webp"
-          alt=""
-        />
+        <ProjectCarousel autoplay={autoplay} />
       </div>
     </Project>
+  )
+}
+
+function ProjectCarousel({autoplay}: ProjectTypes) {
+  return (
+    <WrapperCarousel>
+      <Carousel
+        orientation="vertical"
+        withControls={false}
+        height="100%"
+        sx={{flex: 1}}
+        plugins={[autoplay.current]}
+      >
+        <Carousel.Slide>
+          <img
+            className="preview__"
+            src="/assets/projects/example1.webp"
+            alt=""
+          />
+        </Carousel.Slide>
+        <Carousel.Slide>
+          <img
+            className="preview__"
+            src="/assets/projects/example1.webp"
+            alt=""
+          />
+        </Carousel.Slide>
+      </Carousel>
+    </WrapperCarousel>
   )
 }
 
@@ -85,6 +153,17 @@ const Contents = styled.div`
     margin-top: 102px;
   }
 `
+
+const WrapperCarousel = styled.div`
+  height: 600px;
+  width: 120%;
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+`
+
 const Project = styled.div<IProject>`
   display: flex;
   flex-direction: column-reverse;
@@ -102,7 +181,7 @@ const Project = styled.div<IProject>`
     height: 100%;
     max-height: 400px;
     object-fit: cover;
-    border-radius: 14px;
+    z-index: 1;
   }
 
   @media (min-width: 1000px) {
@@ -110,7 +189,7 @@ const Project = styled.div<IProject>`
     flex-direction: row;
     gap: 82px;
     padding: 0 32px;
-    margin: 0 0 102px -32px;
+    margin: 0 0 102px -157px;
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
     transition: border 0.4s ease;
@@ -128,27 +207,24 @@ const Project = styled.div<IProject>`
     }
 
     > div:first-child {
+      width: 5%;
+    }
+    > div:nth-child(2) {
       order: ${props => (props.layout === '1' ? 1 : 2)};
       display: flex;
-      width: 50%;
+      width: 80%;
       flex-direction: column;
       justify-content: space-between;
     }
     > div:last-child {
-      width: 100%;
+      width: 150%;
       margin-left: ${props => (props.layout === '2' ? '-270px' : '')};
       margin-right: ${props => (props.layout === '1' ? '-270px' : '')};
       order: ${props => (props.layout === '1' ? 2 : 1)};
     }
 
     .preview__ {
-      width: 105%;
-      height: 100%;
       max-height: 600px;
-      object-fit: cover;
-      border-radius: 20px;
-      filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
-        drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
     }
   }
 `
