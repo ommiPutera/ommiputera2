@@ -1,7 +1,7 @@
-import {Text, Title} from '@mantine/core'
-import React from 'react'
-import Autoplay, {AutoplayType} from 'embla-carousel-autoplay'
 import {Carousel} from '@mantine/carousel'
+import {Text, Title} from '@mantine/core'
+import Autoplay, {AutoplayType} from 'embla-carousel-autoplay'
+import React from 'react'
 import styled from 'styled-components'
 import {Button} from '../../components/Button'
 import useMode from '../../hooks/useMode'
@@ -47,19 +47,13 @@ function ProjectItem({layout}: IProject) {
       playOnInit: false,
     }),
   )
-  const handlePlaySlides = () => {
-    autoplay.current.play(false)
-  }
   const handleResetSlides = () => {
     autoplay.current.reset()
     autoplay.current.stop()
   }
-  const onFocus = () => {
-    autoplay.current.stop()
-  }
-  const onBlur = () => {
-    autoplay.current.play(true)
-  }
+  const handlePlaySlides = () => autoplay.current.play(false)
+  const onFocus = () => autoplay.current.stop()
+  const onBlur = () => autoplay.current.play(true)
   useWindowFocusHandler(onFocus, onBlur)
 
   return (

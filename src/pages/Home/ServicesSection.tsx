@@ -1,6 +1,5 @@
 import {Text, Title} from '@mantine/core'
 import clsx from 'clsx'
-import React from 'react'
 import styled from 'styled-components'
 import useMode from '../../hooks/useMode'
 import {Icon1, Icon2, Icon3} from '../../utils/icons'
@@ -28,7 +27,6 @@ function ContentItem({
   animate: 'basic-animate-1' | 'basic-animate-2' | 'basic-animate-3'
 }) {
   const {mode} = useMode()
-
   return (
     <Content className={clsx(animate, '')}>
       <div className="icon__">{Icon}</div>

@@ -1,12 +1,12 @@
+import {zodResolver} from '@hookform/resolvers/zod'
 import {Text, Title} from '@mantine/core'
 import {IconAt, IconUser} from '@tabler/icons'
+import {SubmitHandler, useForm} from 'react-hook-form'
 import styled from 'styled-components'
+import * as z from 'zod'
 import {Button} from '../../components/Button'
 import {Input} from '../../components/Input'
 import {Textarea} from '../../components/Textarea'
-import {SubmitHandler, useForm} from 'react-hook-form'
-import {zodResolver} from '@hookform/resolvers/zod'
-import * as z from 'zod'
 import useMode from '../../hooks/useMode'
 
 const schema = z.object({
@@ -30,10 +30,8 @@ function EmailSection() {
     resolver: zodResolver(schema),
     defaultValues: {name: '', email: '', message: ''},
   })
-
   const [name, email, message] = watch(['name', 'email', 'message'])
   const {mode} = useMode()
-
   const onSubmit: SubmitHandler<Shcema> = data => {
     console.log(data)
   }

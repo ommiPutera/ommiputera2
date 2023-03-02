@@ -1,12 +1,11 @@
 import {Text, Title} from '@mantine/core'
-import styled from 'styled-components'
 import {Link as LinkScroll} from 'react-scroll'
+import styled from 'styled-components'
 import {Button} from '../../components/Button'
 import useMode from '../../hooks/useMode'
 
 function HeroSection() {
   const {mode} = useMode()
-
   return (
     <Wrapper>
       <LeftContent className="mobile-mt-102">
