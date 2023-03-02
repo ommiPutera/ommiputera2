@@ -16,7 +16,7 @@ import {
 
 function Header() {
   return (
-    <WrapperHeader>
+    <Wrapper>
       <Container size={HEADER_SIZE} className="container">
         <LeftContent className="align-center">
           <OmmiLogo />
@@ -31,7 +31,7 @@ function Header() {
           <NavButton />
         </RightContent>
       </Container>
-    </WrapperHeader>
+    </Wrapper>
   )
 }
 
@@ -78,7 +78,7 @@ function NavButton() {
   )
 }
 
-const WrapperHeader = styled.header`
+const Wrapper = styled.header`
   padding: 18px 0;
 
   > div {
@@ -124,7 +124,7 @@ const WrapperHeader = styled.header`
   }
 
   @media (min-width: 1100px) {
-    padding: 38px 0;
+    padding: 62px 0 38px 0;
     margin-bottom: 110px;
 
     > .container {

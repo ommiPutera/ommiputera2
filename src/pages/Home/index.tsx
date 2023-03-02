@@ -5,6 +5,7 @@ import useMode from '../../hooks/useMode'
 import {Helmet} from 'react-helmet'
 import ProjectsSection from './ProjectsSection'
 import EmailSection from './EmailSection'
+import Blogs from './Blogs'
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <HeroSection />
       <ServicesSection />
       <ProjectsSection />
+      <Blogs />
       <EmailSection />
     </HomeWrapper>
   )
@@ -22,7 +24,7 @@ function PageHelmet() {
   const {mode} = useMode()
   return (
     <Helmet>
-      <title>Ommi Putera - Software Engineer</title>
+      <title>Ommi Putera</title>
       <meta
         name="theme-color"
         content={mode === 'light' ? '#fff' : '#18181b'}
@@ -36,12 +38,12 @@ const HomeWrapper = styled.div`
   min-height: 100vh;
 
   > div {
-    margin-bottom: 132px;
+    padding-top: 132px;
   }
 
   @media (min-width: 1100px) {
     > div {
-      margin-bottom: 145px;
+      padding-top: 208px;
     }
   }
 `

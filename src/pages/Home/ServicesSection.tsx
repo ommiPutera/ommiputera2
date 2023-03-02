@@ -5,9 +5,16 @@ import useMode from '../../hooks/useMode'
 import {Icon1, Icon2, Icon3} from '../../utils/icons'
 
 function ServicesSection() {
+  const {mode} = useMode()
   return (
     <Wrapper id="services">
       <Title className="font-38 mobile-font-28 font-600 basic-animate-1 text-align-center">
+        Let’s work together
+      </Title>
+      <Title
+        color={mode === 'dark' ? 'dark.4' : 'dark.6'}
+        className="font-38 mobile-font-28 font-600 basic-animate-1 text-align-center"
+      >
         Pushing the limits of what's possible.
       </Title>
       <Contents>

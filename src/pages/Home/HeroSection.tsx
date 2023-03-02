@@ -10,13 +10,12 @@ function HeroSection() {
     <Wrapper>
       <LeftContent className="mobile-mt-102">
         <Title className="font-38 mobile-font-28 font-600 basic-animate">
-          Software Engineer available for freelance and collaborations. Let's
-          bring your ideas to life!
+          Software Engineer available <br /> for freelance and collaborations.
         </Title>
         <Text
           size="lg"
-          className="mt-32 mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
-          color={mode === 'dark' ? 'dark.3' : 'dark.7'}
+          className="mt-32 mobile-mt-22 mobile-font-18 font-22 font-500 basic-animate-1"
+          color={mode === 'dark' ? 'dark.4' : 'dark.6'}
         >
           👋 Hello there! I'm a highly skilled Software Engineer with two years
           of experience creating and maintaining top-notch, reusable codebases.
@@ -90,6 +89,7 @@ const Wrapper = styled.div`
 
   @media (min-width: 1000px) {
     flex-direction: row;
+    padding-top: 20px !important;
   }
 `
 

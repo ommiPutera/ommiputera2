@@ -16,10 +16,17 @@ type ProjectTypes = {
 }
 
 function ProjectsSection() {
+  const {mode} = useMode()
   return (
     <Wrapper>
       <Title className="font-38 mobile-font-28 font-600 basic-animate-1">
-        Some of my projects.
+        Some of my projects
+      </Title>
+      <Title
+        color={mode === 'dark' ? 'dark.4' : 'dark.6'}
+        className="font-38 mobile-font-28 font-600 basic-animate-1"
+      >
+        Creating next level digital products.
       </Title>
       <Contents>
         <ProjectItem layout="1" />
