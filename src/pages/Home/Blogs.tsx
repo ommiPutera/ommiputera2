@@ -1,6 +1,7 @@
-import {Title} from '@mantine/core'
+import {Text, Title} from '@mantine/core'
 import React from 'react'
 import styled from 'styled-components'
+import {Button} from '../../components/Button'
 import useMode from '../../hooks/useMode'
 
 function Blogs() {
@@ -21,18 +22,51 @@ function Blogs() {
         <Blog />
         <Blog />
       </Contents>
+      <Button
+        variant="default"
+        size="lg"
+        mobileSize="md"
+        className="mt-102 mobile-mt-32 basic-animate-2"
+      >
+        See the full blog
+      </Button>
     </Wrapper>
   )
 }
 
 function Blog() {
-  return <div>Blog 1</div>
+  const {mode} = useMode()
+  return (
+    <WrapperBlog>
+      <img
+        className="basic-animate-2"
+        src="/assets/projects/project1.webp"
+        alt=""
+      />
+      <div>
+        <Text
+          size="xl"
+          className="mt-32 mobile-mt-22 mobile-font-18 font-26 font-500 basic-animate-1"
+        >
+          Use react-error-boundary to handle errors in React
+        </Text>
+        <Text
+          size="xl"
+          className="mt-32 mobile-mt-22 mobile-font-18 font-22 font-500 basic-animate-2"
+          color={mode === 'dark' ? 'dark.4' : 'dark.6'}
+        >
+          January 12th, 2023 — 15 min read
+        </Text>
+      </div>
+    </WrapperBlog>
+  )
 }
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 -90px;
 `
 const Contents = styled.div`
   margin-top: 62px;
@@ -43,7 +77,32 @@ const Contents = styled.div`
 
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 82px;
+    gap: 32px;
+  }
+`
+const WrapperBlog = styled.div`
+  width: 100%;
+  cursor: pointer;
+
+  :hover {
+    img {
+      border-color: ${({theme: {colors, mode}}) =>
+        mode === 'dark' ? colors.dark[0] : colors.dark[9]};
+    }
+  }
+
+  > div {
+    padding: 5px;
+  }
+
+  img {
+    padding: 5px;
+    width: 100%;
+    object-fit: cover;
+    height: 600px;
+    border-radius: 22px;
+    transition: border 0.4s ease;
+    border: 2px solid transparent;
   }
 `
 
