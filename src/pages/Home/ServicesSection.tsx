@@ -2,6 +2,7 @@ import {Text, Title} from '@mantine/core'
 import clsx from 'clsx'
 import React from 'react'
 import styled from 'styled-components'
+import useMode from '../../hooks/useMode'
 import {Icon1, Icon2, Icon3} from '../../utils/icons'
 
 function ServicesSection() {
@@ -26,6 +27,8 @@ function ContentItem({
   Icon: JSX.Element
   animate: 'basic-animate-1' | 'basic-animate-2' | 'basic-animate-3'
 }) {
+  const {mode} = useMode()
+
   return (
     <Content className={clsx(animate, '')}>
       <div className="icon__">{Icon}</div>
@@ -38,7 +41,7 @@ function ContentItem({
       <Text
         size="lg"
         className="mt-32 mobile-mt-22 mobile-font-18 font-18 font-500"
-        color="dark.6"
+        color={mode === 'dark' ? 'dark.3' : 'dark.7'}
       >
         Aut cupiditate expedita dolor eveniet a autem rerum ut dicta.
         Exercitationem eum suscipit quo. Est fugiat ducimus aut saepe.

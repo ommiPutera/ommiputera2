@@ -2,6 +2,7 @@ import {Text, Title} from '@mantine/core'
 import React from 'react'
 import styled from 'styled-components'
 import {Button} from '../../components/Button'
+import useMode from '../../hooks/useMode'
 
 interface IProject {
   layout: '1' | '2'
@@ -30,12 +31,14 @@ function ProjectsSection() {
 }
 
 function ProjectItem({layout}: IProject) {
+  const {mode} = useMode()
+
   return (
     <Project layout={layout}>
       <div>
         <div>
           <Text
-            color="dark.6"
+            color={mode === 'dark' ? 'dark.3' : 'dark.7'}
             size="lg"
             className="mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
           >
@@ -51,7 +54,7 @@ function ProjectItem({layout}: IProject) {
           </Text>
         </div>
         <Text
-          color="dark.7"
+          color={mode === 'dark' ? 'dark.3' : 'dark.7'}
           size="lg"
           className="mobile-mt-22 mobile-font-16 font-20 font-500 basic-animate-1"
         >

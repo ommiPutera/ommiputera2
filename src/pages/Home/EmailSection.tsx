@@ -40,10 +40,14 @@ function EmailSection() {
 
   const getIconColor = (inputName: string) => {
     if (inputName) {
-      if (mode === 'dark') return '#fff'
-      return '#4c4c4c'
-    } else {
-      return 'currentColor'
+      switch (mode) {
+        case 'light':
+          return '#4c4c4c'
+        case 'dark':
+          return '#fff'
+        default:
+          return 'currentColor'
+      }
     }
   }
 
@@ -57,7 +61,7 @@ function EmailSection() {
           <Text
             size="lg"
             className="mobile-mt-22 mt-32 mobile-font-18 font-20 font-500 basic-animate-1"
-            color="dark.6"
+            color={mode === 'dark' ? 'dark.3' : 'dark.7'}
           >
             Lorem ipsum dolor sit amet consectetur. Interdum ultricies purus
             sapien commodo tortor convallis facilisi.
@@ -76,7 +80,7 @@ function EmailSection() {
           </Text>
           <Text
             size="lg"
-            color="dark.6"
+            color={mode === 'dark' ? 'dark.3' : 'dark.7'}
             className="mobile-font-18 font-20 font-500 basic-animate-2"
           >
             Schedule a call with me
@@ -89,7 +93,7 @@ function EmailSection() {
           </Text>
           <Text
             size="lg"
-            color="dark.6"
+            color={mode === 'dark' ? 'dark.3' : 'dark.7'}
             className="mobile-font-18 font-20 font-500 basic-animate-2"
           >
             omiputrakarunia@gmail.com

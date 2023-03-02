@@ -2,8 +2,11 @@ import {Text, Title} from '@mantine/core'
 import styled from 'styled-components'
 import {Link as LinkScroll} from 'react-scroll'
 import {Button} from '../../components/Button'
+import useMode from '../../hooks/useMode'
 
 function HeroSection() {
+  const {mode} = useMode()
+
   return (
     <Wrapper>
       <LeftContent className="mobile-mt-102">
@@ -14,6 +17,7 @@ function HeroSection() {
         <Text
           size="lg"
           className="mt-32 mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
+          color={mode === 'dark' ? 'dark.3' : 'dark.7'}
         >
           👋 Hello there! I'm a highly skilled Software Engineer with two years
           of experience creating and maintaining top-notch, reusable codebases.
