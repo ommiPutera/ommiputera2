@@ -1,11 +1,12 @@
-import styled from 'styled-components'
-import HeroSection from './HeroSection'
-import ServicesSection from './ServicesSection'
-import useMode from '../../hooks/useMode'
 import {Helmet} from 'react-helmet'
-import ProjectsSection from './ProjectsSection'
-import EmailSection from './EmailSection'
+import styled from 'styled-components'
+import useMode from '../../hooks/useMode'
+import BigProject from './BigProject'
 import Blogs from './Blogs'
+import EmailSection from './EmailSection'
+import HeroSection from './HeroSection'
+import ProjectsSection from './ProjectsSection'
+import ServicesSection from './ServicesSection'
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <PageHelmet />
       <HeroSection />
       <ServicesSection />
+      <BigProject />
       <ProjectsSection />
       <Blogs />
       <EmailSection />
