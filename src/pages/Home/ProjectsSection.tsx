@@ -6,13 +6,21 @@ import styled from 'styled-components'
 import {Button} from '../../components/Button'
 import useMode from '../../hooks/useMode'
 import useWindowFocusHandler from '../../hooks/useWindowFocusHandler'
+import {dataProjects} from './data'
 
-interface IProject {
-  layout: '1' | '2'
+export interface IProject {
+  id?: string
+  layout?: '1' | '2'
+  title?: string
+  description?: string
+  type?: string
+  note?: string
+  viewsURL?: string[]
 }
 
-type ProjectTypes = {
+type ProjectCarouselTypes = {
   autoplay: React.MutableRefObject<AutoplayType>
+  urls?: string[]
 }
 
 function ProjectsSection() {
@@ -29,8 +37,9 @@ function ProjectsSection() {
         Creating next level digital products.
       </Title>
       <Contents>
-        <ProjectItem layout="1" />
-        <ProjectItem layout="1" />
+        {dataProjects.map(data => (
+          <ProjectItem {...data} />
+        ))}
       </Contents>
       <Button
         variant="default"
@@ -44,7 +53,15 @@ function ProjectsSection() {
   )
 }
 
-function ProjectItem({layout}: IProject) {
+function ProjectItem({
+  id,
+  layout,
+  title,
+  description,
+  type,
+  note,
+  viewsURL,
+}: IProject) {
   const {mode} = useMode()
   const autoplay = React.useRef(
     Autoplay({
@@ -65,6 +82,7 @@ function ProjectItem({layout}: IProject) {
 
   return (
     <Project
+      key={id}
       layout={layout}
       onMouseEnter={handlePlaySlides}
       onMouseLeave={handleResetSlides}
@@ -74,7 +92,7 @@ function ProjectItem({layout}: IProject) {
           size="lg"
           className="mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
         >
-          Landing Page
+          {type}
         </Text>
       </div>
       <div>
@@ -84,15 +102,13 @@ function ProjectItem({layout}: IProject) {
             size="lg"
             className="mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
           >
-            Aut cupiditate expedita dolor eveniet a autem rerum ut dicta.
-            Exercitationem eum suscipit quo. Est fugiat ducimus aut saepe.
+            {description}
           </Text>
           <Text
             size="xl"
             className="mt-32 mobile-mt-22 mobile-font-22 font-24 font-500 basic-animate-2"
           >
-            Lorem ipsum dolor sit amet consectetur. Facilisis quam turpis at
-            cras faucibus a
+            {title}
           </Text>
         </div>
         <div>
@@ -101,18 +117,18 @@ function ProjectItem({layout}: IProject) {
             size="lg"
             className="mobile-mt-22 mobile-font-16 font-20 font-500 basic-animate-1"
           >
-            Client site rendering & React JS.
+            {note}
           </Text>
         </div>
       </div>
       <div className="basic-animate-3">
-        <ProjectCarousel autoplay={autoplay} />
+        <ProjectCarousel autoplay={autoplay} urls={viewsURL} />
       </div>
     </Project>
   )
 }
 
-function ProjectCarousel({autoplay}: ProjectTypes) {
+function ProjectCarousel({autoplay, urls}: ProjectCarouselTypes) {
   return (
     <WrapperCarousel>
       <Carousel
@@ -122,20 +138,12 @@ function ProjectCarousel({autoplay}: ProjectTypes) {
         sx={{flex: 1}}
         plugins={[autoplay.current]}
       >
-        <Carousel.Slide>
-          <img
-            className="preview__"
-            src="/assets/projects/example1.webp"
-            alt=""
-          />
-        </Carousel.Slide>
-        <Carousel.Slide>
-          <img
-            className="preview__"
-            src="/assets/projects/example1.webp"
-            alt=""
-          />
-        </Carousel.Slide>
+        {urls &&
+          urls.map(src => (
+            <Carousel.Slide>
+              <img className="preview__" src={src} alt="" />
+            </Carousel.Slide>
+          ))}
       </Carousel>
     </WrapperCarousel>
   )
