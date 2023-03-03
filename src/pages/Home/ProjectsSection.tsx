@@ -1,9 +1,10 @@
 import {Carousel} from '@mantine/carousel'
 import {Text, Title} from '@mantine/core'
+import {IconArrowUpRight} from '@tabler/icons'
 import Autoplay, {AutoplayType} from 'embla-carousel-autoplay'
 import React from 'react'
 import styled from 'styled-components'
-import {Button} from '../../components/Button'
+import {Button as MyButton} from '../../components/Button'
 import useMode from '../../hooks/useMode'
 import useWindowFocusHandler from '../../hooks/useWindowFocusHandler'
 import {dataProjects} from './data'
@@ -41,14 +42,14 @@ function ProjectsSection() {
           <ProjectItem {...data} />
         ))}
       </Contents>
-      <Button
+      <MyButton
         variant="default"
         size="lg"
         mobileSize="md"
         className="mt-32 mobile-mt-32 basic-animate-2"
       >
         View all my projects
-      </Button>
+      </MyButton>
     </Wrapper>
   )
 }
@@ -109,6 +110,14 @@ function ProjectItem({
             className="mt-32 mobile-mt-22 mobile-font-22 font-24 font-500 basic-animate-2"
           >
             {title}
+          </Text>
+          <Text
+            size="xl"
+            color="danger.7 "
+            className="mt-32 mobile-mt-22 mobile-font-22 font-22 font-500 basic-animate-2"
+          >
+            Explore
+            <IconArrowUpRight />
           </Text>
         </div>
         <div>

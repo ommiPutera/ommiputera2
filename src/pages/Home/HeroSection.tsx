@@ -9,7 +9,17 @@ function HeroSection() {
   return (
     <Wrapper>
       <LeftContent className="mobile-mt-102">
-        <Title className="font-38 mobile-font-28 font-600 basic-animate">
+        <Title className="font-38 mobile-font-28 font-500 basic-animate">
+          🎯 Helping brands to stand out <br /> in the digital era.
+        </Title>
+        <Text
+          size="lg"
+          className="mt-32 mobile-mt-22 mobile-font-18 font-38 font-500 basic-animate-1"
+          color={mode === 'dark' ? 'dark.4' : 'dark.6'}
+        >
+          Freelance Software Engineer
+        </Text>
+        {/* <Title className="font-38 mobile-font-28 font-600 basic-animate">
           Software Engineer available <br /> for freelance and collaborations.
         </Title>
         <Text
@@ -22,13 +32,13 @@ function HeroSection() {
           From conceptualization to launch, I specialize in bringing your ideas
           to life using industry best practices. Let's collaborate and create
           something amazing!
-        </Text>
+        </Text> */}
         <Button
           variant="default"
           size="lg"
           mobileSize="md"
           position="left mobile-center"
-          className="mt-102 mobile-mt-32 basic-animate-2"
+          className="mt-88 mobile-mt-32 basic-animate-2"
         >
           Some of my projects
         </Button>
@@ -90,6 +100,7 @@ const Wrapper = styled.div`
   @media (min-width: 1000px) {
     flex-direction: row;
     padding-top: 20px !important;
+    padding-bottom: 80px !important;
   }
 `
 
