@@ -141,6 +141,7 @@ export const WrapperLayout = styled.div`
   @media (min-width: 1100px) {
     > .container {
       padding: 0;
+      margin-bottom: 202px;
     }
   }
 `

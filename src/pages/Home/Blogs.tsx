@@ -102,7 +102,7 @@ const WrapperBlog = styled.div`
     height: 600px;
     border-radius: 22px;
     transition: border 0.4s ease;
-    border: 2px solid transparent;
+    border: 3px solid transparent;
   }
 `
 
