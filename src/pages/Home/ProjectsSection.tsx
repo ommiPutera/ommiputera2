@@ -190,7 +190,7 @@ const Project = styled.div<IProject>`
     flex-direction: row;
     gap: 82px;
     padding: 0 32px;
-    margin: 0 0 102px -157px;
+    margin: 0 0 102px -162px;
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
     transition: border 0.4s ease;
