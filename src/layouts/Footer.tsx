@@ -1,21 +1,22 @@
-import {Container} from '@mantine/core'
+import {Container, Title} from '@mantine/core'
 import clsx from 'clsx'
 import styled from 'styled-components'
 import {CONTAINER_SIZE} from '../defaultVariable'
+import useMode from '../hooks/useMode'
 import {useNavigation} from '../store/rootStore'
-import {LeftContent, RightContent} from './sharedStyled'
 
 function Footer() {
   const {isOpen} = useNavigation()
+  const {mode} = useMode()
   return (
     <WrapperFooter className={clsx(isOpen ? 'nav__open' : '')}>
       <Container size={CONTAINER_SIZE}>
-        <LeftContent>
-          <span>Logo</span>
-        </LeftContent>
-        <RightContent>
-          <span>Logo</span>
-        </RightContent>
+        <Title
+          color={mode === 'dark' ? 'dark.4' : 'dark.6'}
+          className="font-18 mobile-font-28 font-500 basic-animate-1"
+        >
+          All rights reserved © Ommi Putera Karunia 2023
+        </Title>
       </Container>
     </WrapperFooter>
   )
