@@ -33,19 +33,22 @@ const bigProject = [
   {
     id: '1',
     title: 'Engineering',
-    content: 'content 1',
+    content:
+      'Aut cupiditate expedita dolor eveniet a autem rerum ut dicta. Exercitationem eum suscipit quo. Est fugiat ducimus aut saepe. Aut cupiditate expedita dolor eveniet a autem rerum ut dicta. Exercitationem eum suscipit quo. Est fugiat ducimus aut saepe.',
     imageUrl: '/assets/icons/engineering.png',
   },
   {
     id: '2',
     title: 'Design',
-    content: 'content 2',
+    content:
+      'eveniet a autem rerum ut dicta. Exercitationem eum suscipit quo. Est fugiat ducimus aut saepe. Aut cupiditate expedita dolor eveniet a autem rerum ut dicta. Exercitationem eum suscipit quo. Est fugiat ducimus aut saepe.',
     imageUrl: '/assets/icons/design.png',
   },
   {
     id: '3',
-    title: 'Design Product',
-    content: 'content 3',
+    title: 'Product',
+    content:
+      'Exercitationem eum suscipit quo. Est fugiat ducimus aut saepe. Aut cupiditate expedita dolor eveniet a autem rerum ut dicta. Exercitationem eum suscipit quo. Est fugiat ducimus aut saepe.',
     imageUrl: '/assets/icons/product.png',
   },
 ]

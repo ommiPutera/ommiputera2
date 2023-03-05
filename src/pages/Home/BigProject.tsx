@@ -45,7 +45,14 @@ function BigProject() {
           imageUrl={dataBigProject[2].imageUrl}
         />
       </Contents>
-      <Detail>{dataBigProject[selectedKey].content}</Detail>
+      <Detail>
+        <Text
+          size="xl"
+          className="mt-32 mobile-mt-22 mobile-font-22 font-24 font-500 basic-animate-3"
+        >
+          {dataBigProject[selectedKey].content}
+        </Text>
+      </Detail>
     </Wrapper>
   )
 }
@@ -98,34 +105,39 @@ const Contents = styled.div`
   @media (min-width: 1000px) {
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 102px;
+    margin-top: 152px;
   }
 `
 
-const Detail = styled.div``
+const Detail = styled.div`
+  margin-top: 62px;
+  height: 150px;
+`
 
 const Content = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   background: ${({theme: {colors, mode}}) =>
-    mode === 'dark' ? colors.dark[8] : colors.dark[2]};
+    mode === 'dark' ? colors.dark[8] : colors.dark[1]};
   width: 350px;
   height: 230px;
   border: 3px solid transparent;
   border-radius: 14px;
   padding: 20px;
   cursor: pointer;
-
-  &.not__selected:hover {
-    background: ${({theme: {colors, mode}}) =>
-      mode === 'dark' ? colors.dark[7] : colors.dark[3]};
-  }
+  color: ${({theme: {colors}}) => colors.dark[5]};
 
   &.selected {
     border-color: ${({theme: {colors, mode}}) =>
       mode === 'dark' ? colors.dark[0] : colors.dark[9]};
+
+    color: ${({theme: {colors, mode}}) =>
+      mode === 'dark' ? colors.dark[0] : colors.dark[9]};
+    img {
+      opacity: 1 !important;
+    }
   }
 
   .icon__ {
@@ -133,6 +145,12 @@ const Content = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    img {
+      opacity: 0.7;
+      width: 170px;
+      margin-top: -90px;
+    }
   }
 `
 
