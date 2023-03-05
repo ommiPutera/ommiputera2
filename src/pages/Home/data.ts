@@ -29,4 +29,25 @@ const projects: IProject[] = [
   },
 ]
 
-export {projects as dataProjects}
+const bigProject = [
+  {
+    id: '1',
+    title: 'Engineering',
+    content: 'content 1',
+    imageUrl: '/assets/icons/engineering.png',
+  },
+  {
+    id: '2',
+    title: 'Design',
+    content: 'content 2',
+    imageUrl: '/assets/icons/design.png',
+  },
+  {
+    id: '3',
+    title: 'Design Product',
+    content: 'content 3',
+    imageUrl: '/assets/icons/product.png',
+  },
+]
+
+export {projects as dataProjects, bigProject as dataBigProject}
