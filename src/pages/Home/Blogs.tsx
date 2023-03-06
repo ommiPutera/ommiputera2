@@ -66,7 +66,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 -90px;
+
+  @media (min-width: 1000px) {
+    margin: 0 -90px;
+  }
 `
 const Contents = styled.div`
   margin-top: 62px;
@@ -99,10 +102,19 @@ const WrapperBlog = styled.div`
     padding: 5px;
     width: 100%;
     object-fit: cover;
-    height: 600px;
-    border-radius: 22px;
-    transition: border 0.4s ease;
-    border: 3px solid transparent;
+    height: 200px;
+  }
+
+  @media (min-width: 1000px) {
+    img {
+      padding: 5px;
+      width: 100%;
+      object-fit: cover;
+      height: 600px;
+      border-radius: 22px;
+      transition: border 0.4s ease;
+      border: 3px solid transparent;
+    }
   }
 `
 

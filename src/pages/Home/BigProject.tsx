@@ -100,7 +100,8 @@ const Wrapper = styled.div`
 const Contents = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 62px;
+  margin-top: 122px;
+  gap: 110px;
 
   @media (min-width: 1000px) {
     flex-direction: row;
@@ -148,8 +149,27 @@ const Content = styled.div`
 
     img {
       opacity: 0.7;
-      width: 170px;
+      width: 150px;
       margin-top: -90px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    width: 350px;
+    height: 230px;
+    margin-bottom: 0px;
+
+    .icon__ {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        opacity: 0.7;
+        width: 170px;
+        margin-top: -90px;
+      }
     }
   }
 `

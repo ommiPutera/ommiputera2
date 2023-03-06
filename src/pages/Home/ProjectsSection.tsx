@@ -138,6 +138,7 @@ function ProjectItem({
 }
 
 function ProjectCarousel({autoplay, urls}: ProjectCarouselTypes) {
+  const urlArr = urls ?? []
   return (
     <WrapperCarousel>
       <Carousel
@@ -147,12 +148,11 @@ function ProjectCarousel({autoplay, urls}: ProjectCarouselTypes) {
         sx={{flex: 1}}
         plugins={[autoplay.current]}
       >
-        {urls &&
-          urls.map(src => (
-            <Carousel.Slide>
-              <img className="preview__" src={src} alt="" />
-            </Carousel.Slide>
-          ))}
+        {urlArr.map(src => (
+          <Carousel.Slide key={src}>
+            <img className="preview__" src={src} alt="" />
+          </Carousel.Slide>
+        ))}
       </Carousel>
     </WrapperCarousel>
   )
@@ -173,13 +173,19 @@ const Contents = styled.div`
 `
 
 const WrapperCarousel = styled.div`
-  height: 600px;
-  width: 120%;
+  height: 200px;
+  width: 100%;
   display: flex;
-  border-radius: 20px;
-  overflow: hidden;
-  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
-    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+
+  @media (min-width: 1000px) {
+    display: flex;
+    height: 600px;
+    width: 120%;
+    border-radius: 20px;
+    overflow: hidden;
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+      drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  }
 `
 
 const Project = styled.div<IProject>`
