@@ -107,12 +107,13 @@ const Contents = styled.div`
     flex-direction: row;
     justify-content: space-between;
     margin-top: 152px;
+    gap: 0;
   }
 `
 
 const Detail = styled.div`
   margin-top: 62px;
-  height: 150px;
+  height: 100px;
 `
 
 const Content = styled.div`

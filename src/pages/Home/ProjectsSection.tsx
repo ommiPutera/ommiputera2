@@ -39,7 +39,7 @@ function ProjectsSection() {
       </Title>
       <Contents>
         {dataProjects.map(data => (
-          <ProjectItem {...data} />
+          <ProjectItem key={data.id} {...data} />
         ))}
       </Contents>
       <MyButton
