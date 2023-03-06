@@ -5,7 +5,24 @@ import styled from 'styled-components'
 import useMode from '../../hooks/useMode'
 import {dataBigProject} from './data'
 
-function BigProject() {
+interface IContentTypes {
+  id?: string
+  title?: string
+  imageUrl: string
+  contentKey: 0 | 1 | 2
+  selectedKey: number
+  setSelectedKey: React.Dispatch<React.SetStateAction<number>>
+  animate: 'basic-animate-1' | 'basic-animate-2' | 'basic-animate-3'
+}
+
+export interface IBigProject {
+  id: string
+  title: string
+  content: string
+  imageUrl: string
+}
+
+function BigProjectSection() {
   const {mode} = useMode()
   const [selectedKey, setSelectedKey] = React.useState(0)
   return (
@@ -64,14 +81,7 @@ function ContentItem({
   contentKey,
   selectedKey,
   setSelectedKey,
-}: {
-  imageUrl: string
-  contentKey: 0 | 1 | 2
-  selectedKey: number
-  title: string
-  setSelectedKey: React.Dispatch<React.SetStateAction<number>>
-  animate: 'basic-animate-1' | 'basic-animate-2' | 'basic-animate-3'
-}) {
+}: IContentTypes) {
   return (
     <Content
       className={clsx(
@@ -175,4 +185,4 @@ const Content = styled.div`
   }
 `
 
-export default BigProject
+export default BigProjectSection

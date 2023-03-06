@@ -1,24 +1,16 @@
 import {Helmet} from 'react-helmet'
 import styled from 'styled-components'
 import useMode from '../../hooks/useMode'
-import BigProjectSection from './BigProjectSection'
 import BlogSection from './BlogSection'
-import EmailSection from './EmailSection'
 import HeroSection from './HeroSection'
-import ProjectsSection from './ProjectsSection'
-import ServicesSection from './ServicesSection'
 
-function Home() {
+function Blog() {
   return (
-    <HomeWrapper>
+    <BlogWrapper>
       <PageHelmet />
       <HeroSection />
-      <ServicesSection />
-      <BigProjectSection />
-      <ProjectsSection />
       <BlogSection />
-      <EmailSection />
-    </HomeWrapper>
+    </BlogWrapper>
   )
 }
 
@@ -26,7 +18,7 @@ function PageHelmet() {
   const {mode} = useMode()
   return (
     <Helmet>
-      <title>Ommi Putera</title>
+      <title>Blog Ommi Putera</title>
       <meta
         name="theme-color"
         content={mode === 'light' ? '#fff' : '#18181b'}
@@ -35,7 +27,7 @@ function PageHelmet() {
   )
 }
 
-const HomeWrapper = styled.div`
+const BlogWrapper = styled.div`
   display: block;
   min-height: 100vh;
 
@@ -51,4 +43,4 @@ const HomeWrapper = styled.div`
   }
 `
 
-export default Home
+export default Blog

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import {Button} from '../../components/Button'
 import useMode from '../../hooks/useMode'
 
-function Blogs() {
+function BlogSection() {
   const {mode} = useMode()
   return (
     <Wrapper>
@@ -18,9 +18,9 @@ function Blogs() {
         Prepared especially for you.
       </Title>
       <Contents>
-        <Blog />
-        <Blog />
-        <Blog />
+        <BlogItem />
+        <BlogItem />
+        <BlogItem />
       </Contents>
       <Button
         variant="default"
@@ -34,7 +34,7 @@ function Blogs() {
   )
 }
 
-function Blog() {
+function BlogItem() {
   const {mode} = useMode()
   return (
     <WrapperBlog>
@@ -118,4 +118,4 @@ const WrapperBlog = styled.div`
   }
 `
 
-export default Blogs
+export default BlogSection

@@ -1,5 +1,7 @@
 import React from 'react'
-import {About, Dashboard} from '../App'
+import {About} from '../App'
+import Blog from '../pages/Blog'
+import BlogItem from '../pages/Blog/BlogItem'
 import Home from '../pages/Home'
 interface IRouteObject {
   path: string
@@ -17,19 +19,9 @@ export const ROUTES: IRouteObject[] = [
     element: <About />,
   },
   {
-    label: 'Dashboard',
-    path: '/dashboard',
-    element: <Dashboard />,
-  },
-  {
-    label: 'Project',
-    path: '/project',
-    element: <Dashboard />,
-  },
-  {
-    label: 'Contact',
-    path: '/contact',
-    element: <Dashboard />,
+    label: 'Blog',
+    path: '/blog',
+    element: <Blog />,
   },
 ]
 
@@ -46,8 +38,13 @@ export const APP_ROUTES: IRouteObject[] = [
     element: <About />,
   },
   {
-    label: 'Dashboard',
-    path: '/dashboard',
-    element: <Dashboard />,
+    label: 'Blog',
+    path: '/blog',
+    element: <Blog />,
+  },
+  {
+    label: 'Blog',
+    path: '/blog/:blogId',
+    element: <BlogItem />,
   },
 ]

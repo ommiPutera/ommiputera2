@@ -1,4 +1,7 @@
+import {IBigProject} from './BigProjectSection'
 import {IProject} from './ProjectsSection'
+import {Icon1, Icon2, Icon3} from '../../utils/icons'
+import {IServices} from './ServicesSection'
 
 const projects: IProject[] = [
   {
@@ -29,7 +32,7 @@ const projects: IProject[] = [
   },
 ]
 
-const bigProject = [
+const bigProject: IBigProject[] = [
   {
     id: '1',
     title: 'Engineering',
@@ -53,4 +56,32 @@ const bigProject = [
   },
 ]
 
-export {projects as dataProjects, bigProject as dataBigProject}
+const services: IServices[] = [
+  {
+    id: '3',
+    title: 'Front-End',
+    animate: 'basic-animate-1',
+    desc: 'Exercitationem eum suscipit quo. Est fugiat ducimus aut saepe. Aut cupiditate expedita dolor eveniet a autem rerum ut dicta.',
+    Icon: <Icon3 />,
+  },
+  {
+    id: '1',
+    title: 'Back-End',
+    animate: 'basic-animate-1',
+    desc: 'Exercitationem eum suscipit quo. Est fugiat ducimus aut saepe. Aut cupiditate expedita dolor eveniet a autem rerum ut dicta.',
+    Icon: <Icon1 />,
+  },
+  {
+    id: '2',
+    title: 'UI Design',
+    animate: 'basic-animate-3',
+    desc: 'Exercitationem eum suscipit quo. Est fugiat ducimus aut saepe. Aut cupiditate expedita dolor eveniet a autem rerum ut dicta.',
+    Icon: <Icon2 />,
+  },
+]
+
+export {
+  projects as dataProjects,
+  bigProject as dataBigProject,
+  services as dataServices,
+}

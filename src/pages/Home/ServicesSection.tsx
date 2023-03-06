@@ -2,7 +2,15 @@ import {Text, Title} from '@mantine/core'
 import clsx from 'clsx'
 import styled from 'styled-components'
 import useMode from '../../hooks/useMode'
-import {Icon1, Icon2, Icon3} from '../../utils/icons'
+import {dataServices} from './data'
+
+export interface IServices {
+  id: string
+  title: string
+  desc: string
+  Icon: JSX.Element
+  animate: 'basic-animate-1' | 'basic-animate-2' | 'basic-animate-3'
+}
 
 function ServicesSection() {
   const {mode} = useMode()
@@ -18,21 +26,15 @@ function ServicesSection() {
         Pushing the limits of what's possible.
       </Title>
       <Contents>
-        <ContentItem animate="basic-animate-1" Icon={<Icon1 />} />
-        <ContentItem animate="basic-animate-2" Icon={<Icon2 />} />
-        <ContentItem animate="basic-animate-3" Icon={<Icon3 />} />
+        {dataServices.map(service => (
+          <ContentItem key={service.id} {...service} />
+        ))}
       </Contents>
     </Wrapper>
   )
 }
 
-function ContentItem({
-  animate,
-  Icon,
-}: {
-  Icon: JSX.Element
-  animate: 'basic-animate-1' | 'basic-animate-2' | 'basic-animate-3'
-}) {
+function ContentItem({animate, Icon, id, title, desc}: IServices) {
   const {mode} = useMode()
   return (
     <Content className={clsx(animate, '')}>
@@ -41,15 +43,14 @@ function ContentItem({
         size="xl"
         className="mt-32 mobile-mt-22 mobile-font-22 font-24 font-500"
       >
-        Lorem ipsum dolor sit Amet
+        {title}
       </Text>
       <Text
         size="lg"
         className="mt-32 mobile-mt-22 mobile-font-18 font-18 font-500"
         color={mode === 'dark' ? 'dark.3' : 'dark.7'}
       >
-        Aut cupiditate expedita dolor eveniet a autem rerum ut dicta.
-        Exercitationem eum suscipit quo. Est fugiat ducimus aut saepe.
+        {desc}
       </Text>
     </Content>
   )
