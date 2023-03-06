@@ -1,7 +1,7 @@
 import React from 'react'
 import {About} from '../App'
 import Blog from '../pages/Blog'
-import BlogItem from '../pages/Blog/BlogItem'
+import BlogSection from '../pages/Blog/BlogSection'
 import Home from '../pages/Home'
 interface IRouteObject {
   path: string
@@ -45,6 +45,6 @@ export const APP_ROUTES: IRouteObject[] = [
   {
     label: 'Blog',
     path: '/blog/:blogId',
-    element: <BlogItem />,
+    element: <BlogSection />,
   },
 ]

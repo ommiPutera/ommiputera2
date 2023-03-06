@@ -1,7 +1,7 @@
 import {Helmet} from 'react-helmet'
 import styled from 'styled-components'
 import useMode from '../../hooks/useMode'
-import BlogSection from './BlogSection'
+import BlogCollection from './BlogCollection'
 import HeroSection from './HeroSection'
 
 function Blog() {
@@ -9,7 +9,7 @@ function Blog() {
     <BlogWrapper>
       <PageHelmet />
       <HeroSection />
-      <BlogSection />
+      <BlogCollection />
     </BlogWrapper>
   )
 }
