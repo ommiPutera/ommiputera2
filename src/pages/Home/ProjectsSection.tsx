@@ -91,17 +91,17 @@ function ProjectItem({
       <div>
         <div>
           <Text
-            color={mode === 'dark' ? 'dark.3' : 'dark.7'}
-            size="lg"
-            className="mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
-          >
-            {description}
-          </Text>
-          <Text
             size="xl"
-            className="mt-32 mobile-mt-22 mobile-font-22 font-24 font-500 basic-animate-2"
+            className="mobile-mt-22 mobile-font-22 font-24 font-500 basic-animate-2"
           >
             {title}
+          </Text>
+          <Text
+            color={mode === 'dark' ? 'dark.3' : 'dark.7'}
+            size="lg"
+            className="mt-32 mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
+          >
+            {description}
           </Text>
           <Text
             size="xl"
@@ -166,13 +166,11 @@ const Contents = styled.div`
 
 const WrapperCarousel = styled.div`
   height: 600px;
-  width: 100%;
   display: flex;
 
   @media (min-width: 1000px) {
     display: flex;
     height: 600px;
-    width: 120%;
     border-radius: 20px;
     overflow: hidden;
     filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))

@@ -1,11 +1,13 @@
 import {Button} from '@mantine/core'
 import clsx from 'clsx'
+import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import {getClassProps} from '../../utils/helpers'
 
 interface IButton {
   children: React.ReactNode | JSX.Element
   className?: string
+  href?: string
   variant?: 'outline' | 'default'
   compact?: true
   disabled?: boolean
@@ -33,6 +35,7 @@ function EpicButton({
   fullwidth,
   position = 'center',
   radius = 'xl',
+  href = '',
   ...rest
 }: IButton) {
   const combineClass = {...rest, mobileSize}
@@ -40,7 +43,7 @@ function EpicButton({
     position: position.split(' ')[0],
     mobile: position.split(' ')[1]?.replace('mobile', ''),
   }
-  return (
+  const Btn = () => (
     <WrapperButton className={clsx(className, getClassProps(postionClass))}>
       <Button
         radius={radius}
@@ -54,6 +57,15 @@ function EpicButton({
       </Button>
     </WrapperButton>
   )
+
+  if (href) {
+    return (
+      <Link to={href}>
+        <Btn />
+      </Link>
+    )
+  }
+  return <Btn />
 }
 
 const WrapperButton = styled.div`

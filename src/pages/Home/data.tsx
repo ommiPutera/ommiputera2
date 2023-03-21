@@ -7,8 +7,9 @@ const projects: IProject[] = [
   {
     id: '01',
     layout: '1',
-    title: 'Naufal Ghifari Website',
-    description: 'description',
+    title: 'Naufal Ghifari Personal Website',
+    description:
+      'I love talking about technology, design, and well-designed digital products. I also like reading and I am an avid listener of music. I love building products which are simple and clean so that in addition to being visually beautiful, it also makes it easier for users to interact with it. For me',
     type: 'Personal Website',
     note: 'ReactJS with CSS-in-JS and of course Typescript',
     viewsURL: [
@@ -21,7 +22,8 @@ const projects: IProject[] = [
     id: '02',
     layout: '1',
     title: 'Naufal Ghifari Website',
-    description: 'description',
+    description:
+      'I love talking about technology, design, and well-designed digital products. I also like reading and I am an avid listener of music. I love building products which are simple and clean so that in addition to being visually beautiful, it also makes it easier for users to interact with it. For me',
     type: 'Personal Website',
     note: 'ReactJS with CSS-in-JS and of course Typescript',
     viewsURL: [

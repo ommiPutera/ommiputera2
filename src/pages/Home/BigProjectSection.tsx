@@ -130,20 +130,12 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: ${({theme: {colors, mode}}) =>
-    mode === 'dark' ? colors.dark[8] : colors.dark[1]};
-  width: 350px;
-  height: 300px;
-  border: 3px solid transparent;
-  border-radius: 14px;
-  padding: 40px;
+  height: 240px;
+  width: 300px;
   cursor: pointer;
   color: ${({theme: {colors}}) => colors.dark[5]};
 
   &.selected {
-    border-color: ${({theme: {colors, mode}}) =>
-      mode === 'dark' ? colors.dark[0] : colors.dark[9]};
-
     color: ${({theme: {colors, mode}}) =>
       mode === 'dark' ? colors.dark[0] : colors.dark[9]};
     img {
@@ -160,13 +152,11 @@ const Content = styled.div`
     img {
       opacity: 0.7;
       width: 170px;
-      margin-top: -30px;
     }
   }
 
   @media (min-width: 1000px) {
-    width: 350px;
-    height: 230px;
+    margin-top: 65px;
     margin-bottom: 0px;
 
     .icon__ {
@@ -176,9 +166,8 @@ const Content = styled.div`
       justify-content: center;
 
       img {
-        opacity: 0.7;
+        opacity: 0.4;
         width: 170px;
-        margin-top: -90px;
       }
     }
   }
