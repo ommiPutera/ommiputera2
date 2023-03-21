@@ -116,8 +116,7 @@ const Contents = styled.div`
   @media (min-width: 1000px) {
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 152px;
-    gap: 0;
+    margin-top: 106px;
   }
 `
 
@@ -130,14 +129,14 @@ const Content = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   background: ${({theme: {colors, mode}}) =>
     mode === 'dark' ? colors.dark[8] : colors.dark[1]};
   width: 350px;
-  height: 230px;
+  height: 300px;
   border: 3px solid transparent;
   border-radius: 14px;
-  padding: 20px;
+  padding: 40px;
   cursor: pointer;
   color: ${({theme: {colors}}) => colors.dark[5]};
 
@@ -160,8 +159,8 @@ const Content = styled.div`
 
     img {
       opacity: 0.7;
-      width: 150px;
-      margin-top: -90px;
+      width: 170px;
+      margin-top: -30px;
     }
   }
 

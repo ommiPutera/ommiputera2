@@ -89,14 +89,6 @@ function ProjectItem({
       onMouseLeave={handleResetSlides}
     >
       <div>
-        <Text
-          size="lg"
-          className="mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
-        >
-          {type}
-        </Text>
-      </div>
-      <div>
         <div>
           <Text
             color={mode === 'dark' ? 'dark.3' : 'dark.7'}
@@ -173,7 +165,7 @@ const Contents = styled.div`
 `
 
 const WrapperCarousel = styled.div`
-  height: 200px;
+  height: 600px;
   width: 100%;
   display: flex;
 
@@ -197,7 +189,7 @@ const Project = styled.div<IProject>`
 
   > div {
     position: relative;
-    width: 100%;
+    width: 50%;
   }
 
   .preview__ {
@@ -213,7 +205,7 @@ const Project = styled.div<IProject>`
     flex-direction: row;
     gap: 82px;
     padding: 0 32px;
-    margin: 0 0 102px -162px;
+    margin: 0 0 102px -35px;
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
     transition: border 0.4s ease;
@@ -226,22 +218,17 @@ const Project = styled.div<IProject>`
     }
 
     > div {
-      position: relative;
-      width: 50%;
+      width: 100%;
     }
-
     > div:first-child {
-      width: 5%;
-    }
-    > div:nth-child(2) {
       order: ${props => (props.layout === '1' ? 1 : 2)};
       display: flex;
-      width: 80%;
+      width: 60%;
       flex-direction: column;
       justify-content: space-between;
     }
     > div:last-child {
-      width: 150%;
+      width: 140%;
       margin-left: ${props => (props.layout === '2' ? '-270px' : '')};
       margin-right: ${props => (props.layout === '1' ? '-270px' : '')};
       order: ${props => (props.layout === '1' ? 2 : 1)};
