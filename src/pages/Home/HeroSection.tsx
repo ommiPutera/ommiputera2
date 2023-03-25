@@ -10,38 +10,26 @@ function HeroSection() {
     <Wrapper>
       <LeftContent className="mobile-mt-102">
         <Title className="font-38 mobile-font-28 font-500 basic-animate">
-          🎯 Helping brands to stand out <br /> in the digital era.
+          🎯 Helping brands and products to stand out in the digital era.
         </Title>
         <Text
           size="lg"
-          className="mt-32 mobile-mt-22 mobile-font-18 font-38 font-500 basic-animate-1"
+          className="mt-32 mobile-mt-22 mobile-font-18 font-28 font-500 basic-animate-1"
           color={mode === 'dark' ? 'dark.4' : 'dark.6'}
         >
-          Freelance Software Engineer
+          Software Engineer available for freelance and collaborations.
         </Text>
-        {/* <Title className="font-38 mobile-font-28 font-600 basic-animate">
-          Software Engineer available <br /> for freelance and collaborations.
-        </Title>
-        <Text
-          size="lg"
-          className="mt-32 mobile-mt-22 mobile-font-18 font-22 font-500 basic-animate-1"
-          color={mode === 'dark' ? 'dark.4' : 'dark.6'}
-        >
-          👋 Hello there! I'm a highly skilled Software Engineer with two years
-          of experience creating and maintaining top-notch, reusable codebases.
-          From conceptualization to launch, I specialize in bringing your ideas
-          to life using industry best practices. Let's collaborate and create
-          something amazing!
-        </Text> */}
-        <Button
-          variant="default"
-          size="lg"
-          mobileSize="md"
-          position="left mobile-center"
-          className="mt-88 mobile-mt-32 basic-animate-2"
-        >
-          Some of my projects
-        </Button>
+        <ScrollTo to="projects">
+          <Button
+            variant="default"
+            size="lg"
+            mobileSize="md"
+            position="left mobile-center"
+            className="mt-88 mobile-mt-32 basic-animate-2"
+          >
+            Some of my projects
+          </Button>
+        </ScrollTo>
         <Button
           variant="outline"
           size="lg"
@@ -58,23 +46,18 @@ function HeroSection() {
           src="/assets/image/profile.jpeg"
           alt=""
         />
-        <Button
-          variant="default"
-          size="lg"
-          mobileSize="md"
-          position="right mobile-center"
-          className="mt-32 mobile-mt-32 basic-animate-3"
-        >
-          Send me email?
-        </Button>
-        <LinkScroll
-          activeClass="active"
-          to="services"
-          spy={true}
-          smooth={true}
-          offset={-10}
-          duration={300}
-        >
+        <ScrollTo to="emails" isSmooth={false}>
+          <Button
+            variant="default"
+            size="lg"
+            mobileSize="md"
+            position="right mobile-center"
+            className="mt-88 mobile-mt-32 basic-animate-3"
+          >
+            Send me email?
+          </Button>
+        </ScrollTo>
+        <ScrollTo to="services">
           <Button
             variant="outline"
             size="lg"
@@ -84,9 +67,31 @@ function HeroSection() {
           >
             Scroll down.. 👇
           </Button>
-        </LinkScroll>
+        </ScrollTo>
       </RightContent>
     </Wrapper>
+  )
+}
+
+function ScrollTo({
+  children,
+  to,
+  isSmooth = true,
+}: {
+  children: React.ReactNode
+  to: string
+  isSmooth?: boolean
+}) {
+  return (
+    <LinkScroll
+      activeClass="active"
+      to={to}
+      smooth={isSmooth}
+      offset={-30}
+      duration={500}
+    >
+      {children}
+    </LinkScroll>
   )
 }
 
