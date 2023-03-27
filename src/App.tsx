@@ -6,6 +6,7 @@ import {CustomFonts, GlobalStyle, mantineTheme, styledTheme} from './theme'
 import {Routes, Route} from 'react-router-dom'
 import {APP_ROUTES} from './routes'
 import NoMatchPage from './routes/NoMatch'
+import {MDXProvider} from '@mdx-js/react'
 
 function App() {
   const {mode} = useMode()
@@ -15,13 +16,15 @@ function App() {
   }
 
   return (
-    <MantineProvider withGlobalStyles withNormalizeCSS theme={mantineTheme}>
-      <CustomFonts />
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <AppRoutes />
-      </ThemeProvider>
-    </MantineProvider>
+    <MDXProvider>
+      <MantineProvider withGlobalStyles withNormalizeCSS theme={mantineTheme}>
+        <CustomFonts />
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <AppRoutes />
+        </ThemeProvider>
+      </MantineProvider>
+    </MDXProvider>
   )
 }
 

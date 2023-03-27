@@ -1,5 +1,5 @@
 import {IBlog} from './BlogCollection'
-import Example from './contents/example.mdx'
+import Example from '../../content/blog/example.mdx'
 
 const blog: IBlog[] = [
   {
