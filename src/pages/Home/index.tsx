@@ -45,8 +45,8 @@ const HomeWrapper = styled.div`
 
   @media (min-width: 1100px) {
     > div {
-      padding-top: 108px;
-      padding-bottom: 108px;
+      padding-top: 138px;
+      padding-bottom: 138px;
     }
   }
 `

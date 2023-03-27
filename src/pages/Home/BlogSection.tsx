@@ -26,6 +26,7 @@ function BlogSection() {
         variant="default"
         size="lg"
         mobileSize="md"
+        href="/blog"
         className="mt-102 mobile-mt-32 basic-animate-2"
       >
         See the full blog

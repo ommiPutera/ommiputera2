@@ -27,7 +27,7 @@ type ProjectCarouselTypes = {
 function ProjectsSection() {
   const {mode} = useMode()
   return (
-    <Wrapper>
+    <Wrapper id="projects">
       <Title className="font-38 mobile-font-28 font-600 basic-animate-1">
         Some of my projects
       </Title>
@@ -89,27 +89,19 @@ function ProjectItem({
       onMouseLeave={handleResetSlides}
     >
       <div>
-        <Text
-          size="lg"
-          className="mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
-        >
-          {type}
-        </Text>
-      </div>
-      <div>
         <div>
+          <Text
+            size="xl"
+            className="mobile-mt-22 mobile-font-22 font-28 font-500 basic-animate-2"
+          >
+            {title}
+          </Text>
           <Text
             color={mode === 'dark' ? 'dark.3' : 'dark.7'}
             size="lg"
-            className="mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
+            className="mt-32 mobile-mt-22 mobile-font-18 font-20 font-500 basic-animate-1"
           >
             {description}
-          </Text>
-          <Text
-            size="xl"
-            className="mt-32 mobile-mt-22 mobile-font-22 font-24 font-500 basic-animate-2"
-          >
-            {title}
           </Text>
           <Text
             size="xl"
@@ -162,6 +154,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: 1000px) {
+    margin: 0 -210px;
+  }
 `
 const Contents = styled.div`
   margin-top: 62px;
@@ -173,18 +169,15 @@ const Contents = styled.div`
 `
 
 const WrapperCarousel = styled.div`
-  height: 200px;
-  width: 100%;
+  height: 600px;
   display: flex;
 
   @media (min-width: 1000px) {
     display: flex;
     height: 600px;
-    width: 120%;
     border-radius: 20px;
     overflow: hidden;
-    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
-      drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   }
 `
 
@@ -197,14 +190,13 @@ const Project = styled.div<IProject>`
 
   > div {
     position: relative;
-    width: 100%;
+    width: 50%;
   }
 
   .preview__ {
     width: 100%;
     height: 100%;
     max-height: 400px;
-    object-fit: cover;
     z-index: 1;
   }
 
@@ -212,8 +204,8 @@ const Project = styled.div<IProject>`
     width: 100%;
     flex-direction: row;
     gap: 82px;
-    padding: 0 32px;
-    margin: 0 0 102px -162px;
+    padding-left: 32px;
+    margin: 0 0 102px 0;
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
     transition: border 0.4s ease;
@@ -226,28 +218,22 @@ const Project = styled.div<IProject>`
     }
 
     > div {
-      position: relative;
-      width: 50%;
+      width: 100%;
     }
-
     > div:first-child {
-      width: 5%;
-    }
-    > div:nth-child(2) {
       order: ${props => (props.layout === '1' ? 1 : 2)};
       display: flex;
-      width: 80%;
+      width: 40%;
       flex-direction: column;
       justify-content: space-between;
     }
     > div:last-child {
-      width: 150%;
-      margin-left: ${props => (props.layout === '2' ? '-270px' : '')};
-      margin-right: ${props => (props.layout === '1' ? '-270px' : '')};
+      width: 100%;
       order: ${props => (props.layout === '1' ? 2 : 1)};
     }
 
     .preview__ {
+      width: 100%;
       max-height: 600px;
     }
   }

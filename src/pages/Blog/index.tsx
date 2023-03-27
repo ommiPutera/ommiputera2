@@ -1,3 +1,4 @@
+import React from 'react'
 import {Helmet} from 'react-helmet'
 import styled from 'styled-components'
 import useMode from '../../hooks/useMode'
@@ -5,6 +6,10 @@ import BlogCollection from './BlogCollection'
 import HeroSection from './HeroSection'
 
 function Blog() {
+  React.useEffect(() => {
+    window.scroll(0, 0)
+  }, [])
+
   return (
     <BlogWrapper>
       <PageHelmet />

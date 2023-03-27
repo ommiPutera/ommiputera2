@@ -50,7 +50,7 @@ function EmailSection() {
   }
 
   return (
-    <Wrapper>
+    <Wrapper id="emails">
       <Information>
         <Title className="font-38 mobile-font-28 font-600 basic-animate-1 text-align-left">
           Get in Touch ✨
